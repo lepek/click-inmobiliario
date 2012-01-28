@@ -16,3 +16,13 @@ if user.nil?
     :password_confirmation => 'foo'
   )
 end
+
+rosario = Location.find_by_name('Rosario')
+if rosario.nil?
+  Location.create(:name => 'Rosario')
+end
+
+vgg = Location.find_by_name('Villa Gobernador Galvez')
+if vgg.nil?
+  Location.create(:name => 'Villa Gobernador Galvez')
+end
