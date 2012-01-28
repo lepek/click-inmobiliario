@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  code: MyString
+  price: 1
+  address: MyString
+  location_id: 1
+  type_id: 1
+  currency_id: 1
+  operation_id: 1
+
+two:
+  description: MyText
+  code: MyString
+  price: 1
+  address: MyString
+  location_id: 1
+  type_id: 1
+  currency_id: 1
+  operation_id: 1

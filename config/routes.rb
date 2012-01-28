@@ -1,4 +1,16 @@
 ClickInmobiliario::Application.routes.draw do
+  resources :operations
+
+  resources :currencies
+
+  resources :properties
+
+  resources :types
+
+  resources :locations
+
+  resources :real_estates
+
   devise_for :users
 
   resources :users
