@@ -1,9 +1,9 @@
 <%= form_for [:admin, @type] do |f| %>
 <% if @type.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@type.errors.count, "error") %> prohibited this type from being saved:</h2>
+	<h2><%= t 'errors.header.male', :resource => 'tipo de inmueble', :count => @type.errors.count %></h2>
 	<ul>
-		<% @type.errors.full_messages.each do |msg| %>
+		<% @type.errors.each do |attr, msg| %>
 		<li>
 			<%= msg %>
 		</li>
@@ -13,13 +13,13 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
-		<%= f.label :name, 'Tipo de inmueble' %>
+		<%= f.label :name %>
 		<div class="input">
 			<%= f.text_field :name %>
 		</div>
 	</div>
 	<div class="actions">
-		<%= f.submit 'Guardar' %>
+		<%= f.submit 'Guardar', :class => "btn primary" %>
 	</div>
 </fieldset>
 <% end %> 

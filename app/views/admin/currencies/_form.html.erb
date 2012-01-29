@@ -1,9 +1,9 @@
 <%= form_for [:admin, @currency] do |f| %>
 <% if @currency.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@currency.errors.count, "error") %> prohibited this currency from being saved:</h2>
+	<h2><%= t 'errors.header.female', :resource => 'moneda', :count => @currency.errors.count %></h2>
 	<ul>
-		<% @currency.errors.full_messages.each do |msg| %>
+		<% @currency.errors.each do |attr, msg| %>
 		<li>
 			<%= msg %>
 		</li>
@@ -13,13 +13,13 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
-		<%= f.label :name, 'Moneda' %>
+		<%= f.label :name %>
 		<div class="input">
 			<%= f.text_field :name %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :code, 'Código' %>
+		<%= f.label :code%>
 		<div class="input">
 			<%= f.text_field :code %>
 		</div>

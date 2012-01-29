@@ -1,9 +1,9 @@
 <%= form_for [:admin, @property] do |f| %>
 <% if @property.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+	<h2><%= t 'errors.header.male', :resource => 'inmueble', :count => @property.errors.count %></h2>
 	<ul>
-		<% @property.errors.full_messages.each do |msg| %>
+		<% @property.errors.each do |attr, msg| %>
 		<li>
 			<%= msg %>
 		</li>
@@ -13,55 +13,55 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
-		<%= f.label :description, 'Descripción' %>
+		<%= f.label :description %>
 		<div class="input">
 			<%= f.text_area :description %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :code, 'Código' %>
+		<%= f.label :code %>
 		<div class="input">
 			<%= f.text_field :code %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :price, 'Precio' %>
+		<%= f.label :price %>
 		<div class="input">
 			<%= f.number_field :price %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :currency_id, 'Moneda' %>
+		<%= f.label :currency_id %>
 		<div class="input">
 			<%= f.collection_select(:currency_id, Currency.order("name").all, :id, :name) %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :address, 'Dirección' %>
+		<%= f.label :address %>
 		<div class="input">
 			<%= f.text_field :address %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :location_id, 'Localidad' %>
+		<%= f.label :location_id %>
 		<div class="input">
 			<%= f.collection_select(:location_id, Location.order("name").all, :id, :name) %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :type_id, 'Tipo de propiedad' %>
+		<%= f.label :type_id %>
 		<div class="input">
 			<%= f.collection_select(:type_id, Type.order("name").all, :id, :name) %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :operation_id, 'Tipo de operación' %>
+		<%= f.label :operation_id %>
 		<div class="input">
 			<%= f.collection_select(:operation_id, Operation.order("name").all, :id, :name) %>
 		</div>
 	</div>
 	<div class="actions">
-		<%= f.submit 'Guardar' %>
+		<%= f.submit 'Guardar', :class => "btn primary" %>
 	</div>
 </fieldset>
 <% end %> 

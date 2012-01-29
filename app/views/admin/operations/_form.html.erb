@@ -1,9 +1,9 @@
 <%= form_for [:admin, @operation] do |f| %>
 <% if @operation.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+	<h2><%= t 'errors.header.male', :resource => 'tipo de operación', :count => @operation.errors.count %></h2>
 	<ul>
-		<% @operation.errors.full_messages.each do |msg| %>
+		<% @operation.errors.each do |attr, msg| %>
 		<li>
 			<%= msg %>
 		</li>
@@ -13,13 +13,13 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
-		<%= f.label :name, 'Tipo de Operación' %>
+		<%= f.label :name %>
 		<div class="input">
 			<%= f.text_field :name %>
 		</div>
 	</div>
 	<div class="actions">
-		<%= f.submit 'Guardar' %>
+		<%= f.submit 'Guardar', :class => "btn primary" %>
 	</div>
 </fieldset>
 <% end %> 
