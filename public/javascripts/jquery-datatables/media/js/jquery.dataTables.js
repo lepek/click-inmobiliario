@@ -955,21 +955,21 @@
 			 *   by javascript
 			 */
 			this.oLanguage = {
-				"sProcessing": "Processing...",
-				"sLengthMenu": "Show _MENU_ entries",
-				"sZeroRecords": "No matching records found",
-				"sEmptyTable": "No data available in table",
-				"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
-				"sInfoEmpty": "Showing 0 to 0 of 0 entries",
-				"sInfoFiltered": "(filtered from _MAX_ total entries)",
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registro/s",
+				"sZeroRecords": "Ningún registro encontrado",
+				"sEmptyTable": "No hay datos para mostrar",
+				"sInfo": "Mostrando _START_ a _END_ de _TOTAL_ registro/s",
+				"sInfoEmpty": "Mostrando 0 a 0 de 0 registro/s",
+				"sInfoFiltered": "(filtrado de _MAX_ registro/s en total)",
 				"sInfoPostFix": "",
-				"sSearch": "Search:",
+				"sSearch": "Buscar:",
 				"sUrl": "",
 				"oPaginate": {
-					"sFirst":    "First",
-					"sPrevious": "Previous",
-					"sNext":     "Next",
-					"sLast":     "Last"
+					"sFirst":    "Primero",
+					"sPrevious": "Anterior",
+					"sNext":     "Siguiente",
+					"sLast":     "Último"
 				},
 				"fnInfoCallback": null
 			};
