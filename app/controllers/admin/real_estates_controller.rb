@@ -45,8 +45,8 @@ module Admin
 
       respond_to do |format|
         if @real_estate.save
-          format.html { redirect_to @real_estate, notice: 'Real estate was successfully created.' }
-          format.json { render json: @real_estate, status: :created, location: @real_estate }
+          format.html { redirect_to [:admin, @real_estate], notice: 'Real estate was successfully created.' }
+          format.json { render json: @real_estate, status: :created, location: [:admin, @real_estate] }
         else
           format.html { render action: "new" }
           format.json { render json: @real_estate.errors, status: :unprocessable_entity }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @real_estate.update_attributes(params[:real_estate])
-          format.html { redirect_to @real_estate, notice: 'Real estate was successfully updated.' }
+          format.html { redirect_to [:admin, @real_estate], notice: 'Real estate was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

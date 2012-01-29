@@ -1,6 +1,6 @@
-<h1>Editing user</h1>
+<h1>Editar usuario</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Ver', [:admin, @user] %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'users') %>

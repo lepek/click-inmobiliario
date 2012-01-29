@@ -3,45 +3,45 @@
 <%= gmaps4rails(@json) %>
 
 <p>
-  <b>Description:</b>
+  <b>Descripción:</b>
   <%= @property.description %>
 </p>
 
 <p>
-  <b>Code:</b>
+  <b>Código:</b>
   <%= @property.code %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b>Precio:</b>
   <%= @property.price %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Dirección:</b>
   <%= @property.address %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <b>Localidad:</b>
   <%= @property.location.name %>
 </p>
 
 <p>
-  <b>Type:</b>
+  <b>Tipo de inmueble:</b>
   <%= @property.type.name %>
 </p>
 
 <p>
-  <b>Currency:</b>
+  <b>Moneda:</b>
   <%= @property.currency.name %>
 </p>
 
 <p>
-  <b>Operation:</b>
+  <b>Tipo de operación:</b>
   <%= @property.operation.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<%= link_to 'Editar', edit_admin_property_path(@property) %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'properties') %>

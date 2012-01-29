@@ -1,4 +1,4 @@
-<%= form_for(@property) do |f| %>
+<%= form_for [:admin, @property] do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -44,6 +44,6 @@
     <%= f.collection_select(:operation_id, Operation.order("name").all, :id, :name) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Guardar' %>
   </div>
 <% end %>

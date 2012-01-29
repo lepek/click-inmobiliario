@@ -45,8 +45,8 @@ module Admin
 
       respond_to do |format|
         if @operation.save
-          format.html { redirect_to @operation, notice: 'Operation was successfully created.' }
-          format.json { render json: @operation, status: :created, location: @operation }
+          format.html { redirect_to [:admin, @operation], notice: 'Operation was successfully created.' }
+          format.json { render json: @operation, status: :created, location: [:admin, @operation] }
         else
           format.html { render action: "new" }
           format.json { render json: @operation.errors, status: :unprocessable_entity }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @operation.update_attributes(params[:operation])
-          format.html { redirect_to @operation, notice: 'Operation was successfully updated.' }
+          format.html { redirect_to [:admin, @operation], notice: 'Operation was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

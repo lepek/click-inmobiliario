@@ -1,6 +1,6 @@
-<h1>Editing type</h1>
+<h1>Editar tipo de inmueble</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @type %> |
-<%= link_to 'Back', types_path %>
+<%= link_to 'Ver', [:admin, @type] %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'types') %>

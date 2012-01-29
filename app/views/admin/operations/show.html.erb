@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Tipo de operaci&oacute;n:</b>
   <%= @operation.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_operation_path(@operation) %> |
-<%= link_to 'Back', operations_path %>
+<%= link_to 'Editar', edit_admin_operation_path(@operation) %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'operations') %>

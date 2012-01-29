@@ -1,6 +1,6 @@
-<h1>Editing real_estate</h1>
+<h1>Editar inmobiliaria</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @real_estate %> |
-<%= link_to 'Back', real_estates_path %>
+<%= link_to 'Ver', [:admin, @real_estate] %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'real_estates') %>

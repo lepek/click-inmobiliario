@@ -44,8 +44,8 @@ module Admin
 
       respond_to do |format|
         if @property.save
-          format.html { redirect_to @property, notice: 'Property was successfully created.' }
-          format.json { render json: @property, status: :created, location: @property }
+          format.html { redirect_to [:admin, @property], notice: 'Property was successfully created.' }
+          format.json { render json: @property, status: :created, location: [:admin, @property] }
         else
           format.html { render action: "new" }
           format.json { render json: @property.errors, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ module Admin
 
       respond_to do |format|
         if @property.update_attributes(params[:property])
-          format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+          format.html { redirect_to [:admin, @property], notice: 'Property was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

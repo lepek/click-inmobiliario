@@ -1,6 +1,6 @@
-<h1>Editing property</h1>
+<h1>Editar inmueble</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @property %> |
-<%= link_to 'Back', properties_path %>
+<%= link_to 'Ver', [:admin, @property] %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'properties') %>

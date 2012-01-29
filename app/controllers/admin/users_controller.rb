@@ -1,7 +1,8 @@
 module Admin
   class UsersController < Admin::ApplicationController
 
-    before_filter :authenticate_user!
+    #before_filter :authenticate_user!
+    
     # GET /users
     # GET /users.json
     def index
@@ -47,8 +48,8 @@ module Admin
 
       respond_to do |format|
         if @user.save
-          format.html { redirect_to @user, notice: 'User was successfully created.' }
-          format.json { render json: @user, status: :created, location: @user }
+          format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
+          format.json { render json: @user, status: :created, location: [:admin, @user] }
         else
           format.html { render action: "new" }
           format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -63,7 +64,7 @@ module Admin
 
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          format.html { redirect_to [:admin, @user], notice: 'User was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Localidad:</b>
   <%= @location.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to 'Editar', edit_admin_location_path(@location) %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'locations') %>

@@ -45,8 +45,8 @@ module Admin
 
       respond_to do |format|
         if @currency.save
-          format.html { redirect_to @currency, notice: 'Currency was successfully created.' }
-          format.json { render json: @currency, status: :created, location: @currency }
+          format.html { redirect_to [:admin, @currency], notice: 'Currency was successfully created.' }
+          format.json { render json: @currency, status: :created, location: [:admin, @currency] }
         else
           format.html { render action: "new" }
           format.json { render json: @currency.errors, status: :unprocessable_entity }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @currency.update_attributes(params[:currency])
-          format.html { redirect_to @currency, notice: 'Currency was successfully updated.' }
+          format.html { redirect_to [:admin, @currency], notice: 'Currency was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

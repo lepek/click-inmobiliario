@@ -45,8 +45,8 @@ module Admin
 
       respond_to do |format|
         if @type.save
-          format.html { redirect_to @type, notice: 'Type was successfully created.' }
-          format.json { render json: @type, status: :created, location: @type }
+          format.html { redirect_to [:admin, @type], notice: 'Type was successfully created.' }
+          format.json { render json: @type, status: :created, location: [:admin, @type] }
         else
           format.html { render action: "new" }
           format.json { render json: @type.errors, status: :unprocessable_entity }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @type.update_attributes(params[:type])
-          format.html { redirect_to @type, notice: 'Type was successfully updated.' }
+          format.html { redirect_to [:admin, @type], notice: 'Type was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
