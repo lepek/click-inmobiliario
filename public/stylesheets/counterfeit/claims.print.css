@@ -1,0 +1,53 @@
+.topbar,
+#flash-messages,
+#breadcrumb,
+footer,
+a.toggle,
+a.prev,
+a.next,
+.screenshots ul.pagination {
+  display: none;
+}
+
+body {
+  font-size: 12pt;
+  font-family: arial, verdana, sans-serif;
+  color: #000;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.details {
+  display: block !important;
+}
+
+.screenshots {
+  width: auto !important;
+}
+.screenshots .slides_control {
+  position: static !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+.screenshots .slide {
+  display: block !important;
+  position: static !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: transparent;
+  width: auto;
+  height: auto;
+  text-align: left;
+}
+.screenshots .slide .caption {
+  position: static;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: #000;
+  border-top: 0;
+}

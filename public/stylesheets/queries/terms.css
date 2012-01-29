@@ -1,0 +1,255 @@
+#term {
+  width: 730px;
+}
+
+#term-categories,
+#domain-search,
+#term-name,
+#index-type {
+  margin: 15px 10px 15px 0px;
+}
+
+#term-categories {
+  margin-right: 0px;
+  z-index: 500;
+}
+
+#term-categories table {
+  position: relative;
+  z-index: 100;
+}
+
+#term-categories table tr td {
+  vertical-align: middle;
+}
+
+#term label {
+  width: 120px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+#term-name { 
+  position: relative;
+  margin-top: 0px;
+}
+
+#term-name input {
+  width: 440px;
+}
+
+#term-categories #as-selections-categories {
+  width: 448px;
+  margin-left: 4px;
+}
+
+#queries_term_indexType {
+  margin-right: 6px;
+}
+
+#domain-search {
+  position: relative;
+}
+
+#domain-search .tooltip-help {
+  position: relative;
+  top: -16px;
+  margin-left: 5px;
+}
+
+#queries_term_isDomainSearch {
+  width: 13px;
+  height: 13px;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top;
+  position: relative;
+  top: 4px;
+  left: 1px;
+  *overflow: hidden;
+}
+
+#term-translations label {
+  position: relative;
+  top: 14px;
+}
+
+#term-translations ul {
+  margin: -15px 0px 0px 125px;
+  padding: 0px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.term-translation input {
+  width: 360px;
+}
+
+.term-translation {
+  width: 575px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  min-height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  -webkit-border: radius: 10px;
+  -moz-border-radius: 10px;
+  background-color: #2AABE2;
+  color: #FFFFFF;
+}
+
+.translation-language {
+  width: 150px;
+  max-width: 150px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.translation-language select {
+  width: 145px;
+}
+
+.translation-value {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  padding-left: 5px;
+  margin-right: 15px;
+}
+
+.translation-value .ui-state-default {
+  border: none;
+}
+
+#translation-add {
+  width: 720px;
+  text-align: right;
+}
+
+.translation-button {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+#languages-hidden {
+  visibility: hidden;
+  height: 1px;
+}
+
+#delete-term {
+  float: right;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.translation-value label.error, .translation-language label.error {
+  display: block;
+  clear: both;
+  padding-left: 15px;
+}
+
+.translation-value, .translation-language {
+  position: relative;
+  z-index: 100;
+}
+
+.blip-shape {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 2px white;
+  background: #ff2400;
+}
+
+.blip-glow {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  width: 30px;
+  height: 30px;   
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 5px solid red;
+  opacity: 0;
+  -webkit-animation-name: 'blip';
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes 'blip'
+{       
+    0% {
+        -webkit-transform: scale(.1);   
+        opacity: 0;
+    }
+    1% {
+        -webkit-transform: scale(.1);   
+        opacity: .6;
+    }
+    60% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+    }
+}
+
+#term-categories ul.as-list {
+  margin-left: 4px;
+}
+
+.field_with_errors {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+#new-category-link {
+  margin-left: 10px;
+}
+
+button.delete {
+  postion: relative;
+  top: 3px;
+}
+
+.qtip-static {
+  position: absolute;
+  top: 85px;
+  right: 108px;
+  width: 270px;
+  line-height: 18px;
+}
+
+/* override bootstrap */
+input {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+table td {
+  padding: 0px;
+}

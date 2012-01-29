@@ -1,0 +1,5 @@
+.formtastic input,
+.formtastic textarea {
+  padding: 4px;
+  font-size: 13px;
+}

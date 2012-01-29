@@ -1,0 +1,257 @@
+h2 {
+  margin-top: 20px;
+}
+
+.empty {
+  font-style: italic;
+  color: #999;
+}
+
+.claim_details {
+  width: 600px;
+}
+
+ul.claims {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul.claims > li {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 8px 16px 11px 16px;
+  margin-bottom: 10px;
+}
+
+ul.claims li a.toggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 6px;
+  background: #eee;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.small_date {
+  color: #333;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.no-trademarks {
+  font-style: italic;
+  padding-top: 4px;
+  margin: 0;
+}
+
+#add-trademark {
+  padding-top: 20px;
+}
+
+#add-trademark .ui-effects-wrapper {
+  display: inline-block;
+}
+
+.fields {
+  margin-left: 140px;
+}
+
+.details h3 {
+  margin-top: 18px;
+}
+.details .screenshots {
+  position: relative;
+  width: 534px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.details .transactions .screenshots {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.details .screenshots + p {
+  float: none;
+  clear: both;
+  padding-top: 30px;
+}
+
+.slides_container .slide {
+  position: relative;
+  height: 300px;
+  background-color: black;
+  width: 534px;
+  text-align: center;
+}
+
+.details .screenshots .next,
+.details .screenshots .prev {
+  position: absolute;
+  top: 157px;
+  left: -24px;
+  width: 24px;
+  height: 43px;
+  display: block;
+  z-index: 101;
+}
+
+.details .screenshots .next {
+  left: 534px;
+}
+
+.details .screenshots .caption {
+	z-index:500;
+	position:absolute;
+	bottom:0;
+	left:0;
+	height:30px;
+	padding:5px 20px 0 20px;
+	background:#000;
+	background:rgba(0,0,0,.5);
+	width:494px;
+	font-size:1.3em;
+	line-height:1.33;
+	color:#fff;
+	border-top:1px solid #000;
+	text-shadow:none;
+}
+
+.details .screenshots ul.pagination {
+  height: auto;
+  margin: 10px 0 0 0;
+}
+
+.details .screenshots ul.pagination li {
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+}
+
+.details .screenshots ul.pagination li.current {
+  border: 1px solid black;
+}
+
+.details .screenshots ul.pagination li a {
+  border: 0;
+  float: none;
+  line-height: 1;
+  padding: 0;
+}
+.details .screenshots ul.pagination li img {
+  display: block;
+}
+
+.complaint {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.complaint p {
+  color: #666666;
+  font-style: italic;
+}
+
+.test_transaction_notes,
+.test_transaction_screenshots {
+  margin-top: 4px;
+}
+
+#reject-claim-reason textarea {
+  width: 300px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.details_list {
+  list-style: none;
+  margin-left: 0;
+}
+.details_list > li {
+  border-top: 1px solid #eee;
+  margin-top: 5px;
+  padding-top: 4px;
+}
+.details_list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.claims .details_list {
+  margin-left: 20px;
+}
+
+.edit_link {
+  float: right;
+}
+
+/* Filters */
+.filters {
+  background: #eee;
+  margin: 10px 0;
+  padding: 1px 10px 5px 10px;
+}
+
+.filters h4 {
+  color: #777;
+}
+
+.filters .chzn-choices {
+  border-radius: 3px;
+  border-color: #ccc !important;
+}
+
+.filters input,
+.filters select {
+  margin-bottom: 3px;
+}
+#filter_keywords {
+  width: 200px;
+}
+
+/* Claims List Page */
+.claims_table th {
+  white-space: nowrap;
+}
+
+a.create-claim {
+  float: right;
+  margin-top: 30px;
+}
+
+.chzn-container .chzn-results li {
+  line-height: normal !important;
+}
+
+
+/* For hidden claim details, we actually just hide them off-screen so
+ * that we can do things like attach a slideshow to hidden details and
+ * have it work properly.
+ */
+.details.hidden {
+  display: block;
+  position: absolute;
+  top: -10000px;
+}
+
+#request-trace .choices label {
+  width: auto;
+  text-align: left;
+}
+
+.quota {
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.quota .progress-bar {
+  -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+.quota small {
+  margin-left: 15px;
+  font-size: 11px;
+}

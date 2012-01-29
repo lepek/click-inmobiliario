@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Moneda:</b>
+  <%= @currency.name %>
+</p>
+
+<p>
+  <b>C&oacute;digo:</b>
+  <%= @currency.code %>
+</p>
+
+
+<%= link_to 'Editar', edit_admin_currency_path(@currency) %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'currencies') %>

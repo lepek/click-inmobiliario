@@ -1,0 +1,86 @@
+/**
+ * Styles for progress bar. Currently used by counterfeit.
+ */
+
+.progress-bar {
+  border: 1px solid #CCCCCC;
+  padding: 0;
+  height: 35px;
+  background-image: url("../images/stripes.png");
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar .total {
+  float: right;
+  font-size: 18px;
+  margin-top: 7px;
+  margin-right: 15px;
+}
+
+.progress-bar .progress {
+  min-height: 100%;
+  margin: 0;
+  padding: 5px;
+  display: block;
+  color: white;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.progress-bar .progress.green {
+  background-color: green;
+  background-image: linear-gradient(bottom, rgb(23,161,46) 21%, rgb(29,120,44) 61%, rgb(36,171,56) 90%);
+  background-image: -o-linear-gradient(bottom, rgb(23,161,46) 21%, rgb(29,120,44) 61%, rgb(36,171,56) 90%);
+  background-image: -moz-linear-gradient(bottom, rgb(23,161,46) 21%, rgb(29,120,44) 61%, rgb(36,171,56) 90%);
+  background-image: -webkit-linear-gradient(bottom, rgb(23,161,46) 21%, rgb(29,120,44) 61%, rgb(36,171,56) 90%);
+  background-image: -ms-linear-gradient(bottom, rgb(23,161,46) 21%, rgb(29,120,44) 61%, rgb(36,171,56) 90%);
+
+  background-image: -webkit-gradient(
+   linear,
+   left bottom,
+   left top,
+   color-stop(0.21, rgb(23,161,46)),
+   color-stop(0.61, rgb(29,120,44)),
+   color-stop(0.9, rgb(36,171,56))
+  );
+}
+
+.progress-bar .progress.yellow {
+  background-color: #f2e680; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #f2e680 0%, #efd92d 50%, #f2e680 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2e680), color-stop(50%,#efd92d), color-stop(100%,#f2e680)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  #f2e680 0%,#efd92d 50%,#f2e680 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  #f2e680 0%,#efd92d 50%,#f2e680 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  #f2e680 0%,#efd92d 50%,#f2e680 100%); /* IE10+ */
+  background-image: linear-gradient(top,  #f2e680 0%,#efd92d 50%,#f2e680 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2e680', endColorstr='#f2e680',GradientType=0 ); /* IE6-9 */
+}
+
+.progress-bar .progress.orange {
+  background-color: #f7c551; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #f7c551 0%, #f2a32e 50%, #f7c551 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7c551), color-stop(50%,#f2a32e), color-stop(100%,#f7c551)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  #f7c551 0%,#f2a32e 50%,#f7c551 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  #f7c551 0%,#f2a32e 50%,#f7c551 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  #f7c551 0%,#f2a32e 50%,#f7c551 100%); /* IE10+ */
+  background-image: linear-gradient(top,  #f7c551 0%,#f2a32e 50%,#f7c551 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7c551', endColorstr='#f7c551',GradientType=0 ); /* IE6-9 */
+}
+
+.progress-bar .progress.red {
+  background-color: #f23d30; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  #f23d30 0%, #d3352a 50%, #f23d30 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f23d30), color-stop(50%,#d3352a), color-stop(100%,#f23d30)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  #f23d30 0%,#d3352a 50%,#f23d30 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  #f23d30 0%,#d3352a 50%,#f23d30 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  #f23d30 0%,#d3352a 50%,#f23d30 100%); /* IE10+ */
+  background-image: linear-gradient(top,  #f23d30 0%,#d3352a 50%,#f23d30 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f23d30', endColorstr='#f23d30',GradientType=0 ); /* IE6-9 */
+}

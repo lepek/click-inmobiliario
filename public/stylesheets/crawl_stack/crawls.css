@@ -1,0 +1,34 @@
+.datatable-row-highlight {
+  background-color: #31C0E8 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+td.event-status {
+  cursor: pointer; text-decoration: underline;
+  color: #31C0E8;
+}
+
+#profile-table_wrapper.dataTables_wrapper {
+  width: auto;
+}
+
+#crawls-table tbody td, #content-inner h1 {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#site_url {
+  width: 450px;
+}
+
+#url_box {
+  word-wrap: break-word;
+  word-break: break-all;
+  margin: 0 15px 15px 15px;
+  padding: 10px 10px 10px 10px;
+  border: #696969 dashed thin;
+  color: #555555;
+  font-family: "'Droid Sans Mono'", Consolas, Monaco, Inconsolata, MONOSPACE;
+  font-size: smaller;
+}

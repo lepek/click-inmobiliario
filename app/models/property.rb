@@ -1,11 +1,11 @@
 class Property < ActiveRecord::Base
   
   belongs_to :location
+  belongs_to :type
+  belongs_to :currency
+  belongs_to :operation
   
-  geocoded_by :full_address
-  
-  # auto-fetch coordinates
-  after_validation :geocode
+  acts_as_gmappable :process_geocoding => true, :check_process => false, :address => :full_address
   
   def full_address
     [address, location.name, 'Argentina'].compact.join(', ')

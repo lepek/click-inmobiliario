@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<%= gmaps4rails(@json) %>
+
+<p>
+  <b>Description:</b>
+  <%= @property.description %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @property.code %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @property.price %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @property.address %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @property.location.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @property.type.name %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @property.currency.name %>
+</p>
+
+<p>
+  <b>Operation:</b>
+  <%= @property.operation.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

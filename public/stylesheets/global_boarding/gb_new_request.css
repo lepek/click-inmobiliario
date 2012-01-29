@@ -1,0 +1,61 @@
+#new-client-request-fields {
+  list-style: none;
+}
+
+#new-request-form ul {
+  margin: 0px;
+}
+
+#new-request-form li {
+  margin-left:  0;
+  padding: 5px 0;
+}
+
+#new-request-form input {
+  width: 200px;
+}
+
+#new-request-form select {
+  width: 208px;
+}
+
+#new-request-form #submit-button {
+  width: auto;
+  position: relative;
+  left: 100px;
+  margin:  10px;
+}
+
+#new-request-form ul label,
+#add-new-project-form label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#add-new-project-form #submit-buttons {
+  margin: 10px 0px;
+  text-align: right;
+  position: relative;
+  right: 13px;
+}
+
+#add-new-project-form #submit-buttons input {
+  display: inline-block;
+}
+
+#add-new-project-form #submit-buttons input {
+  margin-left: 5px;
+}
+
+#requests-table select {
+  width: auto;
+  text-transform: capitalize;
+}
+

@@ -1,0 +1,19 @@
+#payment-channels .toggle {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+table tr.nested {
+  font-size: 11px;
+  display: none;
+}
+
+table tr.nested td:first-child {
+  padding-left: 30px;
+}
+
+/* Investigations List Page */
+.investigations_table th {
+  white-space: nowrap;
+}

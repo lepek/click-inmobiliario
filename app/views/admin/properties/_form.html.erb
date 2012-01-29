@@ -1,0 +1,49 @@
+<%= form_for(@property) do |f| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% @property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description, 'Descripción' %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :code, 'Código' %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :price, 'Precio' %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_id, 'Moneda' %><br />
+    <%= f.collection_select(:currency_id, Currency.order("name").all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :address, 'Dirección' %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+  	<%= f.label :location_id, 'Localidad' %><br />
+  	<%= f.collection_select(:location_id, Location.order("name").all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id, 'Tipo de propiedad' %><br />
+    <%= f.collection_select(:type_id, Type.order("name").all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :operation_id, 'Tipo de operación' %><br />
+    <%= f.collection_select(:operation_id, Operation.order("name").all, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

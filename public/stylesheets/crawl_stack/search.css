@@ -1,0 +1,22 @@
+#crawl-search {
+  margin-bottom: 15px;
+}
+
+#crawl-search .keywords {
+  width: 500px;
+  font-size: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#crawl-search .button {
+  font-size: 15px;
+}
+
+input.error {
+  background-color: #E7595C;
+  border-top: 1px solid #CC6666;
+  border-bottom: 1px solid #CC6666;
+  padding: 10px;
+  color: white;
+  font-size: 14px;

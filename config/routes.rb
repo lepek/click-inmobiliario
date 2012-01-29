@@ -1,19 +1,26 @@
 ClickInmobiliario::Application.routes.draw do
-  resources :operations
+  
+  namespace :admin do
 
-  resources :currencies
+    resources :operations
 
-  resources :properties
+    resources :currencies
 
-  resources :types
+    resources :properties
 
-  resources :locations
+    resources :types
 
-  resources :real_estates
+    resources :locations
 
-  devise_for :users
+    resources :real_estates
 
-  resources :users
+    devise_for :users
+
+    resources :users
+    
+    root :to => 'index#index'
+
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,9 +73,9 @@ ClickInmobiliario::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'users#index'
 
-  # See how all your routes lay out with "rake routes"
+# See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id(.:format)))'
 end

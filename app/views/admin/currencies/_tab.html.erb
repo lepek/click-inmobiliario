@@ -1,0 +1,12 @@
+<fieldset class="gray">
+  <%= button_to "Agregar una nueva moneda", new_admin_currency_path, :method => "get" %>
+</fieldset>
+<% datatable "currencies-table", ["Moneda", "Código", ""], :class => "selectable" do -%>
+  <% currencies.each do |currency| -%>
+    <tr>
+      <td><%= currency.name %></td>
+      <td><%= currency.code %></td>
+      <td><%= button_to "Edit", edit_admin_currency_path(currency), :method => :get %></td>
+    </tr>
+  <% end -%>
+<% end -%>

@@ -1,0 +1,26 @@
+.cancel-icon {
+  background-image: url('/images/delete.png');
+}
+
+.edit-report {
+  background-image: url(/images/pencil.png);
+}
+
+.add-report {
+  background-image: url(/images/report_add.png);
+}
+
+.report-go {
+  background-image: url(/images/report_go.png)
+}
+
+.add-icon {
+  background-image: url(/images/add.png)
+}
+
+.icon-no-text {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}

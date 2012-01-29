@@ -11,9 +11,11 @@ gem 'sqlite3'
 gem 'devise'
 #gem 'cancan'
 
-gem "geocoder"
+gem 'gmaps4rails'
 
 gem "therubyracer", :require => "v8"
+
+gem "simple-navigation"
 
 # Gems used only for assets and not required
 # in production environments by default.

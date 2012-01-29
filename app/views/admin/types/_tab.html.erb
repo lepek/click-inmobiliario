@@ -1,0 +1,11 @@
+<fieldset class="gray">
+  <%= button_to "Agregar un nuevo tipo de inmueble", new_admin_type_path, :method => "get" %>
+</fieldset>
+<% datatable "types-table", ["Tipo de inmueble", ""], :class => "selectable" do -%>
+  <% types.each do |type| -%>
+    <tr>
+      <td><%= type.name %></td>
+      <td><%= button_to "Edit", edit_admin_type_path(type), :method => :get %></td>
+    </tr>
+  <% end -%>
+<% end -%>

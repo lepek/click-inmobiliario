@@ -1,0 +1,79 @@
+/* Create form styles */
+form .screenshots {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+form div.attachment {
+  padding-bottom: 4px;
+}
+form div.attachment input[type=text] {
+  width: 274px;
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+}
+
+form .attachments .remove {
+  float: right;
+  padding-top: 6px;
+}
+
+form .existing ul {
+  list-style: none;
+  margin-left: 20px;
+}
+form .existing .remove {
+  float: none;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.datepicker {
+  width: 75px;
+}
+
+/* Claims Form */
+#counterfeit_claim_homepage_url,
+#counterfeit_claim_url,
+#counterfeit_claim_complaint {
+  width: 500px;
+}
+#counterfeit_claim_complaint {
+  height: 150px;
+}
+#counterfeit_claim_trademark_ids {
+  margin-bottom: 4px;
+}
+#counterfeit_claim_trademarks_input .add {
+  display: block;
+}
+#counterfeit_claim_signature {
+  width: 350px;
+}
+.uploads {
+  width: 440px;
+  padding: 20px 40px 20px 0;
+  border: 1px solid #eee;
+  margin-bottom: 16px;
+}
+.uploads label {
+  width: 100px;
+}
+.uploads .input {
+  margin-left: 120px;
+}
+
+/* Test Transactions Form */
+#counterfeit_test_transaction_notes {
+  height: 150px;
+  width: 500px;
+}
+
+input.cancel,
+a.cancel {
+  float: right;
+  background-image: none;
+}
+

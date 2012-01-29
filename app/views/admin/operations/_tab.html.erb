@@ -1,0 +1,11 @@
+<fieldset class="gray">
+  <%= button_to "Agregar una nueva operación", new_admin_operation_path, :method => "get" %>
+</fieldset>
+<% datatable "operations-table", ["Operación", ""], :class => "selectable" do -%>
+  <% operations.each do |operation| -%>
+    <tr>
+      <td><%= operation.name %></td>
+      <td><%= button_to "Edit", edit_admin_operation_path(operation), :method => :get %></td>
+    </tr>
+  <% end -%>
+<% end -%>

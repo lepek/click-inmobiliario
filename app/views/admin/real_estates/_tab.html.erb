@@ -1,0 +1,12 @@
+<fieldset class="gray">
+  <%= button_to "Agregar una nueva inmobiliaria", new_admin_real_estate_path, :method => "get" %>
+</fieldset>
+<% datatable "real_estates-table", ["Nombre", "E-mail", ""], :class => "selectable" do -%>
+  <% real_estates.each do |real_estate| -%>
+    <tr>
+      <td><%= real_estate.name %></td>
+      <td><%= real_estate.email %></td>
+      <td><%= button_to "Edit", edit_admin_real_estate_path(real_estate), :method => :get %></td>
+    </tr>
+  <% end -%>
+<% end -%>

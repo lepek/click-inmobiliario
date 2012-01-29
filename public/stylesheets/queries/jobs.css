@@ -1,0 +1,186 @@
+#content-inner h3 {
+  margin-top: 0px;
+}
+
+button.actions .ui-button-text {
+  padding: 3px 5px 2px 22px;
+}
+
+.dataTables_wrapper tr td {
+  vertical-align: middle;
+}
+
+#jobs-table th {
+  text-align: left;
+}
+
+#jobs-table tr td {
+  vertical-align: middle;
+}
+
+#job-inner {
+  background-color: #FFFFFF;
+  padding: 2px;
+  background-color: #FFFFFF;
+}
+
+#job-detail tr td, 
+#job-status tr td,
+#job-form tr td {
+  vertical-align: middle;
+  line-height: 22px;
+  padding: 4px;
+}
+
+#queries_job_do_crawl {
+  width: 50px;
+  margin-left: 2px;
+}
+
+#job-detail {
+  width: 100%;
+}
+
+#job-detail tr td.column-label {
+  width: 80px;
+  vertical-align: top;
+}
+
+.column-value {
+  color: #000000;
+  vertical-align: top;
+  width: 210px;
+}
+
+span.value {
+  color: #000000;
+}
+
+td.stats span.label {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 10px;
+}
+
+#job-seed-list input, #job-seed-list textarea {
+  margin-top: 10px;
+}
+
+#job-seed-list textarea {
+  padding: 4px;
+}
+
+.column-value {
+  display: block;
+  color: #000000;
+  vertical-align: top;
+}
+
+.column-value.name {
+  white-space: pre-line;
+  overflow: auto;
+  white-space: -moz-pre-wrap;
+}
+
+.column-value form {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+#job-detail tr td.column-label.actions, 
+#job-detail tr td.column-value.actions {
+  vertical-align: middle;
+}
+
+#choose-existing-seed-list {
+  margin-top: 8px;  
+}
+
+#new-seed-list fieldset {
+  margin: 8px 0px 10px 0px;
+  padding: 4px 15px 15px 15px;
+  color: #999;
+  border:  1px solid #DDD;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  font-size: 14px;
+}
+
+.upload-type-buttons {
+  margin-top: 8px;
+}
+
+table#seed-lists-table tr td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+table#seed-lists-table tr.row-selected td {
+  background-color: #33A0DB;
+  border-top: 1px solid #2F94CA;
+  border-bottom: 1px solid #2F94CA;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+table#seed-lists-table tr.row-selected td.first .ui-icon {
+ margin-right: 5px;
+}
+
+table#seed-lists-table th div {
+  text-align: left;
+}
+
+button.jobs {
+  margin-right: 5px;
+}
+
+button.jobs .ui-button-text {
+  padding: 3px 5px 2px 22px;
+}
+
+button.actions span.ui-icon {
+  left: 3px;
+}
+
+button.ui-datepicker-trigger {
+  margin-bottom: -6px;
+  margin-left: 2px;
+  margin-right: 6px;
+}
+
+#search-history {
+  padding-top: 20px;
+}
+
+#search-history-table tr td {
+  padding: 5px 5px;
+}
+
+.field_with_errors {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+#job-failure-status tr td {
+  padding: 0px 4px 0px 0px;
+}
+
+.qtip-static {
+    margin-top: 10px;
+}
+
+#seed-file-downloads form {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
