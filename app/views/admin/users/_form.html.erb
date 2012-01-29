@@ -1,37 +1,49 @@
 <%= form_for [:admin, @user] do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name, 'Nombre' %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name, 'Apellido' %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email, 'E-mail' %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password, 'Contraseña' %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :confirm_password, 'Confirmar contraseña' %><br />
-    <%= f.password_field :confirm_password %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Guardar' %>
-  </div>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
 <% end %>
+<fieldset class="gray">
+	<div class="clearfix">
+		<%= f.label :first_name, 'Nombre' %>
+		<div class="input">
+			<%= f.text_field :first_name %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :last_name, 'Apellido' %>
+		<div class="input">
+			<%= f.text_field :last_name %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :email, 'E-mail' %>
+		<div class="input">
+			<%= f.text_field :email %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :password, 'Contraseña' %>
+		<div class="input">
+			<%= f.password_field :password %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :confirm_password, 'Confirmar contraseña' %>
+		<div class="input">
+			<%= f.password_field :confirm_password %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit 'Guardar' %>
+	</div>
+</fieldset>
+<% end %> 
