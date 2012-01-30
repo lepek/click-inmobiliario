@@ -3,11 +3,11 @@
 	<head>
 		<title>ClickInmobiliario</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-		<%= stylesheet_link_tag :defaults %> <!--[if lte IE 6]>
-		<%= stylesheet_link_tag :ie6 %>
-		<![endif]-->
+		<%= stylesheet_link_tag :default %> 
+		<!--[if lte IE 6]><%= stylesheet_link_tag :ie6 %><![endif]-->
 		<%= yield :stylesheets %>
-		<%= javascript_include_tag :defaults %> <!--[if lte IE 8]><%= javascript_include_tag :ie_html5 %><![endif]-->
+		<%= javascript_include_tag :default %> 
+		<!--[if lte IE 8]><%= javascript_include_tag :ie_html5 %><![endif]-->
 		<%= yield :javascripts %>
 		<%= csrf_meta_tag %>
 		<%= yield :head %>

@@ -1,0 +1,222 @@
+/*
+ * 'full_numbers' pagination - there is an extra selector on the body tag to 
+ * ensure that there is no conflict between the two pagination types. If you 
+ * want to use full_numbers pagination ensure that you either have 
+ * "example_alt_pagination" as a body class name, or better yet, modify that 
+ * selector.
+ */
+
+/* jQuery UI-specific styling */
+
+.paging_two_button .ui-button {
+	float: left;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+.paging_full_numbers .ui-button {
+	padding: 2px 6px;
+	margin: 0;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+.paging_full_numbers {
+	width: 350px !important;
+}
+
+.ui-toolbar {
+	padding: 5px;
+}
+
+.dataTables_paginate {
+	width: auto;
+}
+
+.dataTables_info {
+	padding-top: 3px;
+}
+
+.dataTables_wrapper table {
+  width: 100%;
+  color: #999;
+  margin-bottom: 0px;
+}
+
+.dataTables_wrapper tr td {
+  vertical-align: middle;
+  height: 26px;
+}
+
+.dataTables_wrapper th {
+	padding: 5px;
+	font-size: 13px;
+	font-weight: bold;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+.dataTables_wrapper td {
+  padding: 5px 5px;
+  background-color: white;
+  color: #666666;
+  font-size: 13px;
+  border-top:  none;
+}
+
+.dataTables_wrapper form.button_to {
+  float: left;
+  margin-bottom: 0px;
+}
+
+input[type="button"] {
+  -webkit-appearance: push-button;
+  white-space: pre;
+}
+
+/* Sort arrow icon positioning */
+
+.DataTables_sort_wrapper {
+	position: relative;
+	padding-right: 20px;
+	padding-right: 20px;
+}
+
+.DataTables_sort_wrapper span {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	right: 0;
+}
+
+/* Features */
+
+.dataTables_wrapper {
+	position: relative;
+	display: inline-block;
+	/*min-height: 302px;*/
+	_height: 302px;
+	clear: both;
+	width: 100%;
+}
+
+.dataTables_processing {
+	position: absolute;
+  border: 1px solid #2495D9;
+  color: white;
+  background: #2AABE2 url('../stylesheets/images/ui-bg_highlight-hard_30_2aabe2_1x100.png') repeat-x 50% 50%;
+	top: 10px;
+	left: 50%;
+	width: 250px;
+	margin-left: -125px;
+	border: 1px solid #ddd;
+	text-align: center;
+	font-size: 11px;
+	padding: 5px;
+  z-index: 1;
+}
+
+.dataTables_length {
+  width: 50%;
+	float: left;
+	padding: 2px 0px 0px 0px;
+}
+
+.dataTables_filter {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.dataTables_info {
+	xxxwidth: 50%;
+	float: left;
+}
+
+.dataTables_paginate {
+	float: right;
+	text-align: right;
+}
+
+/* Pagination nested */
+
+.paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
+	height: 19px;
+	width: 19px;
+	margin-left: 3px;
+	float: left;
+}
+
+.paginate_disabled_previous {
+	background-image: url('../javascripts/jquery-datatables/media/images/back_disabled.jpg');
+}
+
+.paginate_enabled_previous {
+	background-image: url('../javascripts/jquery-datatables/media/images/back_enabled.jpg');
+}
+
+.paginate_disabled_next {
+	background-image: url('../javascripts/jquery-datatables/media/images/forward_disabled.jpg');
+}
+
+.paginate_enabled_next {
+	background-image: url('../javascripts/jquery-datatables/media/images/forward_enabled.jpg');
+}
+
+/* Sorting */
+
+.sorting_asc {
+	background-image: url('../javascripts/jquery-datatables/media/images/sort_asc.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.sorting_desc {
+	background-image: url('../javascripts/jquery-datatables/media/images/sort_desc.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.sorting {
+	background-image: url('../javascripts/jquery-datatables/media/images/sort_both.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+/* Row Selection */
+
+.dataTables_wrapper table.selectable td {
+  cursor: pointer;
+}
+
+table tr td span.ui-icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+table.selectable tr td {
+  color: inherit;
+  background-color: inherit;
+}
+
+table.selectable tr {
+  cursor: pointer;
+}
+
+table.selectable tr {
+  background-color: white;
+}
+
+table.selectable tr.row-selected {
+  color: white;
+  background-color: #47B8E5;
+}
+
+table.selectable tr:hover {
+  color: white;
+  background-color: #46B6E5;
+}
+
+table.selectable tr:active {
+  color: white;
+  background-color: #2BABE1;
+}

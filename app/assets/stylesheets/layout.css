@@ -1,0 +1,177 @@
+body {
+    padding-top: 50px;
+    background: url("/images/body_background.png") repeat fixed 0 0 #d5d8db;
+}
+#content {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+h1 {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+.topbar { height: 50px }
+.topbar div>ul { margin-right: 0 }
+.topbar div>ul a {
+    padding-top: 15px;
+    padding-bottom: 16px;
+}
+.topbar .fill { background: url("/images/menu_background.png") repeat-x }
+.topbar .container { width: 1000px }
+.topbar .container a {
+    color: #eee;
+    text-shadow: none;
+}
+.topbar .container a.brand {
+    width: 150px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    text-indent: -9000em;
+    background-position: 0 2px;
+    background-image: url('/images/logo.png');
+    background-repeat: no-repeat;
+}
+.topbar .container a.brand:hover { background-color: transparent }
+.topbar .container .sf-menu ul {
+    background: #fff;
+    display: block;
+    padding: 0;
+    list-style-type: none;
+    -moz-box-shadow: 2px 2px 4px #ccc;
+    -webkit-box-shadow: 2px 2px 4px #ccc;
+    box-shadow: 2px 2px 4px #ccc;
+    border-left: 1px solid #F3C04C;
+    border-right: 1px solid #F3C04C;
+    border-bottom: 1px solid #F3C04C;
+}
+.topbar .container .sf-menu ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.topbar .container .sf-menu ul li ul {
+    border-top: 1px solid #F3C04C;
+    margin-top: 0;
+}
+.topbar .container .sf-menu ul li a {
+    display: block;
+    margin: 0;
+    padding: 6px;
+    color: #333;
+    font-size: 12px;
+}
+.topbar .container .sf-menu ul li a:hover { background: #eee }
+.topbar .container .account_links { font-size: 12px }
+.topbar .container .account_links .gravatar {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+.topbar .container .account_links .gravatar img { border: none }
+.topbar .container .account_links .gravatar a { background: none }
+.topbar .container #sign_out a { padding-right: 0 }
+#breadcrumb {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 30px;
+    background-color: #eee;
+    font-size: 11px;
+    margin: 0 auto;
+}
+#breadcrumb ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+#breadcrumb li {
+    display: block;
+    float: left;
+    padding-left: 9px;
+    line-height: 35px;
+    color: #666;
+}
+#breadcrumb a {
+    position: relative;
+    display: block;
+    z-index: 1;
+    padding-right: 20px;
+    background-image: url('/images/breadcrumb_separator.gif');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    color: #666;
+    font-size: 11px;
+    text-decoration: none;
+    line-height: 35px;
+    height: 35px;
+}
+#breadcrumb a:hover { color: #000 }
+#breadcrumb li.home a {
+    line-height: 1;
+    padding-top: 10px;
+    height: 25px;
+}
+#breadcrumb li.home a div.icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('/images/home.gif');
+    background-repeat: no-repeat;
+    background-position: 0% 95%;
+    border: none;
+}
+#breadcrumb li.home a:hover div.icon { background-image: url('/images/home_hover.gif') }
+.main { width: 1000px }
+.main abbr[title="required"] {
+    font-weight: bold;
+    color: #c00;
+    padding-left: 2px;
+}
+.main .alert-message a {
+    color: #2AABE2;
+    font-weight: normal;
+}
+.main .alert-message p { margin-bottom: 3px }
+.main .alert-message form { margin-bottom: 0 }
+footer {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #777;
+    font-size: 11px;
+    border: 0;
+    width: 1000px;
+}
+footer .copyright {
+    float: left;
+    padding: 17px 17px 17px 0;
+}
+footer .generated-time {
+    float: right;
+    padding: 17px 0 17px 17px;
+}
+.actions a.cancel {
+    float: right;
+    margin-top: 9px;
+}
+.ui-multiselect .actions {
+    border-radius: 0;
+    border-top: 0;
+    margin: 0;
+    padding: 0;
+}
+.btn.primary {
+    background-color: #224160;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#315f8f), to(#224160));
+    background-image: -moz-linear-gradient(top, #315f8f, #224160);
+    background-image: -ms-linear-gradient(top, #315f8f, #224160);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #315f8f), color-stop(100%, #224160));
+    background-image: -webkit-linear-gradient(top, #315f8f, #224160);
+    background-image: -o-linear-gradient(top, #315f8f, #224160);
+    background-image: linear-gradient(top, #315f8f, #224160);
+}

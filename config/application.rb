@@ -42,30 +42,10 @@ module ClickInmobiliario
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    
-    # Generate extensions for all JavaScript files
-    js_directory = 'admin/javascripts'
-    js_extension = '.js'
-    Dir["public/#{js_directory}/**/*#{js_extension}"].each do |filename|
-      filename = filename.gsub("public/#{js_directory}/", "").gsub(js_extension, "")
-      js_symbol = filename.gsub("/", "_").gsub("\\", "_").to_sym
-      config.action_view.javascript_expansions[js_symbol] =
-        ["../#{js_directory}/#{filename}#{js_extension}"]
-    end
-
-    # Generate extensions for all stylesheets
-    css_directory = 'admin/stylesheets'
-    css_extension = '.css'
-    Dir["public/#{css_directory}/**/*#{css_extension}"].each do |filename|
-      filename = filename.gsub("public/#{css_directory}/", "").gsub(css_extension, "")
-      css_symbol = filename.gsub("/", "_").gsub("\\", "_").to_sym
-      config.action_view.stylesheet_expansions[css_symbol] =
-        ["../#{css_directory}/#{filename}#{css_extension}"]
-    end
 
     config.action_view.stylesheet_expansions[:defaults] = [
       'jquery-ui-1.8.7.custom.css',
