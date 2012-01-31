@@ -1,7 +1,7 @@
 module Admin
   class UsersController < Admin::ApplicationController
-
-    #before_filter :authenticate_user!
+    
+    skip_filter :authenticate_user!
     
     # GET /users
     # GET /users.json

@@ -1,5 +1,9 @@
 ClickInmobiliario::Application.routes.draw do
   
+  
+  devise_for :users, :path => :admin
+   
+  
   namespace :admin do
 
     resources :operations
@@ -12,9 +16,7 @@ ClickInmobiliario::Application.routes.draw do
 
     resources :locations
 
-    resources :real_estates
-
-    devise_for :users
+    resources :real_estates    
 
     resources :users
     
