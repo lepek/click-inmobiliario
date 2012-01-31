@@ -3,16 +3,22 @@
 	<head>
 		<title>ClickInmobiliario</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+		
 		<%= stylesheet_link_tag :default %> 
 		<!--[if lte IE 6]><%= stylesheet_link_tag :ie6 %><![endif]-->
 		<%= yield :stylesheets %>
+		
 		<%= javascript_include_tag :default %> 
-		<!--[if lte IE 8]><%= javascript_include_tag :ie_html5 %><![endif]-->
+		<!--[if lte IE 8]><%= javascript_include_tag :ie_html5 %><![endif]-->		
 		<%= yield :javascripts %>
 		<%= csrf_meta_tag %>
+		
+		<!-- For Gmaps4Rails -->
 		<%= yield :head %>
+		
 		<link rel="icon" type="image/png" href="<%= url_for('/images/favicon.png') %>"/>
 	</head>
+	
 	<body>
 		<div class="topbar">
 			<div class="fill">
@@ -37,5 +43,8 @@
 			</section>
 		</div>
 	</body>
+	
+	<!-- For Gmaps4Rails -->
 	<%= yield :scripts %>
+
 </html>
