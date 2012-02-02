@@ -1,1 +1,40 @@
-Homepage!
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag :gmaps4rails %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :gmaps4rails %>
+<% end %>
+<div class="banner">
+  <h3>Encuentre el hogar de sus sueños</h3>
+  <p>
+    click-inmobiliario.com es el lugar para empezar tu b&uacute;squeda de inmuebles, 
+    ya sea para comprar o vender. Tenemos las herramientas que necesitas para 
+    tomar una decisi&oacute;n correcta.
+  </p>
+</div>
+
+<div id="content-inner">
+  <div class="search">
+  <%= form_tag('/') do %>
+    <fieldset class="gray">
+      <div class="clearfix">
+        <%= label_tag 'Localidad' %>
+        <div class="input">
+          <%= text_field_tag 'location' %>
+        </div>
+      </div>
+      <div class="clearfix">
+        <%= label_tag 'Precio' %>
+        <div class="input">
+          <%= text_field_tag 'price' %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= submit_tag 'Buscar', :class => "btn primary" %>
+      </div>
+    </fieldset>
+  <% end %> 
+
+  </div>
+  <%= gmaps4rails(@properties_json) %>  
+</div>
