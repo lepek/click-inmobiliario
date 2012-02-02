@@ -1,9 +1,10 @@
 <% content_for :stylesheets do %>
-  <%= stylesheet_link_tag :gmaps4rails %>
+  <%= stylesheet_link_tag :homepage, :gmaps4rails %>
 <% end %>
 <% content_for :javascripts do %>
   <%= javascript_include_tag :gmaps4rails %>
 <% end %>
+
 <div class="banner">
   <h3>Encuentre el hogar de sus sueños</h3>
   <p>
@@ -18,17 +19,35 @@
   <%= form_tag('/') do %>
     <fieldset class="gray">
       <div class="clearfix">
-        <%= label_tag 'Localidad' %>
+        <%= label_tag :location_id, 'Localidad' %>
         <div class="input">
-          <%= text_field_tag 'location' %>
+          <%= select_tag :location_id, options_from_collection_for_select(Location.order("name").all, :id, :name) %>
         </div>
       </div>
       <div class="clearfix">
-        <%= label_tag 'Precio' %>
+        <%= label_tag :type_id, 'Tipo de inmueble' %>
         <div class="input">
-          <%= text_field_tag 'price' %>
+          <%= select_tag :type_id, options_from_collection_for_select(Type.order("name").all, :id, :name) %>
         </div>
       </div>
+      <div class="clearfix">
+        <%= label_tag :operation_id, 'Operación' %>
+        <div class="input">
+          <%= select_tag :operation_id, options_from_collection_for_select(Operation.order("name").all, :id, :name) %>
+        </div>
+      </div>
+      <div class="clearfix">
+        <%= label_tag :price, 'Precio máximo' %>
+        <div class="input">
+          <%= text_field_tag :price %>
+        </div>
+      </div>
+      <div class="clearfix">
+        <%= label_tag :currency_id, 'Moneda' %>
+        <div class="input">
+          <%= select_tag :currency_id, options_from_collection_for_select(Currency.order("name").all, :id, :name) %>
+        </div>
+      </div>      
       <div class="actions">
         <%= submit_tag 'Buscar', :class => "btn primary" %>
       </div>
