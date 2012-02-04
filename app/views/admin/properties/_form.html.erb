@@ -13,6 +13,12 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
+		<div class="clearfix">
+			<%= f.label :real_estate_id %>
+			<div class="input">
+				<%= f.collection_select(:real_estate_id, RealEstate.order("name").all, :id, :name) %>
+			</div>
+		</div>
 		<%= f.label :description %>
 		<div class="input">
 			<%= f.text_area :description %>

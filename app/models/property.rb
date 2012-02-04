@@ -4,6 +4,7 @@ class Property < ActiveRecord::Base
   belongs_to :type
   belongs_to :currency
   belongs_to :operation
+  belongs_to :real_estate
   
   acts_as_gmappable :process_geocoding => true, :check_process => false, :address => :full_address
   
@@ -16,6 +17,7 @@ class Property < ActiveRecord::Base
   validates_presence_of :type
   validates_presence_of :currency
   validates_presence_of :operation
+  validates_presence_of :real_estate
   
   
   def full_address
@@ -23,16 +25,13 @@ class Property < ActiveRecord::Base
   end
 
   def self.search(conditions)
-    properties = Property.where(
-        'location_id = ? AND type_id = ? AND operation_id = ? AND currency_id = ?',
-        conditions[:location_id],
-        conditions[:type_id],
-        conditions[:operation_id],
-        conditions[:currency_id]
-    )
-    if conditions[:price] > 0
-      properties = properties.where('price < ?', conditions[:price])
-    end
+    query = []
+    query << 'location_id = :location_id' unless conditions[:location_id] <= 0
+    query << 'type_id = :type_id' unless conditions[:type_id] <= 0
+    query << 'operation_id = :operation_id' unless conditions[:operation_id] <= 0
+    query << 'currency_id = :currency_id' unless conditions[:currency_id] <= 0
+    query << 'price < :price' unless conditions[:price] <= 0
+    properties = Property.where(query.compact.join(' AND '), conditions)
   end
   
 end
