@@ -22,6 +22,8 @@ ClickInmobiliario::Application.routes.draw do
     root :to => 'index#index'
 
   end
+
+  match 'search' => 'index#search', :via => :post
   
   root :to => 'index#index'
 

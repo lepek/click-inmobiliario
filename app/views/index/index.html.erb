@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag :homepage, :gmaps4rails %>
 <% end %>
 <% content_for :javascripts do %>
-  <%= javascript_include_tag :gmaps4rails %>
+  <%= javascript_include_tag :homepage, :gmaps4rails %>
 <% end %>
 
 <div class="banner">
@@ -16,7 +16,7 @@
 
 <div id="content-inner">
   <div class="search">
-  <%= form_tag('/') do %>
+  <%= form_tag('/', :id => 'search') do %>
     <fieldset class="gray">
       <div class="clearfix">
         <%= label_tag :location_id, 'Localidad' %>
@@ -55,5 +55,5 @@
   <% end %> 
 
   </div>
-  <%= gmaps4rails(@properties_json) %>  
+  <%= gmaps4rails(@properties_json) %>
 </div>

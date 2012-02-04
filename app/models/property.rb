@@ -21,5 +21,18 @@ class Property < ActiveRecord::Base
   def full_address
     [address, location.name, 'Argentina'].compact.join(', ')
   end
+
+  def self.search(conditions)
+    properties = Property.where(
+        'location_id = ? AND type_id = ? AND operation_id = ? AND currency_id = ?',
+        conditions[:location_id],
+        conditions[:type_id],
+        conditions[:operation_id],
+        conditions[:currency_id]
+    )
+    if conditions[:price] > 0
+      properties = properties.where('price < ?', conditions[:price])
+    end
+  end
   
 end
