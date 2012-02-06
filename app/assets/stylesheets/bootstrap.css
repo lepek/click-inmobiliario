@@ -678,9 +678,7 @@ select[multiple] {
   height: inherit;
   background-color: #ffffff;
 }
-textarea {
-  height: auto;
-}
+
 .uneditable-input {
   background-color: #ffffff;
   display: block;

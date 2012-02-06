@@ -6,6 +6,14 @@ class Property < ActiveRecord::Base
   belongs_to :operation
   belongs_to :real_estate
   
+  has_many :photos
+
+  accepts_nested_attributes_for :photos
+  
+  # roughly speaking sets list of model protected attributes to []
+  # making all attributes accessible while mass-assignment
+  attr_protected 
+  
   acts_as_gmappable :process_geocoding => true, :check_process => false, :address => :full_address
   
   validates_presence_of :code

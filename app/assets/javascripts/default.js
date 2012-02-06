@@ -4,3 +4,4 @@
 //= require 'rails.js'
 //= require 'superfish.js'
 //= require 'main.js'
+//= require jquery_nested_form
