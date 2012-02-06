@@ -74,11 +74,14 @@ module Admin
     # DELETE /types/1.json
     def destroy
       @type = Type.find(params[:id])
+      type_name = @type.name
       @type.destroy
-
+      
       respond_to do |format|
-        format.html { redirect_to types_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "El tipo de inmueble #{type_name.upcase} fue eliminado correctamente." 
+          redirect_to admin_root_path(:anchor => 'types')
+        end 
       end
     end
   end
