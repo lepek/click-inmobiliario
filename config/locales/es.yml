@@ -19,6 +19,7 @@ es:
       real_estate: 'Inmobiliaria'
       type: 'Tipo de inmueble'
       user: 'Usuario'
+      photo: 'Foto'
     attributes:
       user:
         first_name: 'Nombre'
@@ -35,6 +36,7 @@ es:
         location_id: 'Localidad'
         type_id: 'Tipo de inmueble'
         operation_id: 'Tipo de operación'
+        real_estate_id: 'Inmobiliaria'
       currency:
         name: 'Moneda'
         code: 'Código'
@@ -46,8 +48,12 @@ es:
         name: 'Inmobiliaria'
         address: 'Dirección'
         email: 'E-mail'
-      types:
+      type:
         name: 'Tipo de inmueble'
+        icon: 'Icono'
+      photo:
+        file: 'Foto'
+        description: 'Descripción'
     errors:
       models:
         user:

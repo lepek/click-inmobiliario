@@ -1,0 +1,16 @@
+<% url = ClickInmobiliario::Application.routes.url_helpers %>
+
+$(document).ready(function() {
+    $('#search').submit(function() {
+        $.ajax({
+            type:'POST',
+            url: '<%= url.search_path %>',
+            data:$('#search').serialize(),
+            success: function(response) {
+                Gmaps.map.replaceMarkers(response);
+            }
+        });
+        return false;
+
+    })
+});

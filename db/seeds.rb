@@ -66,3 +66,15 @@ alquiler = Operation.find_by_name('Alquiler')
 if alquiler.nil?
   Operation.create(:name => 'Alquiler')
 end
+
+# Inmobiliarias
+
+fundar = RealEstate.find_by_name('Fundar')
+if fundar.nil?
+  RealEstate.create(:name => 'Fundar', :email => 'info@fundar.com.ar')
+end
+
+pagano = RealEstate.find_by_name('Pagano Luraschi')
+if pagano.nil?
+  RealEstate.create(:name => 'Pagano Luraschi', :email => 'info@pagano.com.ar')
+end

@@ -608,7 +608,7 @@ textarea {
   font-weight: normal;
   line-height: normal;
 }
-label {
+fieldset label {
   padding-top: 6px;
   font-size: 13px;
   line-height: 18px;
@@ -678,9 +678,7 @@ select[multiple] {
   height: inherit;
   background-color: #ffffff;
 }
-textarea {
-  height: auto;
-}
+
 .uneditable-input {
   background-color: #ffffff;
   display: block;

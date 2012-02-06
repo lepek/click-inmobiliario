@@ -1,5 +1,8 @@
 ClickInmobiliario::Application.routes.draw do
   
+  
+  devise_for :users
+
   namespace :admin do
 
     resources :operations
@@ -12,15 +15,17 @@ ClickInmobiliario::Application.routes.draw do
 
     resources :locations
 
-    resources :real_estates
-
-    devise_for :users
+    resources :real_estates    
 
     resources :users
     
     root :to => 'index#index'
 
   end
+
+  match 'search' => 'index#search', :via => :post
+  
+  root :to => 'index#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -70,8 +75,8 @@ ClickInmobiliario::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'users#index'
+  # just remember to delete public/index.html.  
+  #root :to => 'index#index'
 
 # See how all your routes lay out with "rake routes"
 

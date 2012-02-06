@@ -9,7 +9,7 @@ class CreateProperties < ActiveRecord::Migration
       t.integer :type_id
       t.integer :currency_id
       t.integer :operation_id
-
+      t.integer :real_estate_id
       t.timestamps
     end
   end

@@ -18,6 +18,12 @@
 			<%= f.text_field :name %>
 		</div>
 	</div>
+	<div class="clearfix">
+		<%= f.label :icon %>
+		<div class="input">
+			<%= f.file_field :icon %>
+		</div>
+	</div>
 	<div class="actions">
 		<%= f.submit 'Guardar', :class => "btn primary" %>
 	</div>

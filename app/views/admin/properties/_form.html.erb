@@ -1,4 +1,4 @@
-<%= form_for [:admin, @property] do |f| %>
+<%= nested_form_for [:admin, @property], :html=>{:multipart => true } do |f| %>
 <% if @property.errors.any? %>
 <div id="error_explanation">
 	<h2><%= t 'errors.header.male', :resource => 'inmueble', :count => @property.errors.count %></h2>
@@ -13,6 +13,12 @@
 <% end %>
 <fieldset class="gray">
 	<div class="clearfix">
+		<div class="clearfix">
+			<%= f.label :real_estate_id %>
+			<div class="input">
+				<%= f.collection_select(:real_estate_id, RealEstate.order("name").all, :id, :name) %>
+			</div>
+		</div>
 		<%= f.label :description %>
 		<div class="input">
 			<%= f.text_area :description %>
@@ -59,6 +65,19 @@
 		<div class="input">
 			<%= f.collection_select(:operation_id, Operation.order("name").all, :id, :name) %>
 		</div>
+	</div>
+	
+	<%= f.fields_for :photos do |p|  %>
+	<div class="clearfix">
+		<%= p.label :file %>
+		<div class="input">
+			<%= p.file_field :file, :style => 'width: auto;' %>
+			<%= p.link_to_remove image_tag('delete.png') %>
+		</div>
+	</div>
+	<% end %>
+	<div class="clearfix">
+		<%= f.link_to_add image_tag('add.png') + 'Agregar una nueva foto', :photos %>
 	</div>
 	<div class="actions">
 		<%= f.submit 'Guardar', :class => "btn primary" %>
