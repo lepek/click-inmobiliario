@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20120205224733) do
 
   create_table "types", :force => true do |t|
     t.string   "name"
+    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

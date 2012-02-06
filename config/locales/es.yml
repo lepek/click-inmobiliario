@@ -50,6 +50,7 @@ es:
         email: 'E-mail'
       type:
         name: 'Tipo de inmueble'
+        icon: 'Icono'
       photo:
         file: 'Foto'
         description: 'Descripción'
