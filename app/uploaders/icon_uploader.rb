@@ -19,13 +19,15 @@ class IconUploader < CarrierWave::Uploader::Base
   def getWidth
     manipulate! { |img| return img[:width] }
   rescue
-    nil
+    image = MiniMagick::Image.open(Rails.public_path + default_url)
+    image[:width] 
   end
   
   def getHeight
     manipulate! { |img| return img[:height] }
   rescue
-    nil
+    image = MiniMagick::Image.open(Rails.public_path + default_url)
+    image[:height]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
