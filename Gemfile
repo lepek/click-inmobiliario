@@ -19,6 +19,8 @@ gem "simple-navigation"
 
 gem 'carrierwave', '>= 0.5.3'
 
+gem 'mini_magick'
+
 gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 
 # Gems used only for assets and not required
