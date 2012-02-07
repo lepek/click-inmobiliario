@@ -74,13 +74,16 @@ module Admin
     # DELETE /currencies/1.json
     def destroy
       @currency = Currency.find(params[:id])
+      currency_name = @currency.name
       @currency.destroy
 
       respond_to do |format|
-        format.html { redirect_to currencies_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "La moneda #{currency_name.upcase} fue eliminada correctamente." 
+          redirect_to admin_root_path(:anchor => 'currencies')
+        end  
       end
     end
+    
   end
-
 end
