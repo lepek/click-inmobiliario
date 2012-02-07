@@ -5,7 +5,10 @@
   <% operations.each do |operation| -%>
     <tr>
       <td><%= operation.name %></td>
-      <td><%= button_to "Editar", edit_admin_operation_path(operation), :method => :get %></td>
+      <td>
+        <%= button_to "Editar", edit_admin_operation_path(operation), :method => :get %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/operations", :id => operation}, :confirm => "¿Esta seguro que desea eliminar \nla operacion #{operation.name.upcase}?", :method => :delete %>
+      </td>
     </tr>
   <% end -%>
 <% end -%>

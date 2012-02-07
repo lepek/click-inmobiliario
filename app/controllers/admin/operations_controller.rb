@@ -74,11 +74,14 @@ module Admin
     # DELETE /operations/1.json
     def destroy
       @operation = Operation.find(params[:id])
+      operation_name = @operation.name
       @operation.destroy
 
       respond_to do |format|
-        format.html { redirect_to operations_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "La operaci&oacute;n #{operation_name.upcase} fue eliminada correctamente." 
+          redirect_to admin_root_path(:anchor => 'operations')
+        end
       end
     end
   end
