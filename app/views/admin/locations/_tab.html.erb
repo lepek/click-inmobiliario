@@ -5,7 +5,10 @@
   <% locations.each do |location| -%>
     <tr>
       <td><%= location.name %></td>
-      <td><%= button_to "Editar", edit_admin_location_path(location), :method => :get %></td>
+      <td>
+        <%= button_to "Editar", edit_admin_location_path(location), :method => :get %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/locations", :id => location}, :confirm => "¿Esta seguro que desea eliminar \nla localidad #{location.name.upcase}?", :method => :delete %>
+      </td>
     </tr>
   <% end -%>
 <% end -%>

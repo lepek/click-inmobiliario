@@ -74,11 +74,14 @@ module Admin
     # DELETE /locations/1.json
     def destroy
       @location = Location.find(params[:id])
+      location_name = @location.name
       @location.destroy
 
       respond_to do |format|
-        format.html { redirect_to locations_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "La localidad #{location_name.upcase} fue eliminada correctamente." 
+          redirect_to admin_root_path(:anchor => 'locations')
+        end
       end
     end
   end
