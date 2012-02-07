@@ -26,6 +26,7 @@ class Property < ActiveRecord::Base
   validates_presence_of :currency
   validates_presence_of :operation
   validates_presence_of :real_estate
+
   def full_address
     [address, location.name, 'Argentina'].compact.join(', ')
   end
@@ -36,6 +37,10 @@ class Property < ActiveRecord::Base
         "width" => type.icon.getWidth,
         "height" => type.icon.getHeight
       }
+  end
+
+  def gmaps4rails_infowindow
+    ActionController::Base.new.send(:render_to_string, :partial => 'index/infowindow', :locals => { :property => self })
   end
 
   def self.search(conditions)
