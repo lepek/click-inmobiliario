@@ -1,15 +1,33 @@
 <% content_for :javascripts do %>
   <%= javascript_include_tag 'galleria/galleria-1.2.6.min.js' %>
 <% end %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag :property %>
+<% end %>
 
-<div id="gallery">
-  <% @property.photos.each do |photo| %>
-    <%= image_tag photo.file.url %>
-    <% end %>
+<div id="content-inner" style="overflow: hidden;">
+	<div id="gallery">
+	<% @property.photos.each do |photo| %>
+	    <%= image_tag photo.file.url %>
+	<% end %>
+	</div>
+	
+	<div id="property">
+		<p>
+			<h1>
+			<%= @property.address %>
+			<br />
+			<%= @property.location.name %>
+			</h1>
+		</p>
+		<p><%= @property.description %></p>
+		<p><h2>$<%= @property.price %></h2></p>
+		
+	</div>
 </div>
 
 <script>
-    Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.js');
     $("#gallery").galleria({
         width: 500,
         height: 500
