@@ -75,14 +75,14 @@ module Admin
     def destroy
       @operation = Operation.find(params[:id])
       operation_name = @operation.name
-      @operation.destroy
-
-      respond_to do |format|
-        format.html do
-          flash[:success] = "La operaci&oacute;n #{operation_name.upcase} fue eliminada correctamente." 
-          redirect_to admin_root_path(:anchor => 'operations')
-        end
+      
+      if @operation.destroy
+        flash[:success] = "La operaci&oacute;n #{operation_name.upcase} fue eliminada correctamente."
+      else
+        flash[:error] = @operation.errors.to_a.join("<br />")
       end
+      redirect_to admin_root_path(:anchor => 'operations')
     end
+
   end
 end
