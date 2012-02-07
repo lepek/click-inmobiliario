@@ -75,14 +75,13 @@ module Admin
     def destroy
       @currency = Currency.find(params[:id])
       currency_name = @currency.name
-      @currency.destroy
 
-      respond_to do |format|
-        format.html do
-          flash[:success] = "La moneda #{currency_name.upcase} fue eliminada correctamente." 
-          redirect_to admin_root_path(:anchor => 'currencies')
-        end  
+      if @currency.destroy
+        flash[:success] = "La moneda #{currency_name.upcase} fue eliminada correctamente."
+      else
+        flash[:error] = @currency.errors.to_a.join("<br />")
       end
+      redirect_to admin_root_path(:anchor => 'currencies')
     end
     
   end
