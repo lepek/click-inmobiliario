@@ -6,7 +6,10 @@
     <tr>
       <td><%= real_estate.name %></td>
       <td><%= real_estate.email %></td>
-      <td><%= button_to "Editar", edit_admin_real_estate_path(real_estate), :method => :get %></td>
+      <td>
+        <%= button_to "Editar", edit_admin_real_estate_path(real_estate), :method => :get %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/real_estates", :id => real_estate}, :confirm => "¿Esta seguro que desea eliminar \nla inmobiliaria #{real_estate.name.upcase}?", :method => :delete %>
+      </td>
     </tr>
   <% end -%>
 <% end -%>

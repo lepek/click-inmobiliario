@@ -74,11 +74,14 @@ module Admin
     # DELETE /real_estates/1.json
     def destroy
       @real_estate = RealEstate.find(params[:id])
+      real_estate_name = @real_estate.name
       @real_estate.destroy
 
       respond_to do |format|
-        format.html { redirect_to real_estates_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "La inmobiliaria #{real_estate_name.upcase} fue eliminada correctamente." 
+          redirect_to admin_root_path(:anchor => 'real-estates')
+        end
       end
     end
   end
