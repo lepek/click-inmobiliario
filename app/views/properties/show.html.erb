@@ -1,0 +1,17 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'galleria/galleria-1.2.6.min.js' %>
+<% end %>
+
+<div id="gallery">
+  <% @property.photos.each do |photo| %>
+    <%= image_tag photo.file.url %>
+    <% end %>
+</div>
+
+<script>
+    Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+    $("#gallery").galleria({
+        width: 500,
+        height: 500
+    });
+</script>
