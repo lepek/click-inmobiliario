@@ -42,6 +42,12 @@
 			<%= f.password_field :confirm_password %>
 		</div>
 	</div>
+	<div class="clearfix">
+    <%= f.label :role_id %>
+    <div class="input">
+      <%= f.collection_select(:role_id, Role.order("name").all, :id, :name) %>
+    </div>
+  </div>
 	<div class="actions">
 		<%= f.submit 'Guardar', :class => "btn primary" %>
 	</div>

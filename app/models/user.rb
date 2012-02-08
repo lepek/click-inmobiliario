@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
     :timeoutable, :token_authenticatable, :encryptable, :encryptor => :sha512
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :role_id
+  
+  belongs_to :role
   
   validates_uniqueness_of :email
   validates_presence_of :email

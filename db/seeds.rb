@@ -6,6 +6,29 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#Roles
+admin_role = Role.find_by_name('Admin')
+if admin_role.nil?
+  admin_role = Role.create(
+    :name => 'Admin', 
+    :description => 'Administrador' 
+  )
+end
+
+if Role.find_by_name('Inmobiliaria').nil?
+  Role.create(
+    :name => 'Inmobiliaria', 
+    :description => 'Inmobiliaria' 
+  )
+end
+
+if Role.find_by_name('Cliente').nil?
+  Role.create(
+    :name => 'Cliente', 
+    :description => 'Cliente y/o visitante web' 
+  )
+end
+
 # Usuarios
 
 user = User.find_by_email('mbianculli@gmail.com')
@@ -15,7 +38,8 @@ if user.nil?
     :last_name => 'Bianculli', 
     :email => 'mbianculli@gmail.com', 
     :password => 'foo',
-    :password_confirmation => 'foo'
+    :password_confirmation => 'foo',
+    :role_id => admin_role.id
   )
 end
 
