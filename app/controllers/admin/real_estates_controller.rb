@@ -75,14 +75,14 @@ module Admin
     def destroy
       @real_estate = RealEstate.find(params[:id])
       real_estate_name = @real_estate.name
-      @real_estate.destroy
 
-      respond_to do |format|
-        format.html do
-          flash[:success] = "La inmobiliaria #{real_estate_name.upcase} fue eliminada correctamente." 
-          redirect_to admin_root_path(:anchor => 'real-estates')
-        end
+      if @real_estate.destroy
+        flash[:success] = "La inmobiliaria #{real_estate_name.upcase} fue eliminada correctamente."
+      else
+        flash[:error] = @real_estate.errors.to_a.join("<br />")
       end
+      redirect_to admin_root_path(:anchor => 'real-estates')
     end
+
   end
 end
