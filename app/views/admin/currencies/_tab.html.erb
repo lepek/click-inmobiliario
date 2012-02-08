@@ -6,7 +6,10 @@
     <tr>
       <td><%= currency.name %></td>
       <td><%= currency.code %></td>
-      <td><%= button_to "Editar", edit_admin_currency_path(currency), :method => :get %></td>
+      <td>
+        <%= button_to "Editar", edit_admin_currency_path(currency), :method => :get %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/currencies", :id => currency}, :confirm => "¿Esta seguro que desea eliminar \nla moneda #{currency.name.upcase}?", :method => :delete %>
+      </td>
     </tr>
   <% end -%>
 <% end -%>

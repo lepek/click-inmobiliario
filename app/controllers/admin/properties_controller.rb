@@ -73,11 +73,14 @@ module Admin
     # DELETE /properties/1.json
     def destroy
       @property = Property.find(params[:id])
+      property_address = @property.address
       @property.destroy
 
       respond_to do |format|
-        format.html { redirect_to properties_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "El inmueble ubicado en #{property_address.upcase} fue eliminado correctamente." 
+          redirect_to admin_root_path(:anchor => 'properties')
+        end
       end
     end
   end

@@ -6,7 +6,10 @@
     <tr>
       <td><%= user.first_name %> <%= user.last_name %></td>
       <td><%= user.email %></td>
-      <td><%= button_to "Editar", edit_admin_user_path(user), :method => :get %></td>
+      <td>
+        <%= button_to "Editar", edit_admin_user_path(user), :method => :get %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/users", :id => user}, :confirm => "¿Esta seguro que desea eliminar \nel usuario #{user.first_name.upcase + ' ' + user.last_name.upcase}?", :method => :delete %>
+      </td>
     </tr>
   <% end -%>
 <% end -%>

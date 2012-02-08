@@ -77,11 +77,14 @@ module Admin
     # DELETE /users/1.json
     def destroy
       @user = User.find(params[:id])
+      user_full_name = "#{@user.first_name + ' ' + @user.last_name}"
       @user.destroy
 
       respond_to do |format|
-        format.html { redirect_to users_url }
-        format.json { head :ok }
+        format.html do
+          flash[:success] = "El usuario #{user_full_name.upcase} fue eliminado correctamente." 
+          redirect_to admin_root_path(:anchor => 'users')
+        end
       end
     end
   end
