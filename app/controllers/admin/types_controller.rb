@@ -75,14 +75,14 @@ module Admin
     def destroy
       @type = Type.find(params[:id])
       type_name = @type.name
-      @type.destroy
       
-      respond_to do |format|
-        format.html do
-          flash[:success] = "El tipo de inmueble #{type_name.upcase} fue eliminado correctamente." 
-          redirect_to admin_root_path(:anchor => 'types')
-        end 
+      if @type.destroy
+        flash[:success] = "El tipo de inmueble #{type_name.upcase} fue eliminado correctamente."
+      else
+        flash[:error] = @type.errors.to_a.join("<br />")
       end
+      redirect_to admin_root_path(:anchor => 'types')
     end
+
   end
 end
