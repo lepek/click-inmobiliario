@@ -1,0 +1,49 @@
+<%= form_for [:admin, @user] do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+	<h2><%= t 'errors.header.male', :resource => 'usuario', :count => @user.errors.count %></h2>
+	<ul>
+		<% @user.errors.each do |attr, msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<fieldset class="gray">
+	<div class="clearfix">
+		<%= f.label :first_name %>
+		<div class="input">
+			<%= f.text_field :first_name %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :last_name %>
+		<div class="input">
+			<%= f.text_field :last_name %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :email %>
+		<div class="input">
+			<%= f.text_field :email %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :password %>
+		<div class="input">
+			<%= f.password_field :password %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :confirm_password %>
+		<div class="input">
+			<%= f.password_field :confirm_password %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit 'Guardar', :class => "btn primary" %>
+	</div>
+</fieldset>
+<% end %> 

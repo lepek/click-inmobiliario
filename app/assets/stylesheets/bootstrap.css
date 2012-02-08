@@ -1422,10 +1422,13 @@ table .headerSortUp.purple, table .headerSortDown.purple {
   display: block;
   float: left;
 }
+.topbar div > ul > li, .nav > li, img {
+    vertical-align:middle
+}
 .topbar div > ul a, .nav a {
   display: block;
   float: none;
-  padding: 10px 10px 11px;
+  padding: 9px 10px;
   line-height: 19px;
   text-decoration: none;
 }

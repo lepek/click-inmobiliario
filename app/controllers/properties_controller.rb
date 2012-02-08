@@ -1,5 +1,4 @@
-class PropertiesController < ActionController::Base
-  layout 'front_end'
+class PropertiesController < ApplicationController
   
   # GET /properties/1
   # GET /properties/1.json

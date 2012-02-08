@@ -1,5 +1,4 @@
-class IndexController < ActionController::Base
-  layout 'front_end'
+class IndexController < ApplicationController
   
   def index    
     @properties_json = Property.all.to_gmaps4rails

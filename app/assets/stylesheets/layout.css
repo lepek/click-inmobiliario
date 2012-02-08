@@ -14,10 +14,7 @@ h1 {
 }
 .topbar { height: 50px }
 .topbar div>ul { margin-right: 0 }
-.topbar div>ul a {
-    padding-top: 15px;
-    padding-bottom: 16px;
-}
+
 .topbar .fill { background: url("/images/menu_background.png") repeat-x }
 .topbar .container { width: 1000px }
 .topbar .container a {
