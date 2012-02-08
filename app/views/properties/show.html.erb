@@ -5,29 +5,23 @@
   <%= stylesheet_link_tag :property %>
 <% end %>
 
-<div id="content-inner" style="overflow: hidden;">
-	<div id="gallery">
-	<% @property.photos.each do |photo| %>
-	    <%= image_tag photo.file.url %>
-	<% end %>
+<div id="content-inner">
+    <div id="title"><h1><%= @property.address %>, <%= @property.location.name %></h1></div>
+
+  <div id="gallery">
+        <% @property.photos.each do |photo| %>
+            <%= image_tag photo.file.url %>
+        <% end %>
 	</div>
 	
 	<div id="property">
-		<p>
-			<h1>
-				<%= @property.address %>
-				<br />
-				<%= @property.location.name %>
-			</h1>
-		</p>
-		<p><%= @property.description %></p>
-		<p><h2>$<%= @property.price %></h2></p>
-		
+        <h2>$<%= @property.price %></h2>
+		<h5><%= @property.description %></h5>
 	</div>
 </div>
 
 <script>
-    Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.js');
+    Galleria.loadTheme('<%= javascript_path 'galleria/themes/classic/galleria.classic.js' %>');
     $("#gallery").galleria({
         width: 500,
         height: 500
