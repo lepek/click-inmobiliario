@@ -15,7 +15,9 @@
 	</div>
 	
 	<div id="property">
-        <h2>$<%= @property.price %></h2>
+        <h2><%= @property.type.name %> en <%= @property.operation.name %></h2>
+        <div><h2>C&oacute;digo: <%= @property.code %></h2></div>
+        <div><h2>Precio: $<%= @property.price %></h2></div>
 		<h5><%= @property.description %></h5>
 	</div>
 </div>
