@@ -23,7 +23,7 @@ a.external,
 a[href^="http://"],
 a[href^="https://"] {
   padding-right: 12px;
-  background-image: url('../images/external_link.png');
+  background-image: url(<%= asset_path 'external_link.png' %>);
   background-repeat: no-repeat;
   background-position: 100% 70%;
 }
@@ -370,12 +370,12 @@ button.ui-datepicker-trigger .ui-button-icon-primary {
 
 #history .paginate_disabled_previous {
   width: 15px;
-  background-image: url('../images/previous_disabled.png');
+  background-image: url(<%= asset_path 'previous_disabled.png' %>);
 }
 
 #history .paginate_disabled_next {
   width: 15px;
-  background-image: url('../images/next_disabled.png');
+  background-image: url(<%= asset_path 'next_disabled.png' %>);
 }
 
 #history .event {
@@ -479,16 +479,16 @@ span.favorite {
   z-index: 10;
   margin-right: 5px;
   background-repeat: no-repeat;
-  background-image: url('../images/favorite.png');
+  background-image: url(<%= asset_path 'favorite.png' %>);
 }
 
 span.favorite.inactive {
-  background-image: url('../images/favorite_inactive.png');
+  background-image: url(<%= asset_path 'favorite_inactive.png' %>);
   cursor: pointer;
 }
 
 span.favorite.active {
-  background-image: url('../images/favorite.png');
+  background-image: url(<%= asset_path 'favorite.png' %>);
   cursor: pointer;
 }
 
