@@ -1,9 +1,9 @@
 class Photo < ActiveRecord::Base
-  
-   attr_accessible :description, :file
 
-   belongs_to :property
+  attr_protected
 
-   mount_uploader :file, PhotoUploader
-  
+  belongs_to :property
+
+  mount_uploader :file, PhotoUploader
+
 end
