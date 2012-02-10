@@ -23,7 +23,7 @@
 		<div class="topbar">
 			<div class="fill">
 				<div class="container">
-					
+                    <%= render_navigation :context => :front_end, :expand_all => true, :skip_if_empty => true %>
 					<%= render_navigation :context => :admin, :expand_all => true, :skip_if_empty => true %>
 					<div class="account_links pull-right">
 						<div class="gravatar">

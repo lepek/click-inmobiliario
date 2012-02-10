@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class UsersController < ApplicationController
   
     # GET /users/new
@@ -23,7 +25,7 @@ class UsersController < ApplicationController
 
       respond_to do |format|
         if @user.save
-          format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
+          format.html { redirect_to @user, notice: 'Usuario creado con éxito.' }
           format.json { render json: @user, status: :created, location: [:admin, @user] }
         else
           format.html { render action: "new" }
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
 
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          format.html { redirect_to [:admin, @user], notice: 'User was successfully updated.' }
+          format.html { redirect_to @user, notice: 'Usuario modificado con éxito.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
@@ -47,5 +49,16 @@ class UsersController < ApplicationController
         end
       end
     end
-  
+
+    # GET /users/1
+    # GET /users/1.json
+    def show
+      @user = User.find(params[:id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
+    end
+
 end
