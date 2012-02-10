@@ -6,7 +6,7 @@ class Property < ActiveRecord::Base
   belongs_to :operation
   belongs_to :real_estate
 
-  has_many :photos
+  has_many :photos, :dependent => :destroy
 
   accepts_nested_attributes_for :photos
 
