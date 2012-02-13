@@ -1,0 +1,23 @@
+<%= f.fields_for :photos do |p|  %>
+    <% if p.object.file? %>
+        <div class="clearfix">
+            <%= p.label :remove_file, 'Foto' %>
+            <div class="input">
+                <%= image_tag(p.object.file.url, :width => "10%", :height => "10%") %>
+                <br />
+                <%= p.check_box :remove_file %> Borrar
+            </div>
+        </div>
+    <% else %>
+        <div class="clearfix">
+            <%= p.label :file %>
+            <div class="input">
+                <%= p.file_field :file, :style => 'width: auto;' %>
+                <%= p.link_to_remove image_tag('delete.png') %>
+            </div>
+        </div>
+    <% end %>
+<% end %>
+<div class="clearfix">
+	<%= f.link_to_add image_tag('add.png') + 'Agregar una nueva foto', :photos %>
+</div>

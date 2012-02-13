@@ -45,7 +45,7 @@ module Admin
 
       respond_to do |format|
         if @type.save
-          format.html { redirect_to [:admin, @type], notice: 'Type was successfully created.' }
+          format.html { redirect_to [:admin, @type], notice: 'Nuevo tipo de inmueble creado.' }
           format.json { render json: @type, status: :created, location: [:admin, @type] }
         else
           format.html { render action: "new" }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @type.update_attributes(params[:type])
-          format.html { redirect_to [:admin, @type], notice: 'Type was successfully updated.' }
+          format.html { redirect_to [:admin, @type], notice: 'Tipo de inmueble actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

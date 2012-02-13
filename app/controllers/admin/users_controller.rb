@@ -1,8 +1,6 @@
 module Admin
   class UsersController < Admin::ApplicationController
     
-    skip_filter :authenticate_user!
-    
     # GET /users
     # GET /users.json
     def index
@@ -48,7 +46,7 @@ module Admin
 
       respond_to do |format|
         if @user.save
-          format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
+          format.html { redirect_to [:admin, @user], notice: 'Nuevo usuario creado.' }
           format.json { render json: @user, status: :created, location: [:admin, @user] }
         else
           format.html { render action: "new" }
@@ -64,7 +62,7 @@ module Admin
 
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          format.html { redirect_to [:admin, @user], notice: 'User was successfully updated.' }
+          format.html { redirect_to [:admin, @user], notice: 'Usuario actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

@@ -45,7 +45,7 @@ module Admin
 
       respond_to do |format|
         if @location.save
-          format.html { redirect_to [:admin, @location], notice: 'Location was successfully created.' }
+          format.html { redirect_to [:admin, @location], notice: 'Nueva localidad creada.' }
           format.json { render json: @location, status: :created, location: [:admin, @location] }
         else
           format.html { render action: "new" }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @location.update_attributes(params[:location])
-          format.html { redirect_to [:admin, @location], notice: 'Location was successfully updated.' }
+          format.html { redirect_to [:admin, @location], notice: 'Localidad actualizada.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

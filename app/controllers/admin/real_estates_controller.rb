@@ -45,7 +45,7 @@ module Admin
 
       respond_to do |format|
         if @real_estate.save
-          format.html { redirect_to [:admin, @real_estate], notice: 'Real estate was successfully created.' }
+          format.html { redirect_to [:admin, @real_estate], notice: 'Nueva inmobiliaria creada.' }
           format.json { render json: @real_estate, status: :created, location: [:admin, @real_estate] }
         else
           format.html { render action: "new" }
@@ -61,7 +61,7 @@ module Admin
 
       respond_to do |format|
         if @real_estate.update_attributes(params[:real_estate])
-          format.html { redirect_to [:admin, @real_estate], notice: 'Real estate was successfully updated.' }
+          format.html { redirect_to [:admin, @real_estate], notice: 'Inmobiliaria actualizada.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }

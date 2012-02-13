@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Admin
   class OperationsController < Admin::ApplicationController
     # GET /operations
@@ -45,7 +47,7 @@ module Admin
 
       respond_to do |format|
         if @operation.save
-          format.html { redirect_to [:admin, @operation], notice: 'Operation was successfully created.' }
+          format.html { redirect_to [:admin, @operation], notice: 'Nuevo tipo de operación creada.' }
           format.json { render json: @operation, status: :created, location: [:admin, @operation] }
         else
           format.html { render action: "new" }
@@ -61,7 +63,7 @@ module Admin
 
       respond_to do |format|
         if @operation.update_attributes(params[:operation])
-          format.html { redirect_to [:admin, @operation], notice: 'Operation was successfully updated.' }
+          format.html { redirect_to [:admin, @operation], notice: 'Tipo de operación actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
