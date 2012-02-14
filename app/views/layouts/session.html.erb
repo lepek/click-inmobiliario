@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Inmobiliario</title>
+  <%= stylesheet_link_tag :default, :session %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+<div id="content-outer" class="session">
+    <%= render :partial => 'layouts/topbar' %>
+    <section id="content" class="session">
+        <%= yield %>
+    </section>
+</div>
+</body>

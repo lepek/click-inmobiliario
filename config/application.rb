@@ -10,7 +10,13 @@ if defined?(Bundler)
 end
 
 module ClickInmobiliario
+
   class Application < Rails::Application
+
+    config.to_prepare do
+      Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "session" : "devise" }
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

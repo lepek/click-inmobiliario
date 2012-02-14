@@ -1,0 +1,31 @@
+<div id="content-inner" class="session">
+  <div id="login-wrapper">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <% if flash[:alert] %>
+      <div class="error"><%= flash[:alert] %></div>
+    <% end %>
+      <fieldset>
+        <div class="clearfix">
+          <%= f.label :email %>
+          <div class="input">
+          <%= f.email_field :email %>
+          </div>
+        </div>
+        <div class="clearfix">
+          <%= f.label :password %>
+          <div class="input">
+          <%= f.password_field :password %>
+          </div>
+          <div class="input">
+            <%= f.submit "Sign in", {:class => "btn primary"} %>
+          </div>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+            <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+      </fieldset>
+    <% end %>
+  </div>
+
+  <%= render "links" %>
+</div>
