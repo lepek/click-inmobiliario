@@ -27,6 +27,8 @@ es:
         email: 'E-mail'
         password: 'Contraseña'
         confirm_password: 'Confirmar contraseña'
+        role_id: 'Rol'
+        real_estate_id: 'Inmobiliaria'
       property:
         address: 'Dirección'
         code: 'Código'

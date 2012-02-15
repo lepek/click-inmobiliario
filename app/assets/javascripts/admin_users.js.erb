@@ -1,0 +1,9 @@
+$(document).ready(function() {
+    $('#user_role_id').change(function() {
+        if (this.value == 2) {
+            $('#user_real_estate_id').removeAttr("disabled");
+        } else {
+            $('#user_real_estate_id').attr('disabled', 'disabled');
+        }
+    })
+});

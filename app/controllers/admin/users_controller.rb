@@ -1,6 +1,12 @@
 module Admin
   class UsersController < Admin::ApplicationController
-    
+
+    before_filter :may_clean_real_estate, :only => [ :create, :update ]
+
+    def may_clean_real_estate
+      params[:user][:real_estate_id] = nil unless params[:user][:role_id].to_i == Role.get_real_estate_role.to_i
+    end
+
     # GET /users
     # GET /users.json
     def index
