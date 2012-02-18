@@ -2,6 +2,7 @@
     <div class="fill">
         <div class="container">
             <%= link_to "Click-inmobiliario", main_app.root_path, :class => "brand" %>
+            <%= render_navigation :context => :report, :expand_all => true, :skip_if_empty => true %>
             <%= render_navigation :context => :admin, :expand_all => true, :skip_if_empty => true %>
             <div class="account_links pull-right">
                 <%= render_navigation %>

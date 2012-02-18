@@ -25,6 +25,8 @@ ClickInmobiliario::Application.routes.draw do
 
   match 'search' => 'index#search', :via => :post
 
+  resources :reports
+
   resources :properties
 
   resources :users

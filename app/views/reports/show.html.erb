@@ -1,0 +1,8 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'https://www.google.com/jsapi' %>
+<% end %>
+
+<div id="content-inner">
+  <div id="chart" style="text-align: center;"></div>
+  <%= render_chart(@chart, 'chart') unless @chart.nil? %>
+</div>
