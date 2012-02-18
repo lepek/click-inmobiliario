@@ -25,6 +25,8 @@ gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 
 gem 'impressionist'
 
+gem "google_visualr", ">= 2.1"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
