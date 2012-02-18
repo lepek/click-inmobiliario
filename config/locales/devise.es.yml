@@ -1,0 +1,58 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  errors:
+    messages:
+      expired: "ha expirado, por favor solicita una nueva"
+      not_found: "no encontrado"
+      already_confirmed: "ya ha sido confirmado, por favor intenta autenticarte nuevamente"
+      not_locked: "no ha sido bloqueado"
+      not_saved:
+        one: "1 error impidió que este %{resource} sea guardado:"
+        other: "%{count} errores impidieron que este %{resource} sea guardado:"
+
+  devise:
+    failure:
+      already_authenticated: 'Ya has sido autenticado.'
+      unauthenticated: 'Necesitas autenticarte o registrarte antes de continuar.'
+      unconfirmed: 'Debes confirmar tu cuenta antes de continuar.'
+      locked: 'Tu cuenta está bloqueada.'
+      invalid: 'E-mail o contraseña inválido.'
+      invalid_token: 'Dispositivo de autenticación inválido.'
+      timeout: 'Tu sesión ha expirado, por favor vuelve a autenticarte para continuar.'
+      inactive: 'Tu cuenta aún no ha sido activada.'
+    sessions:
+      signed_in: 'Autenticación exitosa.'
+      signed_out: 'Cierre de sesión exitoso.'
+    passwords:
+      send_instructions: 'Recibirás un e-mail con instrucciones acerca de cómo restablecer tu contraseña en unos minutos.'
+      updated: 'Tu contraseña ha sido cambiada exitosamente. En este momento estás autenticado.'
+      updated_not_active: 'Tu contraseña ha sido cambiada exitosamente.'
+      send_paranoid_instructions: "Si tu e-mail existe en nuestra base de datos, recibirás en el mismo un vínculo para restablecer tu contraseña."
+    confirmations:
+      send_instructions: 'Recibirás un e-mail con instrucciones acerca de cómo confirmar tu cuenta en unos minutos.'
+      send_paranoid_instructions: 'Si tu e-mail existe en nuestra base de datos, recibirás en el mismo las instrucciones acerca de cómo confirmar tu cuenta en unos minutos.'
+      confirmed: 'Tu contraseña ha sido cambiada exitosamente. En este momento estás autenticado.'
+    registrations:
+      signed_up: '¡Bienvenido! Te has autenticado exitosamente.'
+      inactive_signed_up: 'Te has autenticado exitosamente. Sin embargo, no puedes ser autenticado porque tu cuenta está %{reason}.'
+      updated: 'Has actualizado tu cuenta exitosamente.'
+      destroyed: '¡Adiós! Tu cuenta ha sido cancelada exitosamente. Esperamos verte pronto.'
+      reasons:
+        inactive: 'desactivada'
+        unconfirmed: 'sin confirmar'
+        locked: 'bloqueada'
+    unlocks:
+      send_instructions: 'Recibirás un e-mail con instrucciones acerca de cómo desbloquear tu cuenta en unos minutos.'
+      unlocked: 'Tu cuenta ha sido desbloqueada exitosamente. En este momento estás autenticado.'
+      send_paranoid_instructions: 'Si tu cuenta existe, recibirás un e.mail con instrucciones acerca de cómo desbloquearla en unos minutos.'
+    omniauth_callbacks:
+      success: 'Exitosamente autorizado desde una cuenta %{kind}.'
+      failure: 'No has sido autorizado desde una cuenta %{kind} porque "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrucciones para confirmación de cuenta'
+      reset_password_instructions:
+        subject: 'Instrucciones para restrablecer contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones para desbloquear cuenta'
