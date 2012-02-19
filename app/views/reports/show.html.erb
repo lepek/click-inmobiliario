@@ -3,6 +3,6 @@
 <% end %>
 
 <div id="content-inner">
-  <div id="chart" style="text-align: center;"></div>
-  <%= render_chart(@chart, 'chart') unless @chart.nil? %>
+  <div id="chart" style="text-align: center; width: 700px; height: 400px;"></div>
+  <%= render_chart(@chart, 'chart', 'ES-AR') unless @chart.nil? %>
 </div>
