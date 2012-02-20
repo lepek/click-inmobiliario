@@ -27,7 +27,11 @@ ClickInmobiliario::Application.routes.draw do
 
   resources :reports
 
-  resources :properties
+  resources :properties do
+    member do
+      post "contact"
+    end
+  end
 
   resources :users
   

@@ -1,0 +1,18 @@
+<div id="contact">
+<%= form_tag contact_property_path, :style => "margin: 0;" do %>
+<div id="error_explanation">
+	<h5>Tus datos serán enviados a la inmobiliaria junto con los datos de la propiedad</h5>
+</div>
+<fieldset class="gray" style="margin: 0;">
+	<div class="clearfix">
+		<%= label_tag :comments, 'Comentarios' %>
+		<div class="input">
+			<%= text_area_tag :comments, nil, :style => 'width: 300px; height: 100px;' %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= submit_tag 'Enviar', :class => "btn primary" %>
+	</div>
+</fieldset>
+<% end %> 
+</div>

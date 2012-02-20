@@ -1,0 +1,16 @@
+$(document).ready(function() {
+    Galleria.loadTheme('<%= javascript_path 'galleria/themes/classic/galleria.classic.js' %>');
+    $("#gallery").galleria({
+        width: 500,
+        height: 500
+    });
+    $("#contact").dialog({ 
+    	autoOpen: false, 
+    	title: 'Contactar a la inmobiliaria',
+    	width: 600,
+    	height: 310
+    });
+	$('#contact-link').click(function() {
+		$("#contact").dialog('open');
+	});
+});
