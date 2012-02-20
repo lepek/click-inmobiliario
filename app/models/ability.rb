@@ -23,6 +23,7 @@ class Ability
       can [:access, :read], :report
       can :access, :admin_module
       can :manage, Property, :real_estate_id => @user.real_estate_id
+      can :read, RealEstate, :id => @user.real_estate_id
     end
     
     def set_permissions_for_cliente
