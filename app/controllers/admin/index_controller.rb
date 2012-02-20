@@ -3,7 +3,7 @@ module Admin
   class IndexController < Admin::ApplicationController
     
     def index
-      authorize! :access, :admin_index
+      authorize! :access, :admin_module
       
       @currencies = Currency.accessible_by(current_ability).order("name").all
       @locations = Location.accessible_by(current_ability).order("name").all

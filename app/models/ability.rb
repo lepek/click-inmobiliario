@@ -20,8 +20,8 @@ class Ability
     end
     
     def set_permissions_for_inmobiliaria
-      can :read, :report
-      can :access, :admin_index
+      can [:access, :read], :report
+      can :access, :admin_module
       can :manage, Property, :real_estate_id => @user.real_estate_id
     end
     
@@ -31,7 +31,7 @@ class Ability
     
     def set_permissions_for_admin
       can :manage, [Currency, Location, Operation, Property, RealEstate, Type, User]
-      can :access, :admin_index
+      can :access, :admin_module
     end
   
 end
