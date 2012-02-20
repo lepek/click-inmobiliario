@@ -24,11 +24,12 @@ ClickInmobiliario::Application.routes.draw do
   end
 
   match 'search' => 'index#search', :via => :post
+  match 'properties/favorite/:id' => 'properties#favorite', :via => :get
 
   resources :reports
 
   resources :properties
-
+    
   resources :users
   
   root :to => 'index#index'

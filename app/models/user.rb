@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   belongs_to :role
   belongs_to :real_estate
   
+  has_many :favorites
+  has_many :properties, :through => :favorites
+  
   validates_uniqueness_of :email
   validates_presence_of :email
   validates_presence_of :first_name

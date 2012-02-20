@@ -2,6 +2,6 @@
     <p><%= property.full_address %></p>
     <p><%= property.type.name %> en <%= property.operation.name %></p>
     <div style="text-align: center">
-        <p>Agregar a favoritos |  <%= link_to 'Ver detalles', "/properties/#{property.id}" %></p>
+        <p> <%= link_to 'Agregar a favoritos',  "/properties/favorite/#{property.id}" %>  |  <%= link_to 'Ver detalles', "/properties/#{property.id}" %></p>
     </div>
 </div>

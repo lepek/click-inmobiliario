@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215015241) do
+ActiveRecord::Schema.define(:version => 20120215015245) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20120215015241) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "favorites", :force => true do |t|
+    t.integer "property_id"
+    t.integer "user_id"
+  end
+
+  add_index "favorites", ["property_id"], :name => "index_favorites_on_property_id"
+  add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -78,7 +86,6 @@ ActiveRecord::Schema.define(:version => 20120215015241) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "visits"
   end
 
   create_table "real_estates", :force => true do |t|

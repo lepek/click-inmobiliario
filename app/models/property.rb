@@ -7,6 +7,8 @@ class Property < ActiveRecord::Base
   belongs_to :real_estate
 
   has_many :photos, :dependent => :destroy
+  has_many :favorites
+  has_many :users, :through => :favorites 
 
   accepts_nested_attributes_for :photos
 
