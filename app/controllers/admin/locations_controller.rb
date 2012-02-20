@@ -1,5 +1,7 @@
 module Admin
   class LocationsController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /locations
     # GET /locations.json
     def index

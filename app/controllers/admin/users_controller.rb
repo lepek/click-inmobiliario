@@ -1,6 +1,6 @@
 module Admin
   class UsersController < Admin::ApplicationController
-
+    load_and_authorize_resource
     before_filter :may_clean_real_estate, :only => [ :create, :update ]
 
     def may_clean_real_estate

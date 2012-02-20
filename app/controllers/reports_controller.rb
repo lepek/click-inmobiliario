@@ -1,7 +1,8 @@
 class ReportsController < ApplicationController
 
   before_filter :authenticate_user!
-
+  authorize_resource :class => false
+  
   def show
     if params[:id] == 'visits'
       visits_chart

@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(:version => 20120215015241) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "visits"
   end
 
   create_table "real_estates", :force => true do |t|

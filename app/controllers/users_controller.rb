@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class UsersController < ApplicationController
+    before_filter :authenticate_user!, :except => [:new, :create]
+    load_and_authorize_resource :only => [:edit, :update, :show]  
   
     # GET /users/new
     # GET /users/new.json

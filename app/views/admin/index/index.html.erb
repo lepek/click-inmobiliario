@@ -10,35 +10,55 @@
   <h1>Administraci&oacute;n</h1>
   <div id="tabs" style="width: 100%">
     <ul>
-      <li><a href="#currencies">Monedas</a></li>
-      <li><a href="#locations">Localidades</a></li>
-      <li><a href="#operations">Operaciones</a></li>
-      <li><a href="#properties">Propiedades</a></li>
-      <li><a href="#real-estates">Inmobiliarias</a></li>
-      <li><a href="#types">Tipo de Propiedades</a></li>
-      <li><a href="#users">Usuarios</a></li>
+      <% if can? :manage, Currency %><li><a href="#currencies">Monedas</a></li><% end %>
+      <% if can? :manage, Location %><li><a href="#locations">Localidades</a></li><% end %>
+      <% if can? :manage, Operation %><li><a href="#operations">Operaciones</a></li><% end %>
+      <% if can? :manage, Property %><li><a href="#properties">Propiedades</a></li><% end %>
+      <% if can? :manage, RealEstate %><li><a href="#real-estates">Inmobiliarias</a></li><% end %>
+      <% if can? :manage, Type %><li><a href="#types">Tipo de Propiedades</a></li><% end %>
+      <% if can? :manage, User %><li><a href="#users">Usuarios</a></li><% end %>
     </ul>
+    <% if can? :manage, Currency -%>
     <div id="currencies">
       <%= render "admin/currencies/tab", :currencies => @currencies %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, Location -%>
     <div id="locations">
       <%= render "admin/locations/tab", :locations => @locations %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, Operation -%>
     <div id="operations">
       <%= render "admin/operations/tab", :operations => @operations %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, Property -%>
     <div id="properties">
       <%= render "admin/properties/tab", :properties => @properties %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, RealEstate -%>
     <div id="real-estates">
       <%= render "admin/real_estates/tab", :real_estates => @real_estates %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, Type -%>
     <div id="types">
       <%= render "admin/types/tab", :types => @types %>
     </div>
+    <% end -%>
+    
+    <% if can? :manage, User -%>
     <div id="users">
       <%= render "admin/users/tab", :users => @users %>
     </div>
+    <% end -%>
   </div>
 </div>
 

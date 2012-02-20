@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 # Authentication and authorization
 gem 'devise'
-#gem 'cancan'
+gem 'cancan'
 
 gem 'gmaps4rails'
 

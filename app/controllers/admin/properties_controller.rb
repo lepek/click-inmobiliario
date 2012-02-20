@@ -1,5 +1,7 @@
 module Admin
   class PropertiesController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /properties
     # GET /properties.json
     def index

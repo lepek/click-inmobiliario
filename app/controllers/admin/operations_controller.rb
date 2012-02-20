@@ -2,6 +2,8 @@
 
 module Admin
   class OperationsController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /operations
     # GET /operations.json
     def index

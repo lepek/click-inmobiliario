@@ -1,5 +1,7 @@
 module Admin
   class TypesController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /types
     # GET /types.json
     def index
