@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_presence_of :first_name
   validates_presence_of :last_name
+  validates_presence_of :role
+  
+  validates_presence_of :real_estate, :if => Proc.new { |v| v.role.id == Role.get_real_estate_role }
+  
 end
