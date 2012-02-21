@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
   include Datatables::ControllerMixin
   impressionist :unique => [:impressionable_type, :impressionable_id, :session_hash], :actions => [ :show ]
   
-  before_filter :authenticate_user!, :only => [:favorite, :favorites_list]
+  before_filter :authenticate_user!, :only => [:favorites_list]
 
   # GET /properties/1
   # GET /properties/1.json
@@ -16,6 +16,11 @@ class PropertiesController < ApplicationController
   end
   
   def favorite
+    unless user_signed_in?
+      flash[:alert] = I18n.t('devise.failure.unauthenticated')
+      render :js => "window.location = '#{new_user_session_path}'"
+      return
+    end
     @property = Property.find(params[:id])
     if @property.is_favorite?
       flash_message = "El inmueble ubicado en #{@property.address.upcase} fue eliminado de sus favoritos."
@@ -38,11 +43,9 @@ class PropertiesController < ApplicationController
         format.js { render :partial => 'infowindow', :locals => { :property_id => @property.id, :infowindow_content => infowindow_content } }
       end
     end
-    
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "No se encontro la propiedad solicitada."
     redirect_to :back
-    
   end
   
   def favorites_list
