@@ -41,9 +41,9 @@
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :confirm_password %>
+		<%= f.label :password_confirmation %>
 		<div class="input">
-			<%= f.password_field :confirm_password %>
+			<%= f.password_field :password_confirmation %>
 		</div>
 	</div>
 	<div class="clearfix">
@@ -55,7 +55,7 @@
     <div class="clearfix">
         <%= f.label :real_estate_id %>
         <div class="input">
-            <% @user.role.id == Role.get_real_estate_role ? @disable = false : @disable = true %>
+            <% !@user.role.nil? && @user.role.id == Role.get_real_estate_role ? @disable = false : @disable = true %>
             <%= f.collection_select(:real_estate_id, RealEstate.order("name").all, :id, :name, {:prompt => 'Ninguna'}, {:disabled => @disable } ) %>
         </div>
     </div>

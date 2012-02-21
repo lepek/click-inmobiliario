@@ -65,9 +65,13 @@ module Admin
     # PUT /users/1.json
     def update
       @user = User.find(params[:id])
-
+      if params[:user][:password].blank? && params[:user][:confirm_password].blank?
+        result = @user.update_without_password(params[:user])
+      else
+        result = @user.update_attributes(params[:user])
+      end
       respond_to do |format|
-        if @user.update_attributes(params[:user])
+        if result
           format.html { redirect_to [:admin, @user], notice: 'Usuario actualizado.' }
           format.json { head :ok }
         else
