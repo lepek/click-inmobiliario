@@ -18,9 +18,13 @@
 </div>
 	</div>	
   <div id="gallery">
-        <% @property.photos.each do |photo| %>
-            <%= image_tag photo.file.url %>
-        <% end %>
+  		<% if @property.photos.empty? %>
+  			<%= image_tag 'no-image.gif' %>
+  		<% else %>
+	        <% @property.photos.each do |photo| %>
+	            <%= image_tag photo.file.url %>
+	        <% end %>
+	    <% end %>  
 	</div>
 	
 	<div id="property">
