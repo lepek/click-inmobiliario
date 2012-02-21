@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>
+      <strong>Datos de la persona interesada:</strong><br />
+      Nombre: <%= @user.first_name %> <%= @user.last_name %><br />
+      E-mail: <%= @user.email %><br />
+      Comentarios: <%= @comments %>
+    </p>
+    <p>
+      <strong>Datos de la propiedad de inter&eacute;s:</strong><br />
+      Direcci&oacute;n: <%= @property.address %>, <%= @property.location.name %><br />
+      C&oacute;digo: <%= @property.code %><br />
+      Precio: <%= @property.price %>
+    </p>
+    <p>Gracias por usar <%= link_to "Click-Inmobiliario.com", url_for(:controller => 'index', :action => 'index', :host => 'www.click-inmobiliario.com') %>!</p>
+  </body>
+</html>

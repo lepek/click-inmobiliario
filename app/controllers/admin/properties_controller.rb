@@ -1,5 +1,7 @@
 module Admin
   class PropertiesController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /properties
     # GET /properties.json
     def index
@@ -57,15 +59,16 @@ module Admin
     # PUT /properties/1.json
     def update
       @property = Property.find(params[:id])
-
-      params[:property][:photos_attributes].each_key { |key|
-        if params[:property][:photos_attributes][key.to_sym][:remove_file] == "1"
-          @photo = Photo.find(params[:property][:photos_attributes][key.to_sym][:id])
-          @photo.remove_file!
-          @photo.destroy
-          params[:property][:photos_attributes].delete(key.to_sym)
-        end
-      }
+      unless params[:property][:photos_attributes].nil?
+        params[:property][:photos_attributes].each_key { |key|
+          if params[:property][:photos_attributes][key.to_sym][:remove_file] == "1"
+            @photo = Photo.find(params[:property][:photos_attributes][key.to_sym][:id])
+            @photo.remove_file!
+            @photo.destroy
+            params[:property][:photos_attributes].delete(key.to_sym)
+          end
+        }
+      end
 
       respond_to do |format|
         if @property.update_attributes(params[:property])

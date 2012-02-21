@@ -1,5 +1,7 @@
 module Admin
   class RealEstatesController < Admin::ApplicationController
+    load_and_authorize_resource
+    
     # GET /real_estates
     # GET /real_estates.json
     def index

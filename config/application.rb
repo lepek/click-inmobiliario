@@ -17,6 +17,8 @@ module ClickInmobiliario
       Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "session" : "devise" }
     end
 
+    ActionMailer::Base.smtp_settings[:openssl_verify_mode] = 'none'  
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

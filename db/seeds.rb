@@ -1,43 +1,91 @@
 # encoding: utf-8
 
 #Roles
+
+puts 'Seeding roles'
+
 admin_role = Role.find_by_name('Admin')
 if admin_role.nil?
   admin_role = Role.create(
     :name => 'Admin', 
-    :description => 'Administrador' 
+    :description => 'Administrador', 
   )
 end
 
-if Role.find_by_name('Inmobiliaria').nil?
-  Role.create(
+inmobiliaria_role = Role.find_by_name('Inmobiliaria')
+if inmobiliaria_role.nil?
+  inmobiliaria_role = Role.create(
     :name => 'Inmobiliaria', 
     :description => 'Inmobiliaria' 
   )
 end
 
-if Role.find_by_name('Cliente').nil?
-  Role.create(
+client_role = Role.find_by_name('Cliente')
+if client_role.nil?
+  client_role = Role.create(
     :name => 'Cliente', 
     :description => 'Cliente y/o visitante web' 
   )
 end
 
+# Inmobiliarias
+
+puts 'Seeding real estates'
+
+fundar = RealEstate.find_by_name('Fundar')
+if fundar.nil?
+  fundar = RealEstate.create(:name => 'Fundar', :email => 'info@fundar.com.ar')
+end
+
+pagano = RealEstate.find_by_name('Pagano Luraschi')
+if pagano.nil?
+  pagano = RealEstate.create(:name => 'Pagano Luraschi', :email => 'info@pagano.com.ar')
+end
+
 # Usuarios
 
-user = User.find_by_email('mbianculli@gmail.com')
-if user.nil?
+puts 'Seeding users'
+
+client_user = User.find_by_email('mbianculli@gmail.com')
+if client_user.nil?
   User.create(
     :first_name => 'Martin', 
     :last_name => 'Bianculli', 
     :email => 'mbianculli@gmail.com', 
     :password => 'foo',
     :password_confirmation => 'foo',
+    :role_id => client_role.id
+  )
+end
+
+admin_user = User.find_by_email('admin@gmail.com')
+if admin_user.nil?
+  User.create(
+    :first_name => 'Administrator', 
+    :last_name => 'Site', 
+    :email => 'admin@gmail.com', 
+    :password => 'foo',
+    :password_confirmation => 'foo',
     :role_id => admin_role.id
   )
 end
 
+inmobiliaria_user = User.find_by_email('inmobiliaria@gmail.com')
+if inmobiliaria_user.nil?
+  User.create(
+    :first_name => 'Junacito', 
+    :last_name => 'Fundar', 
+    :email => 'fundar@gmail.com', 
+    :password => 'foo',
+    :password_confirmation => 'foo',
+    :role_id => inmobiliaria_role.id,
+    :real_estate_id => fundar.id
+  )
+end
+
 # Localidades
+
+puts 'Seeding locations'
 
 rosario = Location.find_by_name('Rosario')
 if rosario.nil?
@@ -71,17 +119,21 @@ end
 
 # Moneda
 
+puts 'Seeding currencies'
+
 ars = Currency.find_by_code('ARS')
 if ars.nil?
-  ars = Currency.create(:name => 'Pesos', :code => 'ARS')
+  ars = Currency.create(:name => 'Pesos', :code => 'ARS', :symbol => '$')
 end
 
 usd = Currency.find_by_code('USD')
 if usd.nil?
-  usd = Currency.create(:name => 'Dolares', :code => 'USD')
+  usd = Currency.create(:name => 'Dolares', :code => 'USD', :symbol => 'U$S')
 end
 
 # Tipo de Propiedad
+
+puts 'Seeding property types'
 
 depto = Type.find_by_name('Departamento')
 if depto.nil?
@@ -106,6 +158,8 @@ end
 
 # Tipo de Operacion
 
+puts 'Seeding operation types'
+
 venta = Operation.find_by_name('Venta')
 if venta.nil?
   venta = Operation.create(:name => 'Venta')
@@ -116,20 +170,9 @@ if alquiler.nil?
   alquiler = Operation.create(:name => 'Alquiler')
 end
 
-# Inmobiliarias
-
-fundar = RealEstate.find_by_name('Fundar')
-if fundar.nil?
-  fundar = RealEstate.create(:name => 'Fundar', :email => 'info@fundar.com.ar')
-end
-
-pagano = RealEstate.find_by_name('Pagano Luraschi')
-if pagano.nil?
-  pagano = RealEstate.create(:name => 'Pagano Luraschi', :email => 'info@pagano.com.ar')
-end
-
-
 # Inmuebles
+
+puts 'Seeding properties'
 
 images_path = File.join(Rails.root, 'db/seed_images/properties')
 

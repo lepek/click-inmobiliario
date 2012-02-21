@@ -1,13 +1,22 @@
 <% content_for :javascripts do %>
-  <%= javascript_include_tag 'galleria/galleria-1.2.6.min.js' %>
+  <%= javascript_include_tag 'galleria/galleria-1.2.6.min.js', :properties %>
 <% end %>
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag :property %>
 <% end %>
-
 <div id="content-inner">
+	<div>
     <div id="title"><h1><%= @property.address %>, <%= @property.location.name %></h1></div>
-
+    <div class="favorite" id="favorite">
+		<% if user_signed_in? %>
+			<% if @is_favorite %>
+				<%= link_to(image_tag('favorite.png', :alt => 'Eliminar de Favoritos', :size => "24x24", :mouseover => 'add_to_favorite.png', :title => 'Eliminar de Favoritos'), url_for(:action => :favorite, :id => @property.id), :remote => true, :"data-replace" => '#favorite') %>
+			<% else %>
+				<%= link_to(image_tag('add_to_favorite.png', :alt => 'Agregar a Favoritos', :size => "24x24", :mouseover => 'favorite.png', :title => 'Agregar a Favoritos'), url_for(:action => :favorite, :id => @property.id), :remote => true, :"data-replace" => '#favorite') %>
+			<% end %>
+		<% end %>
+</div>
+	</div>	
   <div id="gallery">
         <% @property.photos.each do |photo| %>
             <%= image_tag photo.file.url %>
@@ -18,14 +27,11 @@
         <h2><%= @property.type.name %> en <%= @property.operation.name %></h2>
         <div><h2>C&oacute;digo: <%= @property.code %></h2></div>
         <div><h2>Precio: $<%= @property.price %></h2></div>
+        <% if user_signed_in? %>
+        <div style="text-align: right;"><h3><a href="#" id="contact-link">Contactar</a></h3></div>
+        <% end %>
 		<h5><%= @property.description %></h5>
 	</div>
 </div>
 
-<script>
-    Galleria.loadTheme('<%= javascript_path 'galleria/themes/classic/galleria.classic.js' %>');
-    $("#gallery").galleria({
-        width: 500,
-        height: 500
-    });
-</script>
+<%= render :partial => 'contact' %>

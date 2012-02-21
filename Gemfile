@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 # Authentication and authorization
 gem 'devise'
-#gem 'cancan'
+gem 'cancan'
 
 gem 'gmaps4rails'
 
@@ -25,7 +25,9 @@ gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 
 gem 'impressionist'
 
-gem "google_visualr", ">= 2.1"
+gem "google_visualr", ">= 2.1", :git => 'git@github.com:lepek/Google-Visualr.git'
+
+gem 'sql_funk', :git => 'git://github.com/lakim/sql_funk.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
