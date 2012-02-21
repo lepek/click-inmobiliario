@@ -1,0 +1,32 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag :datatables %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :datatables, :admin_index %>
+<% end %>
+
+<!-- The master panel with admin grid -->
+<div id="content-inner">
+  <h1>Favoritos</h1>
+  <div id="tabs" style="width: 100%">
+    <ul>
+      <li><a href="#favorites">Favoritos</a></li>
+    </ul>
+    <div id="favorites">
+    	
+    	<% datatable "properties-table", ["Código", "Dirección", "Inmobiliaria", ""], :class => "selectable" do -%>
+		  <% @properties.each do |property| -%>
+		    <tr>
+		      <td><%= property.code %></td>
+		      <td><%= property.address %></td>
+		      <td><%= property.real_estate.name %></td>
+		      <td>
+		        <%= button_to "Quitar", {:action=>"favorite", :controller=>"properties", :id => property.id}, :confirm => "¿Esta seguro que desea eliminar el favorito?", :method => :get %>
+		      </td>
+		    </tr>
+		  <% end -%>
+		<% end -%>
+    	
+    </div>
+  </div>
+</div>

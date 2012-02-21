@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :role_id, :real_estate_id
+  cattr_accessor :current_user
   
   belongs_to :role
   belongs_to :real_estate
