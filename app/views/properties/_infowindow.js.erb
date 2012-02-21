@@ -1,0 +1,2 @@
+var new_infowindow = "<%=infowindow_content.gsub("\n",'').html_safe.gsub("\"", '\'').html_safe %>";
+Gmaps.map.visibleInfoWindow.setContent(new_infowindow);

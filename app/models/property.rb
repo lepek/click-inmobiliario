@@ -44,7 +44,7 @@ class Property < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    ActionController::Base.new.send(:render_to_string, :partial => 'index/infowindow', :locals => { :property => self, :is_favorite => is_favorite })
+    ActionController::Base.new.send(:render_to_string, :partial => 'index/infowindow', :locals => { :property => self })
   end
 
   def self.search(conditions)
@@ -57,9 +57,7 @@ class Property < ActiveRecord::Base
     properties = Property.where(query.compact.join(' AND '), conditions)
   end
 
-  private
-  
-  def is_favorite
+  def is_favorite?
     (!User.current_user.nil? and User.current_user.properties.exists?(self))
   end
 end

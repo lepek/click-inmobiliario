@@ -24,7 +24,7 @@ ClickInmobiliario::Application.routes.draw do
   end
 
   match 'search' => 'index#search', :via => :post
-  match 'properties/favorite/:id' => 'properties#favorite', :via => :get
+  match 'properties/favorite/:id(/:referer)' => 'properties#favorite', :via => :get
   match 'properties/favorites_list' => 'properties#favorites_list', :via  => :get
 
   resources :reports
