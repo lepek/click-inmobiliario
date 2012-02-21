@@ -1,0 +1,28 @@
+<% if is_favorite %>
+	<% image_title = 'Eliminar de favoritos' %> 
+	<% image_path = asset_path('favorite.png') %>
+	<% image_over_path = asset_path('add_to_favorite.png') %>
+<% else %>
+	<% image_title = 'Agregar a favoritos' %> 
+	<% image_path = asset_path('add_to_favorite.png') %>
+	<% image_over_path = asset_path('favorite.png') %>
+<% end %>
+$('div#success').remove();
+$('#favorite img').attr('src', '<%=image_path%>');
+$('#favorite img').attr('title', '<%=image_title%>');
+
+$('#favorite img')
+	.mouseout(function () { 
+		$(this).attr('src', '<%=image_path%>');
+	})
+	.mouseover(function () {
+		$(this).attr('src', '<%=image_over_path%>');
+	});
+
+jQuery('<div/>', {
+    id: 'success',
+    text: '<%=flash_message%>',
+    class: 'alert-message block-message success'
+}).appendTo('#flash-messages')
+	.delay(3000).fadeOut('slow');
+	

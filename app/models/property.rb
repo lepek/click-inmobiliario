@@ -7,6 +7,8 @@ class Property < ActiveRecord::Base
   belongs_to :real_estate
 
   has_many :photos, :dependent => :destroy
+  has_many :favorites
+  has_many :users, :through => :favorites 
 
   accepts_nested_attributes_for :photos
 
@@ -42,7 +44,7 @@ class Property < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    ActionController::Base.new.send(:render_to_string, :partial => 'index/infowindow', :locals => { :property => self })
+    ActionController::Base.new.send(:render_to_string, :partial => 'index/infowindow', :locals => { :property => self, :is_favorite => is_favorite })
   end
 
   def self.search(conditions)
@@ -55,4 +57,9 @@ class Property < ActiveRecord::Base
     properties = Property.where(query.compact.join(' AND '), conditions)
   end
 
+  private
+  
+  def is_favorite
+    (!User.current_user.nil? and User.current_user.properties.exists?(self))
+  end
 end

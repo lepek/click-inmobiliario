@@ -115,3 +115,7 @@ es:
           attributes:
             name:
               blank: 'El Tipo de Inmueble no puede estar en blanco'
+  devise:
+    failure:
+      invalid: 'Usuario o contraseña no válidos.'
+      unauthenticated: 'Es necesario ingresar antes de continuar.'

@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20120221001533) do
     t.string   "symbol"
   end
 
+  create_table "favorites", :force => true do |t|
+    t.integer "property_id"
+    t.integer "user_id"
+  end
+
+  add_index "favorites", ["property_id"], :name => "index_favorites_on_property_id"
+  add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
