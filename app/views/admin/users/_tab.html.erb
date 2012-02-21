@@ -8,7 +8,9 @@
       <td><%= user.email %></td>
       <td>
         <%= button_to "Editar", edit_admin_user_path(user), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/users", :id => user}, :confirm => "¿Esta seguro que desea eliminar \nel usuario #{user.first_name.upcase + ' ' + user.last_name.upcase}?", :method => :delete %>
+        <% unless current_user == user %>
+        	<%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/users", :id => user}, :confirm => "¿Esta seguro que desea eliminar \nel usuario #{user.first_name.upcase + ' ' + user.last_name.upcase}?", :method => :delete %>
+     	<% end %>
       </td>
     </tr>
   <% end -%>
