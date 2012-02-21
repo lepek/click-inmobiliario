@@ -10,9 +10,9 @@
     <div id="title"><h1><%= @property.address %>, <%= @property.location.name %></h1></div>
     <div class="favorite" id="favorite">
 		<% if @is_favorite %>
-			<%= link_to(image_tag('favorite.png', :alt => 'Eliminar de Favoritos', :size => "24x24", :mouseover => 'add_to_favorite.png', :title => 'Eliminar de Favoritos'), url_for(:action => :favorite, :id => @property.id)) %>
+			<%= link_to(image_tag('favorite.png', :alt => 'Eliminar de Favoritos', :size => "24x24", :mouseover => 'add_to_favorite.png', :title => 'Eliminar de Favoritos'), url_for(:action => :favorite, :id => @property.id), :remote => true, :"data-replace" => '#favorite') %>
 		<% else %>
-			<%= link_to(image_tag('add_to_favorite.png', :alt => 'Agregar a Favoritos', :size => "24x24", :mouseover => 'favorite.png', :title => 'Agregar a Favoritos'), url_for(:action => :favorite, :id => @property.id)) %>
+			<%= link_to(image_tag('add_to_favorite.png', :alt => 'Agregar a Favoritos', :size => "24x24", :mouseover => 'favorite.png', :title => 'Agregar a Favoritos'), url_for(:action => :favorite, :id => @property.id), :remote => true, :"data-replace" => '#favorite') %>
 		<% end %>
 </div>
 	</div>	

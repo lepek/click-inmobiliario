@@ -20,18 +20,28 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
     is_favorite = current_user.properties.exists?(@property)
     if is_favorite
-      flash[:success] = "El inmueble ubicado en #{@property.address.upcase} fue eliminado de sus favoritos." 
+      flash_message = "El inmueble ubicado en #{@property.address.upcase} fue eliminado de sus favoritos."
       current_user.properties.delete(@property)
     else
-      flash[:success] = "El inmueble ubicado en #{@property.address.upcase} fue agregado a sus favoritos."
+      flash_message = "El inmueble ubicado en #{@property.address.upcase} fue agregado a sus favoritos."
       current_user.properties << @property
     end
     current_user.reload
     
+    unless request.xhr?
+      flash[:success] = flash_message
+      redirect_to :back and return
+    end
+    
+    respond_to do |format|
+      flash = nil
+      format.js {render :partial => 'favorite', :locals => {:is_favorite => !is_favorite, :flash_message => flash_message}}
+    end
+    
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "No se encontro la propiedad solicitada."
-  ensure
-    redirect_to :back      
+    redirect_to :back
+    
   end
   
   def favorites_list
