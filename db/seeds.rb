@@ -123,12 +123,12 @@ puts 'Seeding currencies'
 
 ars = Currency.find_by_code('ARS')
 if ars.nil?
-  ars = Currency.create(:name => 'Pesos', :code => 'ARS')
+  ars = Currency.create(:name => 'Pesos', :code => 'ARS', :symbol => '$')
 end
 
 usd = Currency.find_by_code('USD')
 if usd.nil?
-  usd = Currency.create(:name => 'Dolares', :code => 'USD')
+  usd = Currency.create(:name => 'Dolares', :code => 'USD', :symbol => 'U$S')
 end
 
 # Tipo de Propiedad

@@ -42,6 +42,7 @@ es:
       currency:
         name: 'Moneda'
         code: 'Código'
+        symbol: 'Símbolo'
       location:
         name: 'Localidad'
       operation:

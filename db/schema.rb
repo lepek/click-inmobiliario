@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215015241) do
+ActiveRecord::Schema.define(:version => 20120221001533) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "symbol"
   end
 
   create_table "impressions", :force => true do |t|
