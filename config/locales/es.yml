@@ -70,6 +70,9 @@ es:
               taken: 'El E-mail ingresado ya existe'
             password:
               blank: 'La Contraseña no puede estar en blanco'
+              confirmation: 'Las contraseñas no coinciden'
+            real_estate:
+              blank: 'Debe seleccionar una inmobiliaria para este usuario'
         currency:
           attributes:
             name:
