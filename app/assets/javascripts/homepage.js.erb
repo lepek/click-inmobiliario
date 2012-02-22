@@ -1,14 +1,28 @@
 <% url = ClickInmobiliario::Application.routes.url_helpers %>
 
 $(document).ready(function() {
+
+    $("#no-results").dialog({ 
+    	autoOpen: false, 
+    	title: 'Búsqueda',
+    	width: 250,
+    	height: 130,
+    	modal: true,
+    	closeText: 'Cerrar',
+    	buttons: { 'Aceptar': function() { $(this).dialog("close"); } }
+    });
+	
     $('#search').submit(function() {
         $.ajax({
             type:'POST',
             url: '<%= url.search_path %>',
             data:$('#search').serialize(),
-            success: function(response) {
-                Gmaps.map.replaceMarkers(response);
-            }
+            success: function(response) {	        	
+	        	if (jQuery.isEmptyObject(response)) {
+	            	$("#no-results").dialog('open');
+	         	}
+	         	Gmaps.map.replaceMarkers(response);
+            }            
         });
         return false;
 
