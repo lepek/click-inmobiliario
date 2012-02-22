@@ -19,7 +19,8 @@ class PropertiesController < ApplicationController
   def contact
     property = Property.find(params[:id])
     PropertyMailer.contact_email(property, current_user, params[:comments]).deliver
-    redirect_to property, notice: 'E-mail enviado a la inmobiliaria'
+    flash[:success] = 'E-mail enviado a la inmobiliaria'
+    redirect_to property
   end
 
   def favorite
