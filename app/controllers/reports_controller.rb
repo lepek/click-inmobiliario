@@ -38,7 +38,7 @@ class ReportsController < ApplicationController
       data_table.new_column('string', 'Localidad' )
       data_table.new_column('number', 'Inmuebles')
 
-      locations_count = Property.count(:all, :group => 'location_id')
+      locations_count = Property.where('real_estate_id = ?', current_user.real_estate.id).count(:group => 'location_id')
       locations_count.each do |location_id, count|
         data_table.add_row([Location.find(location_id).name, count])
       end
