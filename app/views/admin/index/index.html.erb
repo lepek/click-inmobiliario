@@ -10,13 +10,13 @@
   <h1>Administraci&oacute;n</h1>
   <div id="tabs" style="width: 100%">
     <ul>
+      <% if can? :manage, Property %><li><a href="#properties">Inmuebles</a></li><% end %>
+      <% if can? :manage, RealEstate %><li><a href="#real-estates">Inmobiliarias</a></li><% end %>
+      <% if can? :manage, User %><li><a href="#users">Usuarios</a></li><% end %>
       <% if can? :manage, Currency %><li><a href="#currencies">Monedas</a></li><% end %>
       <% if can? :manage, Location %><li><a href="#locations">Localidades</a></li><% end %>
-      <% if can? :manage, Operation %><li><a href="#operations">Operaciones</a></li><% end %>
-      <% if can? :manage, Property %><li><a href="#properties">Propiedades</a></li><% end %>
-      <% if can? :manage, RealEstate %><li><a href="#real-estates">Inmobiliarias</a></li><% end %>
-      <% if can? :manage, Type %><li><a href="#types">Tipo de Propiedades</a></li><% end %>
-      <% if can? :manage, User %><li><a href="#users">Usuarios</a></li><% end %>
+      <% if can? :manage, Operation %><li><a href="#operations">Operaciones</a></li><% end %>            
+      <% if can? :manage, Type %><li><a href="#types">Tipos de Inmuebles</a></li><% end %>      
     </ul>
     <% if can? :manage, Currency -%>
     <div id="currencies">
