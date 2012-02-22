@@ -28,12 +28,22 @@
 	<div id="property">
         <h2><%= @property.type.name %> en <%= @property.operation.name %></h2>
         <div><h2>C&oacute;digo: <%= @property.code %></h2></div>
-        <div><h2>Precio: $<%= @property.price %></h2></div>
-        <% if user_signed_in? %>
+        <div><h2>Precio: $<%= @property.price %></h2></div>        
         <div style="text-align: right;"><h3><a href="#" id="contact-link">Contactar</a></h3></div>
-        <% end %>
 		<h5><%= @property.description %></h5>
 	</div>
 </div>
 
 <%= render :partial => 'contact' %>
+
+<script>
+$(document).ready(function() {
+	$('#contact-link').click(function() {
+    	<% if user_signed_in? %>		
+			$("#contact").dialog('open');		
+		<% else %>
+			window.location = '<%= new_user_session_path %>'
+		<% end %>
+	});
+});
+</script>
