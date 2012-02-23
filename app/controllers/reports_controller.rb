@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ReportsController < ApplicationController
 
   before_filter :authenticate_user!
@@ -27,7 +29,8 @@ class ReportsController < ApplicationController
         [current_user.real_estate.name, my_visits ],
         ['Otros', other_visits ]
       ])
-      option = { width: 600, height: 360, title: 'Visitas a mis inmuebles', :is3D => true, :colors => ['blue', 'lightblue'] }
+      @title = 'Comparación de las visitas a los inmuebles'
+      option = { width: 600, height: 360, :is3D => true, :colors => ['blue', 'lightblue'] }
       @chart = GoogleVisualr::Interactive::PieChart.new(data_table, option)
 
       ## TODO: grafico de visitas por mes a mis inmuebles
@@ -38,11 +41,12 @@ class ReportsController < ApplicationController
       data_table.new_column('string', 'Localidad' )
       data_table.new_column('number', 'Inmuebles')
 
-      locations_count = Property.count(:all, :group => 'location_id')
+      locations_count = Property.where('real_estate_id = ?', current_user.real_estate.id).count(:group => 'location_id')
       locations_count.each do |location_id, count|
         data_table.add_row([Location.find(location_id).name, count])
       end
-
+      
+      @title = 'Distribución de los inmuebles'
       opts = { :dataMode => 'markers', :region => 'AR' }
       @chart = GoogleVisualr::Interactive::GeoMap.new(data_table, opts)
     end
@@ -63,6 +67,7 @@ class ReportsController < ApplicationController
         data_table.add_row([Date.parse(property.day), property.count_all, '', '', properties_acum, '', ''])
       end
 
+      @title = 'Progreso en la publicación de inmuebles'
       opts = { :displayAnnotations => false }
       @chart = GoogleVisualr::Interactive::AnnotatedTimeLine.new(data_table, opts)
     end

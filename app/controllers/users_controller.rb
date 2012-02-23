@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       end
       respond_to do |format|
         if result
-          format.html { redirect_to [:admin, @user], notice: 'Usuario actualizado.' }
+          format.html { redirect_to @user, notice: 'Usuario actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
