@@ -68,6 +68,7 @@ es:
             email:
               blank: 'El E-mail no puede estar en blanco'
               taken: 'El E-mail ingresado ya existe'
+              invalid: 'El E-mail ingresado no es válido'
             password:
               blank: 'La Contraseña no puede estar en blanco'
               confirmation: 'Las contraseñas no coinciden'
