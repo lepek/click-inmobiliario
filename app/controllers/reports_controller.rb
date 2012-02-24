@@ -6,13 +6,9 @@ class ReportsController < ApplicationController
   authorize_resource :class => false
   
   def show
-    if params[:id] == 'visits'
-      visits_chart
-    elsif params[:id] == 'locations'
-      locations_chart
-    elsif params[:id] == 'publish'
-      publish_chart
-    end
+    send "#{params[:id]}_chart"
+  rescue
+    redirect_to root_path and return
   end
 
   private
@@ -70,6 +66,19 @@ class ReportsController < ApplicationController
       @title = 'Progreso en la publicación de inmuebles'
       opts = { :displayAnnotations => false }
       @chart = GoogleVisualr::Interactive::AnnotatedTimeLine.new(data_table, opts)
+    end
+
+    def search_chart
+      data_table = GoogleVisualr::DataTable.new
+      data_table.new_column('string', 'Localidad' )
+      data_table.new_column('number', 'Búsquedas')
+      locations = Search.find_all_by_name('location')
+      locations.each do |location|
+        data_table.add_row [location.value, location.count]
+      end
+      @title = 'Localidades incluidas en las busquedas'
+      opts = { :dataMode => 'markers', :region => 'AR' }
+      @chart = GoogleVisualr::Interactive::GeoMap.new(data_table, opts)
     end
 
 end

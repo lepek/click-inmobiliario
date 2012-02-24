@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221001533) do
+ActiveRecord::Schema.define(:version => 20120224025223) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20120221001533) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "visits"
   end
 
   create_table "real_estates", :force => true do |t|
@@ -105,6 +106,14 @@ ActiveRecord::Schema.define(:version => 20120221001533) do
   end
 
   add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
+
+  create_table "searches", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "types", :force => true do |t|
     t.string   "name"

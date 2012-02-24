@@ -12,6 +12,7 @@ class IndexController < ApplicationController
         :currency_id => params[:currency_id].to_i,
         :price => params[:price].to_i
     )
+    Search.log params
     respond_to do |format|
         format.json { render json: properties.to_gmaps4rails }
     end
