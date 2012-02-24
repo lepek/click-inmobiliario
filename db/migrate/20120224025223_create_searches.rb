@@ -1,9 +1,7 @@
 class CreateSearches < ActiveRecord::Migration
   def self.up
     create_table :searches do |t|
-      t.string :name
-      t.string :value
-      t.integer :count
+      t.integer :user_id
 
       t.timestamps
     end

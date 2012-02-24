@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224025223) do
+ActiveRecord::Schema.define(:version => 20120224045920) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
@@ -107,10 +107,17 @@ ActiveRecord::Schema.define(:version => 20120224025223) do
 
   add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
-  create_table "searches", :force => true do |t|
+  create_table "search_params", :force => true do |t|
     t.string   "name"
-    t.string   "value"
-    t.integer  "count"
+    t.string   "value_str"
+    t.integer  "value_int"
+    t.integer  "search_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
