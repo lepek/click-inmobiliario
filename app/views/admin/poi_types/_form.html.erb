@@ -1,0 +1,41 @@
+<%= form_for [:admin, @poi_type] do |f| %>
+<% if @poi_type.errors.any? %>
+<div id="error_explanation">
+	<h2><%= t 'errors.header.male', :resource => 'tipo de punto de interes', :count => @poi_type.errors.count %></h2>
+	<ul>
+		<% @poi_type.errors.each do |attr, msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<fieldset class="gray">
+	<div class="clearfix">
+		<%= f.label :name %>
+		<div class="input">
+			<%= f.text_field :name %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :icon %>
+		<div class="input">
+			<%= f.file_field :icon %>
+		</div>
+	</div>
+	
+	<% if f.object.icon? %>
+        <div class="clearfix">
+            <div class="input">
+                <%= image_tag(f.object.icon.url) %>
+                <%= f.check_box :remove_icon %> Borrar
+            </div>
+        </div>
+    <% end %>
+	
+	<div class="actions">
+		<%= f.submit 'Guardar', :class => "btn primary" %>
+	</div>
+</fieldset>
+<% end %> 

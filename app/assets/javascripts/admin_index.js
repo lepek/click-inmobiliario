@@ -7,6 +7,7 @@ $(document).ready(function() {
   $("#real_estates-table").real_estatesTable();
   $("#types-table").typesTable();
   $("#users-table").usersTable();
+  $("#poi-types-table").poiTypesTable();
 });
 
 (function($) {
@@ -124,6 +125,16 @@ $(document).ready(function() {
     var tableOptions = {
       aoColumns: [
         nameColumn, // Tipo de inmueble
+        actionColumn // Action buttons
+      ]
+    };
+    return this.selectableTable(tableOptions);
+  };
+  
+  $.fn.poiTypesTable = function() {
+    var tableOptions = {
+      aoColumns: [
+        nameColumn, // Tipo de punto de interes
         actionColumn // Action buttons
       ]
     };

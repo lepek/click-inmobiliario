@@ -19,6 +19,10 @@ ClickInmobiliario::Application.routes.draw do
 
     resources :users
     
+    resources :poi_types
+    
+    resources :pois
+    
     root :to => 'index#index'
 
   end

@@ -20,6 +20,8 @@ es:
       type: 'Tipo de inmueble'
       user: 'Usuario'
       photo: 'Foto'
+      poi_type: 'Tipo de punto de interes'
+      poi: 'Punto de interes'
     attributes:
       user:
         first_name: 'Nombre'
@@ -57,6 +59,14 @@ es:
       photo:
         file: 'Foto'
         description: 'Descripción'
+      poi_type:
+        name: 'Tipo de punto de interes'
+        icon: 'Icono'
+      poi:
+        address: 'Dirección'
+        description: 'Descripción'
+        location_id: 'Localidad'
+        poi_type_id: 'Tipo de punto de interes'
     errors:
       models:
         user:
@@ -119,6 +129,20 @@ es:
           attributes:
             name:
               blank: 'El Tipo de Inmueble no puede estar en blanco'
+        poi_type:
+          attributes:
+            name:
+              blank: 'El Tipo de Punto de Interes no puede estar en blanco'
+        poi:
+          attributes:
+            description:
+              blank: 'La Descripción no puede estar en blanco'
+            address:
+              blank: 'La Dirección no puede estar en blanco'
+            location:
+              blank: 'La Localidad no puede estar en blanco'
+            poi_type:
+              blank: 'El Tipo de Punto de Interes no puede estar en blanco'
   devise:
     failure:
       invalid: 'Usuario o contraseña no válidos.'

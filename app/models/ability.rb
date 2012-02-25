@@ -31,7 +31,7 @@ class Ability
     end
     
     def set_permissions_for_admin
-      can :manage, [Currency, Location, Operation, Property, RealEstate, Type, User]
+      can :manage, [Currency, Location, Operation, Property, RealEstate, Type, User, PoiType, Poi]
       can :access, :admin_module
     end
   
