@@ -31,6 +31,8 @@ class Property < ActiveRecord::Base
   validates_presence_of :operation
   validates_presence_of :real_estate
 
+ composed_of :price, :class_name => 'Money', :mapping => %w(price cents), :converter => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : Money.empty }
+
   def full_address
     [address, location.name, 'Argentina'].compact.join(', ')
   end
