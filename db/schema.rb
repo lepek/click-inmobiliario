@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224045935) do
+ActiveRecord::Schema.define(:version => 20120224045945) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20120224045935) do
     t.integer  "poi_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "properties", :force => true do |t|

@@ -66,7 +66,7 @@ es:
         address: 'Dirección'
         description: 'Descripción'
         location_id: 'Localidad'
-        poi_type_id: 'Tipo de punto de interes'
+        poi_type_id: 'Punto de interes'
     errors:
       models:
         user:

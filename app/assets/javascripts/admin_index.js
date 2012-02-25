@@ -8,6 +8,7 @@ $(document).ready(function() {
   $("#types-table").typesTable();
   $("#users-table").usersTable();
   $("#poi-types-table").poiTypesTable();
+  $("#pois-table").poisTable();
 });
 
 (function($) {
@@ -135,6 +136,18 @@ $(document).ready(function() {
     var tableOptions = {
       aoColumns: [
         nameColumn, // Tipo de punto de interes
+        actionColumn // Action buttons
+      ]
+    };
+    return this.selectableTable(tableOptions);
+  };
+  
+  $.fn.poisTable = function() {
+    var tableOptions = {
+      aoColumns: [
+        nameColumn, // Descripcion
+        nameColumn, // Direccion
+        nameColumn, // Tipo de Punto de Interes
         actionColumn // Action buttons
       ]
     };

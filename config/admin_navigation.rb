@@ -29,6 +29,9 @@ SimpleNavigation::Configuration.run do |navigation|
       sub.item :poi_types, 'Tipos de Punto de Interes', admin_root_path(:anchor => 'poi_types'), :if => proc {
         current_ability.can? :manage, PoiType
       }
+      sub.item :pois, 'Puntos de Interes', admin_root_path(:anchor => 'pois'), :if => proc {
+        current_ability.can? :manage, Poi
+      }
     end
   end
 end

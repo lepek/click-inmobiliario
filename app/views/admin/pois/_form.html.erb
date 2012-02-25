@@ -1,0 +1,44 @@
+<%= nested_form_for [:admin, @poi], :html=>{:multipart => true } do |f| %>
+<% if @poi.errors.any? %>
+<div id="error_explanation">
+	<h2><%= t 'errors.header.male', :resource => 'punto de interes', :count => @poi.errors.count %></h2>
+	<ul>
+		<% @poi.errors.each do |attr, msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<fieldset class="gray">
+	<div class="clearfix">
+		<%= f.label :description %>
+		<div class="input">
+			<%= f.text_area :description %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :address %>
+		<div class="input">
+			<%= f.text_field :address %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :location_id %>
+		<div class="input">
+			<%= f.collection_select(:location_id, Location.order("name").all, :id, :name) %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<%= f.label :poi_type_id %>
+		<div class="input">
+			<%= f.collection_select(:poi_type_id, PoiType.order("name").all, :id, :name) %>
+		</div>
+	</div>
+
+	<div class="actions">
+		<%= f.submit 'Guardar', :class => "btn primary" %>
+	</div>
+</fieldset>
+<% end %> 
