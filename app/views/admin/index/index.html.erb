@@ -16,7 +16,9 @@
       <% if can? :manage, Currency %><li><a href="#currencies">Monedas</a></li><% end %>
       <% if can? :manage, Location %><li><a href="#locations">Localidades</a></li><% end %>
       <% if can? :manage, Operation %><li><a href="#operations">Operaciones</a></li><% end %>            
-      <% if can? :manage, Type %><li><a href="#types">Tipos de Inmuebles</a></li><% end %>      
+      <% if can? :manage, Type %><li><a href="#types">Tipos de Inmuebles</a></li><% end %>
+      <% if can? :manage, PoiType %><li><a href="#poi_types">Tipos de Punto de Interes</a></li><% end %>
+      <% if can? :manage, Poi %><li><a href="#pois">Puntos de Interes</a></li><% end %>
     </ul>
     <% if can? :manage, Currency -%>
     <div id="currencies">
@@ -57,6 +59,18 @@
     <% if can? :manage, User -%>
     <div id="users">
       <%= render "admin/users/tab", :users => @users %>
+    </div>
+    <% end -%>
+    
+    <% if can? :manage, PoiType -%>
+    <div id="poi_types">
+      <%= render "admin/poi_types/tab", :poi_types => @poi_types %>
+    </div>
+    <% end -%>
+    
+    <% if can? :manage, Poi -%>
+    <div id="pois">
+      <%= render "admin/pois/tab", :pois => @pois %>
     </div>
     <% end -%>
   </div>

@@ -12,6 +12,8 @@ module Admin
       @real_estates = RealEstate.accessible_by(current_ability).order("name").all
       @types = Type.accessible_by(current_ability).order("name").all
       @users = User.accessible_by(current_ability).order("last_name").all
+      @poi_types = PoiType.accessible_by(current_ability).order("name").all
+      @pois = Poi.accessible_by(current_ability).all
     end
   end
 end

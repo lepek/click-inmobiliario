@@ -73,6 +73,24 @@ ActiveRecord::Schema.define(:version => 20120225211520) do
     t.datetime "updated_at"
   end
 
+  create_table "poi_types", :force => true do |t|
+    t.string   "name"
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pois", :force => true do |t|
+    t.text     "description"
+    t.string   "address"
+    t.integer  "location_id"
+    t.integer  "poi_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
   create_table "properties", :force => true do |t|
     t.text     "description"
     t.string   "code"

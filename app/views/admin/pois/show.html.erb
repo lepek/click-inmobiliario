@@ -1,0 +1,33 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag :gmaps4rails %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :gmaps4rails %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<%= gmaps4rails(@json) %>
+
+<p>
+  <b>Descripción:</b>
+  <%= @poi.description %>
+</p>
+
+<p>
+  <b>Dirección:</b>
+  <%= @poi.address %>
+</p>
+
+<p>
+  <b>Localidad:</b>
+  <%= @poi.location.name %>
+</p>
+
+<p>
+  <b>Tipo de punto de inter&eacute;s:</b>
+  <%= @poi.poi_type.name %>
+</p>
+
+<%= link_to 'Editar', edit_admin_poi_path(@poi) %> |
+<%= link_to 'Volver', admin_root_path(:anchor => 'pois') %>
