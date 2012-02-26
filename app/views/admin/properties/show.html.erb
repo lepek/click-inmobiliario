@@ -26,7 +26,7 @@
 
 <p>
   <b>Precio:</b>
-  <%= @property.price %>
+  <%= @property.price.format(:no_cents => true, :thousands_separator => '.', :decimal_mark => ',') %>
 </p>
 
 <p>
@@ -46,11 +46,11 @@
 
 <p>
   <b>Moneda:</b>
-  <%= @property.currency.name %>
+  <%= Currency.find_by_code(@property.price.currency_as_string).name %>
 </p>
 
 <p>
-  <b>Tipo de operación:</b>
+  <b>Tipo de operaci&oacute;n:</b>
   <%= @property.operation.name %>
 </p>
 

@@ -81,7 +81,6 @@ class ReportsController < ApplicationController
     end
 
     def price_chart
-      prices = Search
       data_table = GoogleVisualr::DataTable.new
       data_table.new_column('string', 'Inmuebles' )
       data_table.new_column('number', 'Precio (en dolares)')

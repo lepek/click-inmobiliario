@@ -33,13 +33,13 @@
 	<div class="clearfix">
 		<%= f.label :price %>
 		<div class="input">
-			<%= f.number_field :price %>
+			<%= f.number_field :price, :value => @property.price.format(:no_cents => true, :symbol => false, :thousands_separator => false) %>
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :currency_id %>
+		<%= f.label :currency %>
 		<div class="input">
-			<%= f.collection_select(:currency_id, Currency.order("name").all, :id, :name) %>
+			<%= f.collection_select(:currency, Currency.order("name").all, :code, :name) %>
 		</div>
 	</div>
 	<div class="clearfix">

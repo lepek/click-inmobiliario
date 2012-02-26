@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224045920) do
+ActiveRecord::Schema.define(:version => 20120225211520) do
 
   create_table "currencies", :force => true do |t|
     t.string   "name"
@@ -80,14 +80,13 @@ ActiveRecord::Schema.define(:version => 20120224045920) do
     t.string   "address"
     t.integer  "location_id"
     t.integer  "type_id"
-    t.integer  "currency_id"
     t.integer  "operation_id"
     t.integer  "real_estate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "visits"
+    t.string   "currency"
   end
 
   create_table "real_estates", :force => true do |t|

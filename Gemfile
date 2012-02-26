@@ -17,8 +17,10 @@ gem "therubyracer", :require => "v8"
 
 gem "simple-navigation"
 
+# For uploads
 gem 'carrierwave', '>= 0.5.3'
 
+# For image manipulation
 gem 'mini_magick'
 
 gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
@@ -28,6 +30,10 @@ gem 'impressionist'
 gem "google_visualr", ">= 2.1", :git => 'git@github.com:lepek/Google-Visualr.git'
 
 gem 'sql_funk', :git => 'git://github.com/lakim/sql_funk.git'
+
+gem 'money'
+gem 'google_currency'
+gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.

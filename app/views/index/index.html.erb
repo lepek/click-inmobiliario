@@ -45,7 +45,7 @@
       <div class="clearfix">
         <%= label_tag :currency_id, 'Moneda' %>
         <div class="input">
-          <%= select_tag :currency_id, options_from_collection_for_select(Currency.order("name").all, :id, :name) %>
+          <%= select_tag :currency_code, options_from_collection_for_select(Currency.order("name").all, :code, :name) %>
         </div>
       </div>      
       <div class="actions">

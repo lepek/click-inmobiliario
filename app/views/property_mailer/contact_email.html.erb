@@ -14,7 +14,7 @@
       <strong>Datos de la propiedad de inter&eacute;s:</strong><br />
       Direcci&oacute;n: <%= @property.address %>, <%= @property.location.name %><br />
       C&oacute;digo: <%= @property.code %><br />
-      Precio: <%= @property.price %>
+      Precio en <%= Currency.find_by_code(@property.price.currency_as_string).name.downcase %>: <%= @property.price.format(:no_cents => true, :thousands_separator => '.', :decimal_mark => ',') %>
     </p>
     <p>Gracias por usar <%= link_to "Click-Inmobiliario.com", url_for(:controller => 'index', :action => 'index', :host => 'www.click-inmobiliario.com') %>!</p>
   </body>
