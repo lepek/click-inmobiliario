@@ -1,3 +1,9 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :gmaps4rails %>
+  <%= gmaps({})%>
+  <%= javascript_include_tag "geocode.autocomplete" %>
+<% end %>
+
 <%= nested_form_for [:admin, @property], :html=>{:multipart => true } do |f| %>
 <% if @property.errors.any? %>
 <div id="error_explanation">
@@ -45,7 +51,7 @@
 	<div class="clearfix">
 		<%= f.label :address %>
 		<div class="input">
-			<%= f.text_field :address %>
+			<%= f.text_field :address, :class => "geocode_autocomplete" %>
 		</div>
 	</div>
 	<div class="clearfix">
