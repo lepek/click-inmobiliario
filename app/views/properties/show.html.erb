@@ -28,7 +28,7 @@
 	<div id="property">
         <h2><%= @property.type.name %> en <%= @property.operation.name %></h2>
         <div><h2>C&oacute;digo: <%= @property.code %></h2></div>
-        <div><h2>Precio: $<%= @property.price %></h2></div>        
+        <div><h2>Precio en <%= Currency.find_by_code(@property.price.currency_as_string).name.downcase %>: <%= @property.price.format(:no_cents => true, :thousands_separator => '.', :decimal_mark => ',') %></h2></div>
         <div style="text-align: right;"><h3><a href="#" id="contact-link">Contactar</a></h3></div>
 		<h5><%= @property.description %></h5>
 	</div>

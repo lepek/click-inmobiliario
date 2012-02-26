@@ -42,6 +42,8 @@ module Admin
     # POST /properties
     # POST /properties.json
     def create
+      params[:property][:price] = Money.from_string(params[:property][:price], params[:property][:currency])
+      params[:property][:currency] = nil
       @property = Property.new(params[:property])
 
       respond_to do |format|
