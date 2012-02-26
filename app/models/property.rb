@@ -26,7 +26,6 @@ class Property < ActiveRecord::Base
   validates_presence_of :description
   validates_presence_of :location
   validates_presence_of :type
-  #validates_presence_of :currency
   validates_presence_of :operation
   validates_presence_of :real_estate
 
@@ -57,12 +56,26 @@ class Property < ActiveRecord::Base
     query << 'location_id = :location_id' unless conditions[:location_id] <= 0
     query << 'type_id = :type_id' unless conditions[:type_id] <= 0
     query << 'operation_id = :operation_id' unless conditions[:operation_id] <= 0
-    query << 'currency = :currency' unless conditions[:currency].blank?
-    query << 'price < :price' unless conditions[:price] <= 0
-    properties = Property.where(query.compact.join(' AND '), conditions)
+    Property.where("#{query.compact.join(' AND ')} AND ( #{self.build_query_for_prices(conditions)} )", conditions)
   end
 
   def is_favorite?
     (!User.current_user.nil? and User.current_user.properties.exists?(self))
   end
+
+  private
+
+    def self.build_query_for_prices(conditions)
+      unless conditions[:currency].blank? || conditions[:price] <= 0
+        currencies = Currency.all
+        price_query = []
+        currencies.each do |currency|
+          price_query << " ( currency = '#{currency.code}' AND price < #{Money.new(conditions[:price], conditions[:currency]).exchange_to(currency.code.to_sym).cents} ) "
+        end
+        price_query.compact.join(' OR ')
+      else
+        '1=1'
+      end
+    end
+
 end

@@ -71,6 +71,8 @@ GEM
       multi_json (~> 1.0)
     gmaps4rails (1.4.5)
       json
+    google_currency (0.1.1)
+      money (>= 3.1.0.pre1)
     hike (1.2.1)
     i18n (0.6.0)
     impressionist (1.0.1)
@@ -158,9 +160,11 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   devise
   gmaps4rails
+  google_currency
   google_visualr (>= 2.1)!
   impressionist
   jquery-rails
+  json
   mini_magick
   money
   nested_form!

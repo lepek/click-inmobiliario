@@ -32,6 +32,8 @@ gem "google_visualr", ">= 2.1", :git => 'git@github.com:lepek/Google-Visualr.git
 gem 'sql_funk', :git => 'git://github.com/lakim/sql_funk.git'
 
 gem 'money'
+gem 'google_currency'
+gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.

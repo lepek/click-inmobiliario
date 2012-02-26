@@ -10,7 +10,7 @@ class IndexController < ApplicationController
         :type_id => params[:type_id].to_i,
         :operation_id => params[:operation_id].to_i,
         :currency => params[:currency_code],
-        :price => Money.from_numeric(params[:price].to_i).cents
+        :price => Money.from_numeric(params[:price].to_i, params[:currency_code]).cents
     )
     Search.log(params, current_user || nil)
 
