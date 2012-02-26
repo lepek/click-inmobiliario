@@ -32,6 +32,8 @@
         <div style="text-align: right;"><h3><a href="#" id="contact-link">Contactar</a></h3></div>
 		<h5><%= @property.description %></h5>
 	</div>
+	
+	<%= render :partial => 'nearest_pois', :locals => { :property => @property }%>
 </div>
 
 <%= render :partial => 'contact' %>

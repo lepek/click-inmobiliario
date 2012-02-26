@@ -60,4 +60,26 @@ class Property < ActiveRecord::Base
   def is_favorite?
     (!User.current_user.nil? and User.current_user.properties.exists?(self))
   end
+  
+  def nearest_poi(poi_type=nil)
+    nearest_poi = Hash.new
+    return nearest_poi if poi_type.nil? or (poi_type.class != PoiType and poi_type.class != String)
+    poi_type = PoiType.find(:first, :conditions => [ "lower(name) = ? ", poi_type.downcase]) if poi_type.class == String
+    return nearest_poi unless poi_type 
+    pois = Poi.search({:location_id => self.location_id, :poi_type_id => poi_type.id})
+    return nearest_poi if pois.empty?
+    pois.each do |poi|
+      begin
+      destination = Gmaps4rails.destination({"from" => self.full_address.to_s, "to" => poi.full_address.to_s}, {"mode" => "WALKING"})
+      if destination[0]["distance"]["value"] and (nearest_poi["value"].nil? or nearest_poi["value"] > destination[0]["distance"]["value"])
+        nearest_poi = destination[0]["distance"]
+        nearest_poi[:poi] = poi
+      end
+      rescue Exception => e
+        next
+      end  
+    end
+    nearest_poi
+  end
+
 end

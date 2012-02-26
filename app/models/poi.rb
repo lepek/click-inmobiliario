@@ -14,6 +14,13 @@ class Poi < ActiveRecord::Base
   validates_presence_of :location
   validates_presence_of :poi_type
 
+  def self.search(conditions)
+    query = []
+    query << 'location_id = :location_id' if conditions[:location_id]
+    query << 'poi_type_id = :poi_type_id' if conditions[:poi_type_id]
+    pois = Poi.where(query.compact.join(' AND '), conditions)
+  end
+
   def full_address
     [address, location.name, 'Argentina'].compact.join(', ')
   end
