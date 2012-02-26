@@ -35,13 +35,11 @@ es:
       confirmed: 'Tu contraseña ha sido cambiada exitosamente. En este momento estás autenticado.'
     registrations:
       signed_up: '¡Bienvenido! Te has autenticado exitosamente.'
-      inactive_signed_up: 'Te has autenticado exitosamente. Sin embargo, no puedes ser autenticado porque tu cuenta está %{reason}.'
+      signed_up_but_unconfirmed: 'Un mensaje ha sido enviado a tu casilla de correo. Por favor, abre el link incluido en el correo para activar tu cuenta.'
+      signed_up_but_inactive: 'Te has autenticado exitosamente. Sin embargo, no puedes ingresar al sitio porque tu cuenta no fue activada.'
+      signed_up_but_locked: 'Te has autenticado exitosamente. Sin embargo, no puedes ingresar al sitio porque tu cuenta ha sido bloqueada.'
       updated: 'Has actualizado tu cuenta exitosamente.'
       destroyed: '¡Adiós! Tu cuenta ha sido cancelada exitosamente. Esperamos verte pronto.'
-      reasons:
-        inactive: 'desactivada'
-        unconfirmed: 'sin confirmar'
-        locked: 'bloqueada'
     unlocks:
       send_instructions: 'Recibirás un e-mail con instrucciones acerca de cómo desbloquear tu cuenta en unos minutos.'
       unlocked: 'Tu cuenta ha sido desbloqueada exitosamente. En este momento estás autenticado.'
