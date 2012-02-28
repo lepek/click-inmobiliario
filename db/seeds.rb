@@ -205,7 +205,8 @@ if Property.find_by_code('MI002').nil?
     :address => '9 de Julio 1046',
     :location_id => rosario.id,
     :type_id => casa.id,
-    :operation_id => venta.id
+    :operation_id => venta.id,
+    :created_at => 1.month.ago
   )
   Dir.foreach(File.join(images_path, '2')) do |img|
     next if img == '.' or img == '..'
@@ -219,13 +220,14 @@ end
 if Property.find_by_code('MI003').nil?
   p = Property.create!(
     :code => 'MI003',
-    :real_estate_id => pagano.id,
+    :real_estate_id => fundar.id,
     :description => 'Departamento a estrenar, frontal, en complejo cerrado. el mismo está conformado por dos dormitorios con placares, cocina-equipada con amoblamiento, posee artefacto de cocina. lavadero integrado, instalación para lavarropas, termotanque, baño completo con bañera, balcones, cochera',
     :price => Money.from_numeric(2500, ars.code),
     :address => 'Donado 1098',
     :location_id => rosario.id,
     :type_id => depto.id,
-    :operation_id => alquiler.id
+    :operation_id => alquiler.id,
+    :created_at => 1.week.ago
   )
   Dir.foreach(File.join(images_path, '3')) do |img|
     next if img == '.' or img == '..'
@@ -239,13 +241,14 @@ end
 if Property.find_by_code('MI004').nil?
   p = Property.create!(
     :code => 'MI004',
-    :real_estate_id => pagano.id,
+    :real_estate_id => fundar.id,
     :description => 'Semipiso ubicado en calle Pichincha y Rioja, a pocas cuadras del Hospital central y de la terminal de omnibus. Cuenta con tres dormitorios con placares, baño completo y baño de visitas. Gran living comedor en pisos de marmol con balcon y excelente vista a la ciudad. Cocina con comedor diario, lavanderia, dependencias de servicio con baño de servicio. No posee cochera. ',
     :price => Money.from_numeric(1200, ars.code),
     :address => 'Pichincha 937',
     :location_id => rosario.id,
     :type_id => condo.id,
-    :operation_id => alquiler.id
+    :operation_id => alquiler.id,
+    :created_at => 1.week.ago
   )
   Dir.foreach(File.join(images_path, '4')) do |img|
     next if img == '.' or img == '..'
