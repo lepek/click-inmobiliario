@@ -11,7 +11,7 @@ class Property < ActiveRecord::Base
 
   accepts_nested_attributes_for :photos
 
-  is_impressionable
+  is_impressionable :counter_cache => true
 
   # roughly speaking sets list of model protected attributes to []
   # making all attributes accessible while mass-assignment

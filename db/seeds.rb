@@ -187,6 +187,7 @@ if Property.find_by_code('MI001').nil?
     :type_id => casa.id,
     :operation_id => venta.id
   )
+  156.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e5#{i}") }
   Dir.foreach(File.join(images_path, '1')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
@@ -208,6 +209,7 @@ if Property.find_by_code('MI002').nil?
     :operation_id => venta.id,
     :created_at => 1.month.ago
   )
+  126.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e4#{i}") }
   Dir.foreach(File.join(images_path, '2')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
@@ -229,6 +231,7 @@ if Property.find_by_code('MI003').nil?
     :operation_id => alquiler.id,
     :created_at => 1.week.ago
   )
+  170.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e3#{i}") }
   Dir.foreach(File.join(images_path, '3')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
@@ -250,6 +253,7 @@ if Property.find_by_code('MI004').nil?
     :operation_id => alquiler.id,
     :created_at => 1.week.ago
   )
+  150.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e2#{i}") }
   Dir.foreach(File.join(images_path, '4')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
@@ -270,6 +274,7 @@ if Property.find_by_code('MI005').nil?
     :type_id => casa.id,
     :operation_id => venta.id
   )
+  53.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e1#{i}") }
   Dir.foreach(File.join(images_path, '5')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
@@ -290,6 +295,7 @@ if Property.find_by_code('MI006').nil?
     :type_id => condo.id,
     :operation_id => venta.id
   )
+  108.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75e0#{i}") }
   Dir.foreach(File.join(images_path, '6')) do |img|
     next if img == '.' or img == '..'
     photo = Photo.create!(
