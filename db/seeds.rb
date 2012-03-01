@@ -97,14 +97,14 @@ if vgg.nil?
   vgg = Location.create(:name => 'Villa Gobernador Galvez')
 end
 
-funes = Location.find_by_name('Funes')
-if funes.nil?
-  funes = Location.create(:name => 'Funes')
+rafaela = Location.find_by_name('Rafaela')
+if rafaela.nil?
+  rafaela = Location.create(:name => 'Rafaela')
 end
 
-roldan = Location.find_by_name('Roldan')
-if roldan.nil?
-  roldan = Location.create(:name => 'Roldan')
+santa_fe = Location.find_by_name('Santa Fe')
+if santa_fe.nil?
+  roldan = Location.create(:name => 'Santa Fe')
 end
 
 san_lorenzo = Location.find_by_name('San Lorenzo')
@@ -222,7 +222,7 @@ if Poi.find_by_description('Institutos de San Juan Bautista de La Salle').nil?
       :description => 'Institutos de San Juan Bautista de La Salle',
       :location_id => rosario.id,
       :poi_type_id => school.id,
-      :address => 'Mendoza 444'
+      :address => 'Av Mendoza 444'
   )
 end
 
@@ -396,3 +396,74 @@ if Property.find_by_code('MI006').nil?
     )
   end
 end
+
+if Property.find_by_code('MI007').nil?
+  p = Property.create!(
+    :code => 'MI007',
+    :real_estate_id => fundar.id,
+    :description => 'Excelente Departamento en conjunto habitacional. El mismo cuenta con un amplio living comedor con balcón frontal, separado del mismo cocina con abundante amoblamiento de alacena y bajo mesada en melamina con cantos de aluminio, lavadero independiente, 2 dormitorios, el principal en suite con vestidor, baño principal completo con antebaño, dormitorio secundario con placard, cochera doble a la par con sus correspondientes bauleras, ubicado en 4º piso, Superficie Cubierta Propia Total: 81.27 m2.(Torre Norte). Caracreristicas Constructivas: pisos de porcellanatto, aberturas en aluminio blanco, puertas interiores macizas, calefacción central por radiadores.',
+    :price => Money.from_numeric(1100, ars.code),
+    :address => 'Hipólito Yrigoyen 259',
+    :location_id => rafaela.id,
+    :type_id => depto.id,
+    :operation_id => alquiler.id,
+    :created_at => 2.weeks.ago
+  )
+  35.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a0#{i}") }
+end
+
+# Busquedas
+
+puts 'Seeding searches'
+
+10.times { |i|
+  Search.log(
+      {
+        :location_id => rosario.id,
+        :type_id => depto.id,
+        :operation_id => venta.id,
+        :price => 80000,
+        :currency_code => usd.code
+      },
+      nil
+  )
+}
+
+12.times { |i|
+  Search.log(
+      {
+        :location_id => rosario.id,
+        :type_id => depto.id,
+        :operation_id => venta.id,
+        :price => 45000,
+        :currency_code => usd.code
+      },
+      nil
+  )
+}
+
+26.times { |i|
+  Search.log(
+      {
+        :location_id => rosario.id,
+        :type_id => depto.id,
+        :operation_id => venta.id,
+        :price => 165000,
+        :currency_code => usd.code
+      },
+      nil
+  )
+}
+
+8.times { |i|
+  Search.log(
+      {
+        :location_id => rafaela.id,
+        :type_id => depto.id,
+        :operation_id => venta.id,
+        :price => 30000,
+        :currency_code => usd.code
+      },
+      nil
+  )
+}
