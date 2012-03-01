@@ -8,7 +8,7 @@
 	<h3>Puntos de Inter&eacute;s m&aacute;s cercanos:</h3>
 	<ul>
 		<% nearest_pois.each do |poi_type, nearest_poi| %>
-			<%= content_tag(:li, "#{nearest_poi[:poi].poi_type.name} m&aacute;s cercano/a: <span class='poi' title='#{nearest_poi[:poi].full_address}'>#{nearest_poi[:poi].description}</span> a #{nearest_poi['text']}".html_safe, :style => "background-image: url('#{nearest_poi[:poi].poi_type.icon.url}')") %>
+			<%= content_tag(:li, "<span class='poi' title='#{nearest_poi[:poi].full_address}'>#{nearest_poi[:poi].description}</span> a #{nearest_poi['text']}".html_safe, :style => "background-image: url('#{nearest_poi[:poi].poi_type.icon.url}')") %>
 		<% end %>
 	</ul>
 </div>

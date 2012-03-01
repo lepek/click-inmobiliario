@@ -170,6 +170,98 @@ if alquiler.nil?
   alquiler = Operation.create(:name => 'Alquiler')
 end
 
+# Tipo de puntos de interes
+
+puts 'Seeding POIs types'
+
+school = PoiType.find_by_name('Escuela')
+if school.nil?
+  school = PoiType.create!(:name => 'Escuela')
+  school.icon.store!(File.open(File.join(Rails.root, 'db/seed_images/pois/school.png')))
+  school.save!
+end
+
+police = PoiType.find_by_name('Policia')
+if police.nil?
+  police = PoiType.create!(:name => 'Policia')
+  police.icon.store!(File.open(File.join(Rails.root, 'db/seed_images/pois/police.png')))
+  police.save!
+end
+
+hospital = PoiType.find_by_name('Hospital')
+if hospital.nil?
+  hospital = PoiType.create!(:name => 'Hospital')
+  hospital.icon.store!(File.open(File.join(Rails.root, 'db/seed_images/pois/hospital.png')))
+  hospital.save!
+end
+
+# Puntos de interes
+
+puts 'Seeding POIs'
+
+if Poi.find_by_description('Hospital de Emergencias "Dr. Clemente Álvarez"').nil?
+  i = Poi.create!(
+      :description => 'Hospital de Emergencias "Dr. Clemente Álvarez"',
+      :location_id => rosario.id,
+      :poi_type_id => hospital.id,
+      :address => 'Av Pellegrini 3205'
+  )
+end
+
+if Poi.find_by_description('Hospital Provincial del Centenario').nil?
+  i = Poi.create!(
+      :description => 'Hospital Provincial del Centenario',
+      :location_id => rosario.id,
+      :poi_type_id => hospital.id,
+      :address => 'Urquiza 3101'
+  )
+end
+
+if Poi.find_by_description('Institutos de San Juan Bautista de La Salle').nil?
+  i = Poi.create!(
+      :description => 'Institutos de San Juan Bautista de La Salle',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Mendoza 444'
+  )
+end
+
+if Poi.find_by_description('Colegio San José').nil?
+  i = Poi.create!(
+      :description => 'Colegio San José',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Presidente Roca 150'
+  )
+end
+
+if Poi.find_by_description('Policia Federal').nil?
+  i = Poi.create!(
+      :description => 'Policia Federal',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => '9 de julio 233'
+  )
+end
+
+if Poi.find_by_description('Seccional 16').nil?
+  i = Poi.create!(
+      :description => 'Seccional 16',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => 'Ayacucho 3350'
+  )
+end
+
+if Poi.find_by_description('Seccional 17').nil?
+  i = Poi.create!(
+      :description => 'Seccional 17',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => 'Donado 947'
+  )
+end
+
 # Inmuebles
 
 puts 'Seeding properties'
