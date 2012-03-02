@@ -2,7 +2,7 @@ require 'datatables/controller_mixin'
 class PropertiesController < ApplicationController
   include Datatables::ControllerMixin
   #impressionist :unique => [:impressionable_type, :impressionable_id, :session_hash], :actions => [ :show ]
-  impressionist
+  impressionist :actions => [ :show ]
 
   before_filter :authenticate_user!, :only => [:contact, :favorites_list]
 
