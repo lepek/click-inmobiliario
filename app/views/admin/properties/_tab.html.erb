@@ -1,11 +1,13 @@
 <fieldset class="gray">
   <%= button_to "Agregar un nuevo inmueble", new_admin_property_path, :method => "get" %>
 </fieldset>
-<% datatable "properties-table", ["Código", "Dirección", "Inmobiliaria", ""], :class => "selectable" do -%>
+<% datatable "properties-table", ["Código", "Dirección", "Localidad","Tipo", "Inmobiliaria", ""], :class => "selectable" do -%>
   <% properties.each do |property| -%>
     <tr>
       <td><%= property.code %></td>
       <td><%= property.address %></td>
+      <td><%= property.location.name %></td>
+      <td><%= property.type.name %></td>
       <td><%= property.real_estate.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_property_path(property), :method => :get %>

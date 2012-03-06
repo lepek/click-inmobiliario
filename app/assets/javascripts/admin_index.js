@@ -39,6 +39,10 @@ $(document).ready(function() {
     sWidth: "150px"
   };
   
+  var shortNameColumn = {
+    sWidth: "70px"
+  };
+  
   var countColumn = {
     bSearchable: false,
     sWidth: "50px"
@@ -73,6 +77,7 @@ $(document).ready(function() {
       aoColumns: [
         nameColumn, // Nombre
         nameColumn, // email
+        shortNameColumn, // rol
         actionColumn // Action buttons
       ]
     };
@@ -102,9 +107,11 @@ $(document).ready(function() {
   $.fn.propertiesTable = function() {
     var tableOptions = {
       aoColumns: [
-        nameColumn, // Codigo
+        countColumn, // Codigo
         nameColumn, // Direccion
-        nameColumn, // Inmobiliaria
+        shortNameColumn, // Localidad
+        shortNameColumn, // Tipo
+        shortNameColumn, // Inmobiliaria
         actionColumn // Action buttons
       ]
     };
@@ -147,7 +154,8 @@ $(document).ready(function() {
       aoColumns: [
         nameColumn, // Descripcion
         nameColumn, // Direccion
-        nameColumn, // Tipo de Punto de Interes
+        shortNameColumn, // Localidad
+        shortNameColumn, // Tipo de Punto de Interes
         actionColumn // Action buttons
       ]
     };

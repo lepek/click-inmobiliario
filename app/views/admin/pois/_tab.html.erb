@@ -1,11 +1,12 @@
 <fieldset class="gray">
   <%= button_to "Agregar un nuevo Punto de Interes", new_admin_poi_path, :method => "get" %>
 </fieldset>
-<% datatable "pois-table", ["Descripcion", "Dirección", "Tipo de Punto de Interes", ""], :class => "selectable" do -%>
+<% datatable "pois-table", ["Descripcion", "Dirección", "Localidad","Tipo de Punto de Interes", ""], :class => "selectable" do -%>
   <% pois.each do |poi| -%>
     <tr>
       <td><%= poi.description %></td>
       <td><%= poi.address %></td>
+      <td><%= poi.location.name %></td>
       <td><%= poi.poi_type.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_poi_path(poi), :method => :get %>
