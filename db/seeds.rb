@@ -42,6 +42,16 @@ if pagano.nil?
   pagano = RealEstate.create(:name => 'Pagano Luraschi', :email => 'info@pagano.com.ar')
 end
 
+dunond = RealEstate.find_by_name('Dunond')
+if dunond.nil?
+  dunond = RealEstate.create(:name => 'Dunond', :email => 'info@dunond.com.ar')
+end
+
+paganini = RealEstate.find_by_name('Paganini')
+if paganini.nil?
+  paganini = RealEstate.create(:name => 'Paganini', :email => 'info@paganini.com.ar')
+end
+
 # Usuarios
 
 puts 'Seeding users'
@@ -217,6 +227,33 @@ if Poi.find_by_description('Hospital Provincial del Centenario').nil?
   )
 end
 
+if Poi.find_by_description('Hospital de Niños Víctor J. Vilela').nil?
+  i = Poi.create!(
+      :description => 'Hospital de Niños Víctor J. Vilela',
+      :location_id => rosario.id,
+      :poi_type_id => hospital.id,
+      :address => 'Virasoro 1855'
+  )
+end
+
+if Poi.find_by_description('Centro de Salud Dr. García Piatti').nil?
+  i = Poi.create!(
+      :description => 'Centro de Salud Dr. García Piatti',
+      :location_id => rosario.id,
+      :poi_type_id => hospital.id,
+      :address => 'Balcarce 3850'
+  )
+end
+
+if Poi.find_by_description('Maternidad Martin').nil?
+  i = Poi.create!(
+      :description => 'Maternidad Martin',
+      :location_id => rosario.id,
+      :poi_type_id => hospital.id,
+      :address => 'San Luis 2020'
+  )
+end
+
 if Poi.find_by_description('Institutos de San Juan Bautista de La Salle').nil?
   i = Poi.create!(
       :description => 'Institutos de San Juan Bautista de La Salle',
@@ -232,6 +269,51 @@ if Poi.find_by_description('Colegio San José').nil?
       :location_id => rosario.id,
       :poi_type_id => school.id,
       :address => 'Presidente Roca 150'
+  )
+end
+
+if Poi.find_by_description('Escuela Domingo F. Sarmiento').nil?
+  i = Poi.create!(
+      :description => 'Escuela Domingo F. Sarmiento',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => '9 de Julio 80'
+  )
+end
+
+if Poi.find_by_description('Escuela Gral. San Martin').nil?
+  i = Poi.create!(
+      :description => 'Escuela Gral. San Martin',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Entre Ríos 145'
+  )
+end
+
+if Poi.find_by_description('Escuela de Enseñanza Media para Adultos 1147').nil?
+  i = Poi.create!(
+      :description => 'Escuela de Enseñanza Media para Adultos 1147',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Italia 1244'
+  )
+end
+
+if Poi.find_by_description('Escuela Gral. Manuel Belgrano').nil?
+  i = Poi.create!(
+      :description => 'Escuela Gral. Manuel Belgrano',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Buenos Aires 1033'
+  )
+end
+
+if Poi.find_by_description('Escuela Remedios Escalada de San Martín').nil?
+  i = Poi.create!(
+      :description => 'Escuela Remedios Escalada de San Martín',
+      :location_id => rosario.id,
+      :poi_type_id => school.id,
+      :address => 'Paraguay 1251'
   )
 end
 
@@ -259,6 +341,33 @@ if Poi.find_by_description('Seccional 17').nil?
       :location_id => rosario.id,
       :poi_type_id => police.id,
       :address => 'Donado 947'
+  )
+end
+
+if Poi.find_by_description('Seccional 01').nil?
+  i = Poi.create!(
+      :description => 'Seccional 01',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => 'Juan M. de Rosas 1350'
+  )
+end
+
+if Poi.find_by_description('Seccional 03').nil?
+  i = Poi.create!(
+      :description => 'Seccional 03',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => 'Dorrego 161'
+  )
+end
+
+if Poi.find_by_description('Seccional 07').nil?
+  i = Poi.create!(
+      :description => 'Seccional 07',
+      :location_id => rosario.id,
+      :poi_type_id => police.id,
+      :address => 'Caferata 345'
   )
 end
 
@@ -410,6 +519,204 @@ if Property.find_by_code('MI007').nil?
     :created_at => 2.weeks.ago
   )
   35.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a0#{i}") }
+end
+
+if Property.find_by_code('MI008').nil?
+  p = Property.create!(
+    :code => 'MI008',
+    :real_estate_id => dunond.id,
+    :description => 'Lo que estabas buscando!! ESPECTACULAR DUPLEX 3 AMBIENTES 80 MTS EXCLUSIVOS EN CALLE SANTIAGO 1644. A metros del parque Independencia y Bv.Oroño. Edificio de escalera. 3er y 4to piso AL FRENTE. Bajas expensas. Orientación este. Excelente construcción. Ambientes totalmente luminosos.',
+    :price => Money.from_numeric(120000, usd.code),
+    :address => 'Santiago 1600',
+    :location_id => rosario.id,
+    :type_id => depto.id,
+    :operation_id => venta.id,
+    :created_at => 3.weeks.ago
+  )
+  58.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a1#{i}") }
+  Dir.foreach(File.join(images_path, '8')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '8', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI009').nil?
+  p = Property.create!(
+    :code => 'MI009',
+    :real_estate_id => pagano.id,
+    :description => 'Departamento de un dormitorio con placard, cocina comedor, baño completo, balcon tipo patio de 20 mts2 a estrenar',
+    :price => Money.from_numeric(70000, usd.code),
+    :address => 'Ituzaingó 1100',
+    :location_id => rosario.id,
+    :type_id => depto.id,
+    :operation_id => venta.id,
+    :created_at => 1.weeks.ago
+  )
+  5.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a2#{i}") }
+  Dir.foreach(File.join(images_path, '9')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '9', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI010').nil?
+  p = Property.create!(
+    :code => 'MI010',
+    :real_estate_id => fundar.id,
+    :description => 'Excelente departamento de categoria en pleno centro de rosario , balcon de frente y contra frente , solarium , baño con hidromasaje ,cochera fija , quincho , muy bello , perfecta luz y doble circulacion , calefactores en todos las ambientes construccion de categoria , ultima unidad',
+    :price => Money.from_numeric(195000, usd.code),
+    :address => 'Av San Martin 400',
+    :location_id => rosario.id,
+    :type_id => depto.id,
+    :operation_id => venta.id,
+    :created_at => 5.weeks.ago
+  )
+  15.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a3#{i}") }
+  Dir.foreach(File.join(images_path, '10')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '10', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI011').nil?
+  p = Property.create!(
+    :code => 'MI011',
+    :real_estate_id => fundar.id,
+    :description => 'Departamento de 3 dormitorios con placares, amplio living, cocina comedor, balcón al frente sobre calle laprida, 1 dormitorio en suite, baño completo, lavadero independiente, puerta blindada, alarma, calefacción individual central terraza con quincho, baños y cocina de uso comun alquiler primeros 6 meses: $2500 alquiler próximos 6 meses: $2700 alquiler segundo año: $3200',
+    :price => Money.from_numeric(2500, ars.code),
+    :address => 'Laprida 600',
+    :location_id => rosario.id,
+    :type_id => depto.id,
+    :operation_id => alquiler.id,
+    :created_at => 2.weeks.ago
+  )
+  23.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a4#{i}") }
+  Dir.foreach(File.join(images_path, '11')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '11', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI012').nil?
+  p = Property.create!(
+    :code => 'MI012',
+    :real_estate_id => dunond.id,
+    :description => 'Piso exclusivo dos dormitorios gran living comedor, cocina equipada. dos baños, lavadero independiente. dos balcones. palier privado. cochera. quincho piscina. excelente estado general',
+    :price => Money.from_numeric(5000, ars.code),
+    :address => 'Laprida 1800',
+    :location_id => rosario.id,
+    :type_id => depto.id,
+    :operation_id => alquiler.id,
+    :created_at => 1.weeks.ago
+  )
+  14.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a5#{i}") }
+  Dir.foreach(File.join(images_path, '12')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '12', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI013').nil?
+  p = Property.create!(
+    :code => 'MI013',
+    :real_estate_id => dunond.id,
+    :description => 'Consultas por condiciones de contratacion y exhibición al 0341-155702727 / 4267259',
+    :price => Money.from_numeric(6000, ars.code),
+    :address => 'Italia 800',
+    :location_id => rosario.id,
+    :type_id => casa.id,
+    :operation_id => alquiler.id,
+    :created_at => 1.weeks.ago
+  )
+  14.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a6#{i}") }
+  Dir.foreach(File.join(images_path, '13')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '13', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI014').nil?
+  p = Property.create!(
+    :code => 'MI014',
+    :real_estate_id => fundar.id,
+    :description => 'ALQUILER COMERCIAL Propiedad desarrollada en una casa en Planta Baja y otra casa en Planta Alta. Magnífica casona antigüa con entradas independientes y conectadas por impecable escalera interna. En planta baja se encuentran un hall ingreso, vestibulo,living recibidor, 4 habitaciones, 4 baños, cocina comedor, living comedor y 2 patios internos. En planta alta se encuentran otras 3 habitaciones, cocina y baño, habitación de servicio, lavadero y terraza. Ideal Instituciones, Bancos, Financieras. MULTINACIONALES',
+    :price => Money.from_numeric(7000, usd.code),
+    :address => 'Bv. Oroño 50',
+    :location_id => rosario.id,
+    :type_id => casa.id,
+    :operation_id => alquiler.id,
+    :created_at => 6.weeks.ago
+  )
+  24.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a7#{i}") }
+  Dir.foreach(File.join(images_path, '14')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '14', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI015').nil?
+  p = Property.create!(
+    :code => 'MI015',
+    :real_estate_id => paganini.id,
+    :description => 'Paganini vende cordoba y alsina, casa estilo señorial, impecable estado, 3/4 habitaciones, hall distribuidor de ingreso, cocina comedor y comedor diario, pasaplatos con barra, 3 habitaciones, una con entre piso y una cuarta habitacion en entre piso tipo escritorio o altillo sobre la cochera con acceso por adentro, baño principal reciclado con sanitarios originales y baño de servicio tambien reciclado, patio jardín con pisos mosaicos y cesped, parrillero, terraza, lavadero, dependencias, cochera, aires split y calefactores, 200m2 terreno (8,66 x 23) y 180m2 edificado - contacto: marcos paganini cel: 3415 - 789674 paganini negocios inmobiliarios www paganinirosario com ar',
+    :price => Money.from_numeric(220000, usd.code),
+    :address => 'Av Córdoba 3800',
+    :location_id => rosario.id,
+    :type_id => casa.id,
+    :operation_id => venta.id,
+    :created_at => 4.weeks.ago
+  )
+  4.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a8#{i}") }
+  Dir.foreach(File.join(images_path, '15')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '15', img)),
+      :property_id => p.id
+    )
+  end
+end
+
+if Property.find_by_code('MI016').nil?
+  p = Property.create!(
+    :code => 'MI016',
+    :real_estate_id => dunond.id,
+    :description => 'Casa desarrollada en dos plantas 160 m2 cubiertos P B hall ingreso, living, cocina comedor, estar, cochera baño y patio con parrillero P A 3 dormitorios, baño y balcon terraza Escaleras interna y externa, Edificada sobre terreno de 158 m2 Construccion solida, realizada en los años 50 con buenos materiales Ubicada a una cuadra del parque Independencia, excelente barrio, proximo al centro de la ciudad Aceptamos Propuestas: Permuta en Parte de Pago Departamento uno o dos Dormitorio',
+    :price => Money.from_numeric(180000, usd.code),
+    :address => 'Av Presidente Perón 2900',
+    :location_id => rosario.id,
+    :type_id => casa.id,
+    :operation_id => venta.id,
+    :created_at => 7.weeks.ago
+  )
+  11.times { |i| p.impressions.create(:request_hash => "9beeb36b0bac66e260a231bfcf35e0b8ae7805b07a3ebea763d55778b9e75a9#{i}") }
+  Dir.foreach(File.join(images_path, '16')) do |img|
+    next if img == '.' or img == '..'
+    photo = Photo.create!(
+      :file => File.open(File.join(images_path, '16', img)),
+      :property_id => p.id
+    )
+  end
 end
 
 # Busquedas
