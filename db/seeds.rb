@@ -7,24 +7,24 @@ puts 'Seeding roles'
 admin_role = Role.find_by_name('Admin')
 if admin_role.nil?
   admin_role = Role.create(
-    :name => 'Admin', 
-    :description => 'Administrador', 
+    :name => 'Admin',
+    :description => 'Administrador',
   )
 end
 
 inmobiliaria_role = Role.find_by_name('Inmobiliaria')
 if inmobiliaria_role.nil?
   inmobiliaria_role = Role.create(
-    :name => 'Inmobiliaria', 
-    :description => 'Inmobiliaria' 
+    :name => 'Inmobiliaria',
+    :description => 'Inmobiliaria'
   )
 end
 
 client_role = Role.find_by_name('Cliente')
 if client_role.nil?
   client_role = Role.create(
-    :name => 'Cliente', 
-    :description => 'Cliente y/o visitante web' 
+    :name => 'Cliente',
+    :description => 'Cliente y/o visitante web'
   )
 end
 
@@ -59,9 +59,9 @@ puts 'Seeding users'
 client_user = User.find_by_email('mbianculli@gmail.com')
 if client_user.nil?
   User.create(
-    :first_name => 'Martin', 
-    :last_name => 'Bianculli', 
-    :email => 'mbianculli@gmail.com', 
+    :first_name => 'Martin',
+    :last_name => 'Bianculli',
+    :email => 'mbianculli@gmail.com',
     :password => 'foo',
     :password_confirmation => 'foo',
     :role_id => client_role.id
@@ -71,25 +71,38 @@ end
 admin_user = User.find_by_email('admin@gmail.com')
 if admin_user.nil?
   User.create(
-    :first_name => 'Administrator', 
-    :last_name => 'Site', 
-    :email => 'admin@gmail.com', 
+    :first_name => 'Administrator',
+    :last_name => 'Site',
+    :email => 'admin@gmail.com',
     :password => 'foo',
     :password_confirmation => 'foo',
     :role_id => admin_role.id
   )
 end
 
-inmobiliaria_user = User.find_by_email('inmobiliaria@gmail.com')
-if inmobiliaria_user.nil?
+fundar_user = User.find_by_email('fundar@gmail.com')
+if fundar_user.nil?
   User.create(
-    :first_name => 'Junacito', 
-    :last_name => 'Fundar', 
-    :email => 'fundar@gmail.com', 
+    :first_name => 'Junacito',
+    :last_name => 'Fundar',
+    :email => 'fundar@gmail.com',
     :password => 'foo',
     :password_confirmation => 'foo',
     :role_id => inmobiliaria_role.id,
     :real_estate_id => fundar.id
+  )
+end
+
+pagano_user = User.find_by_email('pagano@gmail.com')
+if pagano_user.nil?
+  User.create(
+    :first_name => 'Junacito',
+    :last_name => 'Pagano',
+    :email => 'pagano@gmail.com',
+    :password => 'foo',
+    :password_confirmation => 'foo',
+    :role_id => inmobiliaria_role.id,
+    :real_estate_id => pagano.id
   )
 end
 
