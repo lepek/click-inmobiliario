@@ -91,7 +91,7 @@ class Property < ActiveRecord::Base
         currencies = Currency.all
         price_query = []
         currencies.each do |currency|
-          price_query << " ( currency = '#{currency.code}' AND price < #{Money.new(conditions[:price], conditions[:currency]).exchange_to(currency.code.to_sym).cents} ) "
+          price_query << " ( currency = '#{currency.code}' AND price <= #{Money.new(conditions[:price], conditions[:currency]).exchange_to(currency.code.to_sym).cents} ) "
         end
         price_query.compact.join(' OR ')
       else
