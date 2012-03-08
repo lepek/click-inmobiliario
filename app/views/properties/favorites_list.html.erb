@@ -14,12 +14,14 @@
     </ul>
     <div id="favorites">
     	
-    	<% datatable "properties-table", ["Código", "Dirección", "Localidad", ""], :class => "selectable" do -%>
+    	<% datatable "properties-table", ["Código", "Dirección", "Localidad", "Tipo", "Inmobiliaria", ""], :class => "selectable" do -%>
 		  <% @properties.each do |property| -%>
 		    <tr>
 		      <td><%= property.code %></td>
 		      <td><%= property.address %></td>
 		      <td><%= property.location.name %></td>
+          <td><%= property.type.name %></td>
+          <td><%= property.real_estate.name %></td>
 		      <td>
 		      	<%= button_to "Ver", property_path(property), :method => :get %>
 		        <%= button_to "Eliminar", {:action=>"favorite", :controller=>"properties", :id => property.id}, :confirm => "¿Esta seguro que desea eliminar el favorito?", :method => :get %>
