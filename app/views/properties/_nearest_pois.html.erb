@@ -1,7 +1,3 @@
-<% nearest_pois = {:school => property.nearest_poi("escuela"), 
-									 :hospital => property.nearest_poi("hospital"),
-									 :police_station => property.nearest_poi("policia") }.delete_if{|k,v| v.empty?} %>
-
 <% unless nearest_pois.empty? %>
 
 <div id="nearest_pois">

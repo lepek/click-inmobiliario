@@ -14,7 +14,7 @@
 			<%= link_to(image_tag('add_to_favorite.png', :alt => 'Agregar a Favoritos', :size => "24x24", :mouseover => 'favorite.png', :title => 'Agregar a Favoritos'), url_for(:action => :favorite, :id => @property.id, :referer => :show), :remote => true) %>
 		<% end %>
 </div>
-	</div>	
+	</div>
   <div id="gallery">
   		<% if @property.photos.empty? %>
   			<%= image_tag 'no-image.gif' %>
@@ -22,9 +22,9 @@
 	        <% @property.photos.each do |photo| %>
 	            <%= image_tag photo.file.url %>
 	        <% end %>
-	    <% end %>  
+	    <% end %>
 	</div>
-	
+
 	<div id="property">
         <h2><%= @property.type.name %> en <%= @property.operation.name %></h2>
         <div><h2>C&oacute;digo: <%= @property.code %></h2></div>
@@ -32,8 +32,8 @@
         <div style="text-align: right;"><h3><a href="#" id="contact-link">Contactar</a></h3></div>
 		<h5><%= @property.description %></h5>
 	</div>
-	
-	<%= render :partial => 'nearest_pois', :locals => { :property => @property }%>
+
+	<%= render :partial => 'nearest_pois', :locals => { :property => @property, :nearest_pois => @nearest_pois }%>
 </div>
 
 <%= render :partial => 'contact' %>
@@ -41,8 +41,8 @@
 <script>
 $(document).ready(function() {
 	$('#contact-link').click(function() {
-    	<% if user_signed_in? %>		
-			$("#contact").dialog('open');		
+    	<% if user_signed_in? %>
+			$("#contact").dialog('open');
 		<% else %>
 			window.location = '<%= new_user_session_path %>'
 		<% end %>

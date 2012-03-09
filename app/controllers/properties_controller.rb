@@ -10,12 +10,20 @@ class PropertiesController < ApplicationController
   # GET /properties/1.json
   def show
     @property = Property.find(params[:id])
+
+    @nearest_pois = {}
+    poi_types = PoiType.all
+    poi_types.each do |poi_type|
+      nearest_poi = @property.nearest_poi(poi_type.name.to_s)
+      @nearest_pois[poi_type.name.to_sym] = nearest_poi unless nearest_poi.empty?
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @property }
     end
   end
-  
+
 
   def contact
     property = Property.find(params[:id])
@@ -39,14 +47,14 @@ class PropertiesController < ApplicationController
       current_user.properties << @property
     end
     current_user.reload
-    
+
     unless request.xhr?
       flash[:success] = flash_message
       redirect_to :back and return
     end
     respond_to do |format|
       if params[:referer] and params[:referer] == "show"
-        format.js { render :partial => 'favorite', :locals => { :is_favorite => @property.is_favorite?, :flash_message => flash_message } }        
+        format.js { render :partial => 'favorite', :locals => { :is_favorite => @property.is_favorite?, :flash_message => flash_message } }
       else
         infowindow_content = render_to_string( :partial => 'index/infowindow', :locals => { :property => @property } )
         format.js { render :partial => 'infowindow', :locals => { :property_id => @property.id, :infowindow_content => infowindow_content } }
@@ -56,9 +64,9 @@ class PropertiesController < ApplicationController
     flash[:error] = "No se encontro la propiedad solicitada."
     redirect_to :back
   end
-  
+
   def favorites_list
     @properties = current_user.properties
   end
-  
+
 end
