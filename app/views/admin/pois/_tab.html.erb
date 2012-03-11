@@ -1,7 +1,7 @@
 <fieldset class="gray">
-  <%= button_to "Agregar un nuevo Punto de Interes", new_admin_poi_path, :method => "get" %>
+  <%= button_to "Agregar un nuevo punto de interés", new_admin_poi_path, :method => "get" %>
 </fieldset>
-<% datatable "pois-table", ["Descripcion", "Dirección", "Localidad","Tipo de Punto de Interes", ""], :class => "selectable" do -%>
+<% datatable "pois-table", ["Descripción", "Dirección", "Localidad","Tipo", ""], :class => "selectable" do -%>
   <% pois.each do |poi| -%>
     <tr>
       <td><%= poi.description %></td>
@@ -10,7 +10,7 @@
       <td><%= poi.poi_type.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_poi_path(poi), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/pois", :id => poi}, :confirm => "¿Esta seguro que desea eliminar \nel Punto de Interes ubicado en #{poi.address.upcase}?", :method => :delete %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/pois", :id => poi}, :confirm => "¿Está seguro que desea eliminar \nel punto de interés ubicado en #{poi.address.upcase}?", :method => :delete %>
       </td>
     </tr>
   <% end -%>

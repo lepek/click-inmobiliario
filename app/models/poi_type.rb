@@ -11,7 +11,7 @@ class PoiType < ActiveRecord::Base
   private
   
   def poi_type_with_pois?
-    errors.add(:base, "El tipo de punto de interes #{name.upcase} no puede ser eliminado ya que posee puntos de interes asociados al mismo.") unless pois.count == 0
+    errors.add(:base, "El tipo de punto de inter&eacute;s #{name.upcase} no puede ser eliminado ya que posee puntos de inter&eacute;s asociados al mismo.") unless pois.count == 0
     errors.blank?
   end
   

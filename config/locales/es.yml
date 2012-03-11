@@ -20,8 +20,8 @@ es:
       type: 'Tipo de inmueble'
       user: 'Usuario'
       photo: 'Foto'
-      poi_type: 'Tipo de punto de interes'
-      poi: 'Punto de interes'
+      poi_type: 'Tipo de punto de interés'
+      poi: 'Punto de interés'
     attributes:
       user:
         first_name: 'Nombre'
@@ -60,13 +60,13 @@ es:
         file: 'Foto'
         description: 'Descripción'
       poi_type:
-        name: 'Tipo de punto de interes'
+        name: 'Tipo de punto de interés'
         icon: 'Icono'
       poi:
         address: 'Dirección'
         description: 'Descripción'
         location_id: 'Localidad'
-        poi_type_id: 'Punto de interes'
+        poi_type_id: 'Tipo de punto de interés'
     errors:
       models:
         user:
@@ -115,13 +115,13 @@ es:
             operation:
               blank: 'El Tipo de Operación no puede estar en blanco'
             currency:
-              blank: 'La moneda no puede estar en blanco'
+              blank: 'La Moneda no puede estar en blanco'
             type:
               blank: 'El Tipo de Inmueble no puede estar en blanco'
         real_estate:
           attributes:
             name:
-              blank: 'La inmobiliaria no puede estar en blanco'
+              blank: 'La Inmobiliaria no puede estar en blanco'
             email:
               blank: 'El E-mail no puede estar en blanco'
               taken: 'El E-mail ingresado ya existe'
@@ -132,7 +132,7 @@ es:
         poi_type:
           attributes:
             name:
-              blank: 'El Tipo de Punto de Interes no puede estar en blanco'
+              blank: 'El Tipo de Punto de Interés no puede estar en blanco'
         poi:
           attributes:
             description:
@@ -142,7 +142,7 @@ es:
             location:
               blank: 'La Localidad no puede estar en blanco'
             poi_type:
-              blank: 'El Tipo de Punto de Interes no puede estar en blanco'
+              blank: 'El Tipo de Punto de Interés no puede estar en blanco'
   devise:
     failure:
       invalid: 'Usuario o contraseña no válidos.'

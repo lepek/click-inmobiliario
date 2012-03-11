@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Admin
   class PoisController < Admin::ApplicationController
     load_and_authorize_resource
@@ -46,7 +48,7 @@ module Admin
 
       respond_to do |format|
         if @poi.save
-          format.html { redirect_to [:admin, @poi], notice: 'Nuevo punto de interes creado.' }
+          format.html { redirect_to [:admin, @poi], notice: 'Nuevo punto de interés creado.' }
           format.json { render json: @poi, status: :created, location: [:admin, @poi] }
         else
           format.html { render action: "new" }
@@ -61,7 +63,7 @@ module Admin
       @poi = Poi.find(params[:id])
       respond_to do |format|
         if @poi.update_attributes(params[:poi])
-          format.html { redirect_to [:admin, @poi], notice: 'Punto de interes actualizado.' }
+          format.html { redirect_to [:admin, @poi], notice: 'Punto de interés actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
@@ -79,7 +81,7 @@ module Admin
 
       respond_to do |format|
         format.html do
-          flash[:success] = "El Punto de interes ubicado en #{poi_address.upcase} fue eliminado correctamente." 
+          flash[:success] = "El punto de inter&eacute;s ubicado en #{poi_address.upcase} fue eliminado correctamente." 
           redirect_to admin_root_path(:anchor => 'pois')
         end
       end

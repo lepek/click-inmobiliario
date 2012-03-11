@@ -1,5 +1,5 @@
 <fieldset class="gray">
-  <%= button_to "Agregar un nuevo tipo de punto de interes", new_admin_poi_type_path, :method => "get" %>
+  <%= button_to "Agregar un nuevo tipo de punto de interés", new_admin_poi_type_path, :method => "get" %>
 </fieldset>
 <% datatable "poi-types-table", ["Tipo de punto de inter&eacute;s", ""], :class => "selectable" do -%>
   <% poi_types.each do |poi_type| -%>
@@ -7,7 +7,7 @@
       <td><%= poi_type.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_poi_type_path(poi_type), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/poi_types", :id => poi_type}, :confirm => "¿Esta seguro que desea eliminar \nel tipo de punto de interes #{poi_type.name.upcase}?", :method => :delete %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/poi_types", :id => poi_type}, :confirm => "¿Está seguro que desea eliminar \nel tipo de punto de interés #{poi_type.name.upcase}?", :method => :delete %>
       </td>
     </tr>
   <% end -%>

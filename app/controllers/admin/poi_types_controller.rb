@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Admin
   class PoiTypesController < Admin::ApplicationController
     load_and_authorize_resource
@@ -47,7 +49,7 @@ module Admin
 
       respond_to do |format|
         if @poi_type.save
-          format.html { redirect_to [:admin, @poi_type], notice: 'Nuevo tipo de punto de interes creado.' }
+          format.html { redirect_to [:admin, @poi_type], notice: 'Nuevo tipo de punto de interés creado.' }
           format.json { render json: @poi_type, status: :created, location: [:admin, @poi_type] }
         else
           format.html { render action: "new" }
@@ -63,7 +65,7 @@ module Admin
 
       respond_to do |format|
         if @poi_type.update_attributes(params[:poi_type])
-          format.html { redirect_to [:admin, @poi_type], notice: 'Tipo de punto de interes actualizado.' }
+          format.html { redirect_to [:admin, @poi_type], notice: 'Tipo de punto de interés actualizado.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
@@ -79,7 +81,7 @@ module Admin
       poi_type_name = @poi_type.name
       
       if @poi_type.destroy
-        flash[:success] = "El tipo de punto de interes #{poi_type_name.upcase} fue eliminado correctamente."
+        flash[:success] = "El tipo de punto de inter&eacute;s #{poi_type_name.upcase} fue eliminado correctamente."
       else
         flash[:error] = @poi_type.errors.to_a.join("<br />")
       end
