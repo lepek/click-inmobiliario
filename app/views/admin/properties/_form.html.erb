@@ -43,7 +43,7 @@
 		</div>
 	</div>
 	<div class="clearfix">
-		<%= f.label :currency %>
+		<%= f.label :currency_id %>
 		<div class="input">
 			<%= f.collection_select(:currency, Currency.order("name").all, :code, :name) %>
 		</div>
