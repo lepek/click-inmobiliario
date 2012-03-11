@@ -7,7 +7,7 @@
       <td><%= type.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_type_path(type), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/types", :id => type}, :confirm => "¿Esta seguro que desea eliminar \nel tipo de inmueble #{type.name.upcase}?", :method => :delete %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/types", :id => type}, :confirm => "¿Está seguro que desea eliminar \nel tipo de inmueble #{type.name.upcase}?", :method => :delete %>
       </td>
     </tr>
   <% end -%>

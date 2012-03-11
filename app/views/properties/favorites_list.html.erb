@@ -24,7 +24,7 @@
           <td><%= property.real_estate.name %></td>
 		      <td>
 		      	<%= button_to "Ver", property_path(property), :method => :get %>
-		        <%= button_to "Eliminar", {:action=>"favorite", :controller=>"properties", :id => property.id}, :confirm => "¿Esta seguro que desea eliminar el favorito?", :method => :get %>
+		        <%= button_to "Eliminar", {:action=>"favorite", :controller=>"properties", :id => property.id}, :confirm => "¿Está seguro que desea eliminar el favorito?", :method => :get %>
 		      </td>
 		    </tr>
 		  <% end -%>

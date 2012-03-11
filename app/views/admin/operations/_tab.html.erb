@@ -7,7 +7,7 @@
       <td><%= operation.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_operation_path(operation), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/operations", :id => operation}, :confirm => "¿Esta seguro que desea eliminar \nla operacion #{operation.name.upcase}?", :method => :delete %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/operations", :id => operation}, :confirm => "¿Está seguro que desea eliminar \nla operación #{operation.name.upcase}?", :method => :delete %>
       </td>
     </tr>
   <% end -%>
