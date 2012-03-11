@@ -49,7 +49,7 @@ module Admin
 
       respond_to do |format|
         if @operation.save
-          format.html { redirect_to [:admin, @operation], notice: 'Nuevo tipo de operación creada.' }
+          format.html { redirect_to [:admin, @operation], notice: 'Nuevo tipo de operación creado.' }
           format.json { render json: @operation, status: :created, location: [:admin, @operation] }
         else
           format.html { render action: "new" }
@@ -81,7 +81,7 @@ module Admin
       operation_name = @operation.name
       
       if @operation.destroy
-        flash[:success] = "La operaci&oacute;n #{operation_name.upcase} fue eliminada correctamente."
+        flash[:success] = "El tipo de operaci&oacute;n #{operation_name.upcase} fue eliminado correctamente."
       else
         flash[:error] = @operation.errors.to_a.join("<br />")
       end
