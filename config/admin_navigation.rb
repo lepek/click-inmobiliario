@@ -26,10 +26,10 @@ SimpleNavigation::Configuration.run do |navigation|
       sub.item :types, 'Tipos de Inmueble', admin_root_path(:anchor => 'types'), :if => proc {
         current_ability.can? :manage, Type
       }
-      sub.item :poi_types, 'Tipos de Punto de Interes', admin_root_path(:anchor => 'poi_types'), :if => proc {
+      sub.item :poi_types, 'Tipos de Punto de Interés', admin_root_path(:anchor => 'poi_types'), :if => proc {
         current_ability.can? :manage, PoiType
       }
-      sub.item :pois, 'Puntos de Interes', admin_root_path(:anchor => 'pois'), :if => proc {
+      sub.item :pois, 'Puntos de Interés', admin_root_path(:anchor => 'pois'), :if => proc {
         current_ability.can? :manage, Poi
       }
     end
