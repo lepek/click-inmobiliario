@@ -1,13 +1,13 @@
 <fieldset class="gray">
-  <%= button_to "Agregar una nueva operación", new_admin_operation_path, :method => "get" %>
+  <%= button_to "Agregar un nuevo tipo de operación", new_admin_operation_path, :method => "get" %>
 </fieldset>
-<% datatable "operations-table", ["Operación", ""], :class => "selectable" do -%>
+<% datatable "operations-table", ["Tipo de operación", ""], :class => "selectable" do -%>
   <% operations.each do |operation| -%>
     <tr>
       <td><%= operation.name %></td>
       <td>
         <%= button_to "Editar", edit_admin_operation_path(operation), :method => :get %>
-        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/operations", :id => operation}, :confirm => "¿Está seguro que desea eliminar \nla operación #{operation.name.upcase}?", :method => :delete %>
+        <%= button_to "Borrar", {:action=>"destroy", :controller=>"admin/operations", :id => operation}, :confirm => "¿Está seguro que desea eliminar \nel tipo de operación #{operation.name.upcase}?", :method => :delete %>
       </td>
     </tr>
   <% end -%>
