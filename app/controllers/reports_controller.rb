@@ -75,7 +75,7 @@ class ReportsController < ApplicationController
       locations_count.each do |location, count|
         data_table.add_row [location, count]
       end
-      @title = 'Localidades incluidas en las busquedas'
+      @title = 'Localidades incluidas en las búsquedas'
       opts = { :dataMode => 'markers', :region => 'AR' }
       @chart = GoogleVisualr::Interactive::GeoMap.new(data_table, opts)
     end
@@ -83,7 +83,7 @@ class ReportsController < ApplicationController
     def price_chart
       data_table = GoogleVisualr::DataTable.new
       data_table.new_column('string', 'Inmuebles' )
-      data_table.new_column('number', 'Precio (en dolares)')
+      data_table.new_column('number', 'Precio (en dólares)')
 
       searches_prices_50000 = Search.joins(:search_params).where('search_params.name = ? AND search_params.value_str = ? AND search_params.value_int <= ?', 'price', 'USD', 50000)
       searches_prices_50000_100000 = Search.joins(:search_params).where('search_params.name = ? AND search_params.value_str = ? AND search_params.value_int BETWEEN ? AND ?', 'price', 'USD', 50000, 100000)
@@ -95,7 +95,7 @@ class ReportsController < ApplicationController
         ['Más de 100.000', searches_prices_100000.count ]
       ])
 
-      @title = 'Precios incluidos en las busquedas'
+      @title = 'Precios incluidos en las búsquedas (en dólares)'
       option = { width: 600, height: 360, :is3D => true, :colors => ['blue', 'lightblue', 'darkblue'] }
       @chart = GoogleVisualr::Interactive::PieChart.new(data_table, option)
     end

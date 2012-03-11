@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
       sub.item :visits, 'Visitas', report_path('visits')
       sub.item :visits, 'Localidades', report_path('locations')
       sub.item :visits, 'Publicaciones', report_path('publish')
-      sub.item :visits, 'Busquedas', report_path('search')
+      sub.item :visits, 'Búsquedas', report_path('search')
       sub.item :visits, 'Precios', report_path('price')
     end
   end
